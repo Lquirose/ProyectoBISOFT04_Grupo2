@@ -1,0 +1,410 @@
+body {
+  overflow: hidden;
+}
+
+*{
+    background-color: white;
+    margin: 0;
+    font-family: "Aoboshi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Contenedor principal o MAIN  */
+
+.all_container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh
+}
+
+/* Logo  */
+
+.logo{
+    display: flex;
+    height: auto;
+    width: 11vw;
+    justify-self: center;
+    
+}
+
+/* !!!!!! Contenedor de la mitad izquierda !!!!!! */
+
+.left-side{
+    
+    width: 55%;
+    height: 100%;
+}
+
+.left-side h1{
+    justify-self: center;
+    font-size: 1.7vw;
+    margin-top: -4%;
+}
+
+.leftP{
+    color: #777777;
+    justify-self: center;
+    margin-right: 10%;
+    font-size: .9vw;
+}
+
+.leftP1{
+    color: #777777;
+    justify-self: center;
+    margin-right: 7%;
+    font-size: .9vw;
+}
+
+.GoogleButton{    /* Boton de Google*/
+    display: flex;
+    height: 2.67vw;
+    width: 17%;
+    margin: 4% auto 0 auto;
+    border: 1.7px solid #cccccc;
+    border-radius:0.5vw ;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.GoogleButton:hover{
+     transform: scale(1.03);
+}
+
+.GoogleButton:active{
+    background-color:#f6f6f6;
+    text-decoration: none;
+}
+
+.textButton{
+    color: black;
+    font-size: 1.2vw;
+    font-weight: 200;
+    background-color: transparent;
+}
+
+.left-side button img{
+    width: 1.6vw;
+    margin-left: 0.7vw;
+    margin-right: 9%;
+    background-color: transparent;
+}
+
+.line_N_P{
+    height: auto;
+    width: 100%;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Line{
+    height: 0.1vw;
+    width: 15%;
+    background-color: #aaaaaa;
+    margin-top:.4vw ;
+}
+
+.lineP{
+    margin-left:2.5% ;
+    margin-right:2.5% ;
+    color: #777777;
+    font-size: 1.06vw;
+}
+
+.formRegistro{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vw;
+    align-items: center;
+
+}
+
+.formRegistro div{
+    height: auto;
+    width: auto;
+    position: relative;
+}
+
+.formRegistro div input{
+    margin-top: .5vw ;
+    margin-bottom:.5vw ;
+    height: 2.3vw;
+    width: 20vw;
+    border: 0.15vw solid #999999;
+    padding-left: 3vw;
+    font-size: 1.2vw;
+}
+
+.formRegistro div img{
+    height: auto;
+    position: absolute;
+    background-color: transparent;
+    
+}
+
+.userIMG{
+    width: 2vw;
+    top:.8vw ;
+    left:.37vw ;
+    filter: opacity(0.5)
+}
+
+.emailIMG{
+    width: 1.9vw;
+    top:.87vw ;
+    left:.47vw ;
+    filter: opacity(0.5)
+}
+
+.lockIMG{
+    width: 2vw;
+    top:.75vw ;
+    left:.35vw ;
+    filter: opacity(0.4)
+}
+
+.formRegistro div input::placeholder{
+    font-size: 1.2vw;
+    position: absolute;
+    left: 3.1vw;
+    top: .37vw;
+}
+
+.submit{
+    margin-top: 1vw;
+    height: 2.2vw;
+    width: 6.8vw;
+    background-color: #2865FF;
+    color: white;
+    border: none;
+    transition: 0.5s;
+    border-radius: 0.1vw;
+}
+
+.submit:hover{
+    transform: scale(1.04);
+}
+
+.submit:active{
+    background-color: #1d4cc5f0;
+}
+
+.text-below{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.3vw;
+}
+
+.text-below a{
+    margin-left: 1vw;
+    transition: 0.1s;
+    text-decoration: none;
+}
+
+.text-below a:visited{
+    color: #2865FF;
+}
+
+.text-below a:active{
+    color: #1d48b4;
+}
+
+/* !!!!!! Contenedor de la mitad izquierda !!!!!! */
+
+/* !!!!!! Contenedor de la mitad derecha !!!!!! */
+
+.right-side{
+    
+    width: 45%;
+    height: 100%;
+    background-color: #2865FF;
+    position: relative;
+}
+
+.RightIMG{
+    background-color: none;
+    width: 45vw;
+    height: auto;
+    background-color: transparent;
+    position: absolute;
+    z-index: 5;
+    top: -2%;
+}
+
+.Circle1{
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  background-color: #ffffff;
+  opacity: .1;
+  top: 18%;
+  left: 18%;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.Circle2{
+      position: absolute;
+  width: 18vw;
+  height: 18vw;
+  background-color: #ffffff;
+  opacity: .25;
+  top: 23%;
+  left: 28%;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.right-side p{
+    position: absolute;
+    background-color: transparent;
+    color: white;  
+    top: 80%;  
+    left: 28.6%;
+    font-size: 1.07vw;
+}
+
+
+
+/* !!!!!! Contenedor de la mitad derecha !!!!!! */
+
+/* --- MEDIA QUERIES PARA RESPONSIVE --- */
+
+@media screen and (max-width: 1024px) {
+  .GoogleButton {
+    width: 30vw;
+    height: 6vw;
+  }
+
+  .textButton {
+    font-size: 2.5vw;
+  }
+
+  .leftP,
+  .lineP {
+    font-size: 1.6vw;
+  }
+
+  .submit {
+    width: 10vw;
+    height: 4vw;
+    font-size: 1.8vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .all_container {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    width: 100%;
+    height: auto;
+  }
+
+  .formRegistro div input {
+    width: 80vw;
+    height: 9vw;
+    font-size: 4vw;
+    padding-left: 12vw;
+  }
+
+  .userIMG,
+  .emailIMG,
+  .lockIMG {
+    width: 7vw;
+    top: 2.5vw;
+    left: 2vw;
+  }
+
+  .formRegistro div input::placeholder {
+    font-size: 3.5vw;
+    left: 13vw;
+    top: 1vw;
+  }
+
+  .submit {
+    width: 40vw;
+    height: 9vw;
+    font-size: 4vw;
+    border-radius: 1vw;
+  }
+
+  .GoogleButton {
+    width: 50vw;
+    height: 8vw;
+    font-size: 4vw;
+  }
+
+  .GoogleButton img {
+    width: 4vw;
+    margin-left: 2vw;
+    margin-right: 5vw;
+  }
+
+  .right-side {
+    background-color: #2865FF;
+    padding-top: 5vw;
+    padding-bottom: 5vw;
+    text-align: center;
+  }
+
+  .RightIMG {
+    position: static;
+    width: 80vw;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    z-index: 1;
+  }
+
+  .right-side p {
+    position: static;
+    font-size: 4vw;
+    margin-top: 4vw;
+  }
+
+  .Circle1,
+  .Circle2 {
+    display: none;
+  }
+
+  .line_N_P {
+    flex-direction: column;
+    gap: 2vw;
+  }
+
+  .Line {
+    width: 50%;
+  }
+
+  .left-side h1 {
+    font-size: 5vw;
+  }
+
+  .leftP {
+    font-size: 3.2vw;
+    text-align: center;
+    margin-right: 0;
+  }
+
+  .text-below {
+    flex-direction: column;
+    text-align: center;
+    font-size: 3.5vw;
+    gap: 1vw;
+  }
+
+  .text-below a {
+    font-size: 3.5vw;
+    margin: 0;
+  }
+}

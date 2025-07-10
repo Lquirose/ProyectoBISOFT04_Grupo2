@@ -1,0 +1,227 @@
+/*-----------------------------------------------
+transporteadmin
+-----------------------------------------------*/
+
+.transport-main, .transport-usermain {
+    font-family: "poppins", sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.page-title {
+    background-color: rgba(40, 101, 255, 0.1);
+    padding: 40px;
+}
+
+.transport-form {
+   padding: 32px;
+}
+
+.form-body {
+   display: grid;
+   grid-template-columns: 2fr 2fr;
+   gap: 24px;
+    max-width: 720px;
+    margin: 40px auto
+}
+
+
+.input-group {
+    display:flex;
+    flex-direction:column;
+}
+
+
+.input-group label {
+
+    margin-bottom: 8px;
+    font-size: 14px;
+   font-weight: 500;
+    text-align: left;
+}
+    
+.input-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+
+.form-button {
+    justify-content:center;
+    display: flex;
+    gap: 16px;
+}
+
+.form-button button {
+    border: none;
+    color: white;
+    cursor: pointer;
+   
+}
+
+    
+
+.popular-routes {
+    padding-bottom: 100px;
+}
+.route-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.route-card, .route-usercard, .fee-usercard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    padding: 12px 16px;
+    max-width: 300px;
+    text-align: left
+}
+
+.route-card img, .route-usercard img, .fee-usercard img {
+     width: 50px;
+    height: 50px;
+    object-fit:cover;
+    border-radius: 8px;
+    margin-right:12px;
+    flex-shrink: 0
+}
+
+.route-card p {
+    margin:0;
+    font-family: "poppins", sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+.route-card .card-content h5, .route-usercard .usercard-content h5 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "poppins", sans-serif;
+}
+
+.route-card:hover, .route-usercard:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .form-body {
+        grid-template-columns: 1fr;
+        
+  }
+
+  .form-button {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-button button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .route-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.route-card {
+  flex: 1 1 100%; /* tarjetas responsivas */
+  max-width: 100%;
+}
+
+
+
+.transport-form
+.page-title {
+    padding: 20px;
+    
+
+}
+
+}
+
+/*Página de transporte*/
+
+.routelinks-container {
+     display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding: 70px;
+    max-width: 800px;
+    width:100%;
+    height: auto;
+    border: none;
+   border-radius: 20px;
+   box-sizing: border-box;
+   box-shadow:  0 2px 8px rgba(0,0,0,0.3);
+   margin: 0 auto;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+   
+}
+.user-routes{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding: 70px;
+    
+
+    
+}
+
+
+.route-userlinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    margin-top: 20px;
+   justify-content:center;
+   padding: 0 50px;
+
+   
+   
+}
+.user-fee {
+    display:grid;
+    justify-content: center;
+    
+}
+
+.userfee-links > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.fee-usercard {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s;
+}
