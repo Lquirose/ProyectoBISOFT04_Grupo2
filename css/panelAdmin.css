@@ -1,9 +1,9 @@
-/*body {
+body {
   margin: 0;
   font-family: "poppins", sans-serif;
   
 }
-
+/*
 *{
     text-decoration: none;
     margin:0;
@@ -33,7 +33,7 @@ header {
      display: flex;
     justify-content:flex-start;
     align-items: center;
-}
+}*/
 
 .navbar {
     display:flex;
@@ -42,17 +42,17 @@ header {
 
 }
 
-/*.navbar > div { 
+.navbar > div { 
     margin-right: 100px;
     
 }
 .navbar nav {
-    margin-left:auto;/*Hace que se el nav se haga a la derecha todo lo que se pueda
+    margin-left:auto;/*Hace que se el nav se haga a la derecha todo lo que se pueda*/
     padding-right: 100px;
-    
-}*/
+}
 
-/*nav ul {
+
+nav ul {
     list-style: none;
     display: flex;
     gap: 50px;
@@ -66,7 +66,6 @@ nav a {
     padding: 5px;
     transition: background-color 0.2s ease, box-shadow 0.3s ease;
 
-  
 }
 
 nav a:hover {
@@ -74,7 +73,7 @@ nav a:hover {
 
 }
 
-.search-container {
+/*.search-container {
   position: relative;
   display: inline-block;
   width: 100%;
@@ -111,12 +110,12 @@ nav a:hover {
   transform: translateY(-50%);
   color: white;
 }
-
+*/
 
 #salir{
   color:red;
 }
-*/
+
 .layout {
   display:flex;             
   flex-direction: column;      
@@ -138,7 +137,8 @@ nav a:hover {
   flex-direction: column;
 }
 
-.menu li {
+.menu li a{
+  color: black;
   font-size: 16px;
   padding: 12px 10px;
   margin-bottom: 10px;
@@ -147,6 +147,6 @@ nav a:hover {
   transition:  0.2s;
 }
 
-.menu li:hover {
+.menu li a:hover {
   background-color: #d3e3ff;
 }
