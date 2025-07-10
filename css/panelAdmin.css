@@ -3,37 +3,13 @@ body {
   font-family: "poppins", sans-serif;
   
 }
-/*
+
 *{
     text-decoration: none;
     margin:0;
     padding: 0;
     box-sizing: border-box;
 }
-
-
-
-
-.logo {
-    width: 100px;
-    height: 40px;
-    border-radius: 20px;
-    object-fit: cover;
-}
-
-header {
-    background-color: #0056ff;
-    padding:15px 10px 15px 10px ;
-    color: white;
-}
-
-.header-content {
-    max-width: 100%;
-    margin: 0 auto;
-     display: flex;
-    justify-content:flex-start;
-    align-items: center;
-}*/
 
 .navbar {
     display:flex;
@@ -47,7 +23,7 @@ header {
     
 }
 .navbar nav {
-    margin-left:auto;/*Hace que se el nav se haga a la derecha todo lo que se pueda*/
+    margin-left:auto; /*Hace que se el nav se haga a la derecha todo lo que se pueda*/
     padding-right: 100px;
 }
 
@@ -70,47 +46,7 @@ nav a {
 
 nav a:hover {
  box-shadow: 2px 2px 5px #ffffff;
-
 }
-
-/*.search-container {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-  
-}
-
-.search-container input {
-  padding-left: 20px;
-  width: 200px;
-  background-color: transparent;
-  color: white;
-  font-family: "poppins";
-  font-size: 14px;
-  border: white solid 1px;
-  border-radius: 20px;
-  box-sizing: border-box;
-  transition: box-shadow 0.3s ease;
-}
-
-.search-container input::placeholder {
-  color: white;
-  opacity: 1;
-}
-
-.search-container input:focus {
-  outline: none;
-  box-shadow: 0 0 5px 2px #ffffff;
-}
-
-.search-container .icon {
-  position: absolute;
-  right: 8px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-}
-*/
 
 #salir{
   color:red;
@@ -118,16 +54,18 @@ nav a:hover {
 
 .layout {
   display:flex;             
-  flex-direction: column;      
-  /*height: calc(100vh - 70px); */
+  flex-direction: column;
+  position: absolute;      
 }
 
 /* Menú lateral izquierdo */
+/*BUSCAR COMO HACER QUE CREZCA LA BARRITA CONFORME SE BAJA*/
 .sidebar {
-  width: 240px;
+  width: 240px; 
   background-color: #e6efff;
   padding: 15px 10px;
   box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+  height: 100vh;
 }
 
 .menu {
