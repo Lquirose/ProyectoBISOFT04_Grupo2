@@ -2,18 +2,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "poppins", sans-serif;
 }
 .regbusiness{
-  font-family: "poppins", sans-serif;
   text-align: center;
-  background-color: #f9f9f9;
+  background-color: #e6efff;
 }
 
-
-
-
 .intro {
-  background-color: #f6f8fa; 
+  background-color: #e6efff; 
   padding: 60px 20px;
   text-align: center;
   color: #04205c; 
