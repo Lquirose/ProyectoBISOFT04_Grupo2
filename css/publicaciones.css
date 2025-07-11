@@ -1,19 +1,27 @@
 .post-main {
-  max-width: 1400px;
+  max-width: 1400px; 
   margin: 32px auto;
   padding: 0 32px;
   display: flex;
   gap: 32px;
+  font-family: 'Poppins', sans-serif; 
 }
 
 .availablePosts {
-  flex: 1;
+  flex: 1; 
   margin-top: 16px;
+  text-align: left; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
 }
+
 
 .sectionHeader h2 {
   font-size: 24px;
   font-weight: 600;
+  color: #333; 
 }
 
 .sectionHeader p {
@@ -23,10 +31,9 @@
 }
 
 .postCards {
-  flex: 2;
+  flex: 2; 
   display: flex;
-  flex-direction: column;
-  gap: 24px;
+  flex-direction: column; 
 }
 
 .Card {
@@ -50,7 +57,7 @@
 }
 
 .postImg,
-.postsImg {
+.postsImg { 
   background-color: #e0e0e0;
   height: 150px;
   display: flex;
@@ -58,16 +65,31 @@
   justify-content: center;
   color: #888;
   font-size: 14px;
+  background-size: cover; 
+  background-position: center;
 }
 
 .Card h3 {
   margin: 8px 16px 0 16px;
   font-size: 16px;
   font-weight: 600;
+  color: #333; 
 }
 
 .Card p {
   margin: 8px 16px 16px 16px;
   color: #444;
   font-size: 14px;
+}
+
+
+@media (max-width: 992px) {
+    .post-main {
+        flex-direction: column; 
+        padding: 0 20px;
+    }
+
+    .availablePosts {
+        text-align: center; 
+    }
 }

@@ -3,174 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/PublicacionesAdmin.css">
+    <title>Detalles de Publicación - Administración</title>
+
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/panelAdmin.css">
+    <link rel="stylesheet" href="css/panelAdmin.css"> <link rel="stylesheet" href="css/PublicacionesAdmin.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <title>Document</title>
 </head>
-<body> 
-   <header>
-             <div class = "navbar">
-                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
-                <div class="mobile-nav">
-                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
-                    <label for="responsive-menu" class="hamburger">
-                        <i class='bx bx-menu'></i>
-                    </label>
-                    <div class="menu-content">
-                        <nav>
-                            <div class="menu-item">
-                                <ul>
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li><a href="publicaciones.html">Publicaciones</a></li>
-                                    <li><a href="transporte.html">Transporte</a></li>
-                                    <li><a href="oferta.html">Oferta</a></li>
-                                    <li><a href="RegistroEmprendimiento.html">Emprendimientos</a></li>
-                                    <li><a href="panelAdmin.html">Administración</a></li>
-                                    <li><a href="perfil.html">Perfil</a></li>
-                                    <li class="search-container">
-                                        <form action="search">
-                                            <input type="text" name="query" placeholder="buscar">
-                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
-                                            
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+<body>
+    <header>
+        <div class="navbar">
+            <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
+            <div class="mobile-nav">
+                <input type="checkbox" id="responsive-menu" class="responsive-menu">
+                <label for="responsive-menu" class="hamburger">
+                    <i class='bx bx-menu'></i>
+                </label>
+                <div class="menu-content">
+                    <nav>
+                        <div class="menu-item">
+                            <ul>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="publicaciones.html">Publicaciones</a></li>
+                                <li><a href="transporte.html">Transporte</a></li>
+                                <li><a href="oferta.html">Oferta</a></li>
+                                <li><a href="RegistroEmprendimiento.html">Emprendimientos</a></li>
+                                <li><a href="panelAdmin.html">Administración</a></li>
+                                <li><a href="perfil.html">Perfil</a></li>
+                                <li class="search-container">
+                                    <form action="search">
+                                        <input type="text" name="query" placeholder="buscar">
+                                        <span class="icon"><i class='bx bx-search'></i></span>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
+        </div>
     </header>
+
     <main class="layout">
         <aside class="sidebar">
             <nav>
-            <ul class="menu">
-                <li> <a href="publicacionesAdmin.html"> 📄 Publicaciones</a></li> <!--Acá hay que seguir uniendo los "botones"-->
-                <li><a href="ReportesAdmin.html">📢 Reportes ciudadanos</a></li>
-                <li> <a href="EmprendimientosAdmin.html">💼 Emprendimientos</a></li>
-                <li> <a href="OfertaAdmin.html">🏷️ Ofertas</a></li>
-                <li> <a href="transporteadmin.html">🚌 Transporte</a></li>
-                <li class="logout" id="salir">🚪 Salir del sistema</li> <!--JS-->
-            </ul>
+                <ul class="menu">
+                    <li class="active"><a href="publicacionesAdmin.html">📄 Publicaciones</a></li>
+                    <li><a href="ReportesAdmin.html">📢 Reportes ciudadanos</a></li>
+                    <li><a href="EmprendimientosAdmin.html">💼 Emprendimientos</a></li>
+                    <li><a href="OfertaAdmin.html">🏷️ Ofertas</a></li>
+                    <li><a href="transporteadmin.html">🚌 Transporte</a></li>
+                    <li class="logout" id="salir">🚪 Salir del sistema</li>
+                </ul>
             </nav>
         </aside>
-    </main>
-      <main class="PubliAdmin">
-        <h1>Detalles de la publicación</h1>
 
-        <section class="basic-info">
-            <div class="detail-field">
-                <strong>Nombre del anuncio</strong>
-                <p>Este es un anuncio de ejemplo para ilustrar el diseño.</p>
+        <section class="PubliAdmin">
+            <h1>Detalles de la publicación</h1>
+            <div class="info-complete">
+                <p>Información completa sobre la publicación seleccionada.</p>
             </div>
-            <div class="detail-field">
-                <strong>Autor</strong>
-                <p>Juan Pérez</p>
-            </div>
-            <div class="detail-field">
-                <strong>Fecha de publicación</strong>
-                <p>23 de marzo, 2023</p>
-            </div>
-            <div class="detail-field">
-                <strong>Categoría</strong>
-                <p>Servicios</p>
-            </div>
-            <div class="detail-field">
-                <strong>Estado</strong>
-                <p>Pendiente</p>
-            </div>
-            <div class="detail-field">
-                <strong>ID del anuncio</strong>
-                <p>#123456</p>
-            </div>
-        </section>
 
-        <section class="ad-title">
-            <h2>Título del anuncio</h2>
-            <p>Este es un ejemplo de descripción corta para el anuncio.</p>
-        </section>
+            <section class="basic-info">
+                <div class="detail-field">
+                    <strong>Nombre del Anuncio</strong>
+                    <p>Este es un ejemplo de descripción corta para el anuncio.</p>
+                </div>
+                <div class="detail-field">
+                    <strong>Autor</strong>
+                    <p>Juan Pérez</p>
+                </div>
+                <div class="detail-field">
+                    <strong>Fecha de Publicación</strong>
+                    <p>23 de marzo, 2023</p>
+                </div>
+                <div class="detail-field">
+                    <strong>Categoría</strong>
+                    <p>Servicios</p>
+                </div>
+                <div class="detail-field">
+                    <strong>Estado</strong>
+                    <p>Pendiente</p>
+                </div>
+                <div class="detail-field">
+                    <strong>ID del Anuncio</strong>
+                    <p>#123456</p>
+                </div>
+            </section>
 
-        <section class="featured-image">
-            <h2>Imagen destacada</h2>
-            <div class="image-placeholder">
-                <p>Imagen destacada del anuncio</p>
-                <small>Marcador de posición si no hay imagen disponible.</small>
-            </div>
-        </section>
+            <section class="ad-title">
+                <h2>Título del Anuncio</h2>
+                <p>Descripción.</p>
+            </section>
 
-        <section class="description">
-            <h2>Descripción</h2>
-            <p>Texto extendido con detalles sobre la publicación.</p>
-            <div class="extra-detail">
-                <strong>Texto extendido</strong>
-                <p>Este texto ofrece una descripción detallada del anuncio…</p>
-            </div>
-            <div class="extra-detail">
-                <strong>Ubicación</strong>
-                <p>Comunidad: San José, Cantón: Escazú, Distrito: Escazú</p>
-            </div>
-        </section>
+            <section class="featured-image">
+                <h2>Imagen Destacada</h2>
+                <div class="image-placeholder">
+                    <p>Imagen destacada del anuncio</p>
+                    <small>Esta imagen representa el detalle del anuncio. Placeholder si no existe imagen.</small>
+                </div>
+            </section>
 
-        <section class="author-info">
-            <div class="author">
-                <p><strong>Juan Pérez</strong></p>
-                <p>Usuario registrado</p>
-                <p>Fecha de registro: 15 de enero, 2021</p>
+            <section class="description">
+                <h2>Descripción</h2>
+                <p>Texto extendido con detalles sobre la publicación.</p>
+                <div class="extra-detail">
+                    <strong>Texto Extenso</strong>
+                    <p>Este texto ofrece una descripción detallada del anuncio…</p>
+                </div>
+                <div class="extra-detail">
+                    <strong>Ubicación</strong>
+                    <p>Comunidad: San José, Cantón: Escazú, Distrito: Escazú</p>
+                </div>
+            </section>
+
+            <section class="author-info">
+                <div class="author-avatar"></div>
+                <div class="author-details">
+                    <p><strong>Juan Pérez</strong></p>
+                    <p>Fecha de registro: 15 de enero, 2021</p>
+                </div>
                 <button>Ver perfil</button>
-            </div>
-        </section>
+            </section>
 
-        <section class="contextual-actions">
-            <h2>Acciones contextuales</h2>
-            <ul>
-                <li>
-                    <input type="checkbox" id="approve" />
-                    <label for="approve">Aprobar</label>
-                </li>
-                <li>
-                    <button class="reject" title="Rechazar">
-                        <i class="bx bx-x"></i>
-                    </button>
-                </li>
-                <li>
-                    <button class="delete" title="Eliminar">
-                        <i class="bx bx-trash"></i>
-                    </button>
-                </li>
-                <li>
-                    <button class="edit" title="Editar publicación">
-                        <i class="bx bx-edit"></i>
-                    </button>
-                </li>
-            </ul>
+            <section class="contextual-actions">
+                <h2>Acciones Contextuales</h2>
+                <p>Opciones disponibles según su rol.</p>
+                <ul>
+                    <li>
+                        <button class="action-btn approve" title="Aprobar">
+                            <i class='bx bx-check-circle'></i> Aprobar
+                        </button>
+                    </li>
+                    <li>
+                        <button class="action-btn reject" title="Rechazar">
+                            <i class='bx bx-x-circle'></i> Rechazar
+                        </button>
+                    </li>
+                    <li>
+                        <button class="action-btn delete" title="Eliminar">
+                            <i class='bx bx-trash'></i> Eliminar
+                        </button>
+                    </li>
+                    <li>
+                        <button class="action-btn edit" title="Editar publicación">
+                            <i class='bx bx-edit'></i> Editar publicación
+                        </button>
+                    </li>
+                </ul>
+            </section>
         </section>
     </main>
+
     <footer class="site-footer">
         <div class="footer-container">
-    <ul class="footer-links">
-      <li>
-        <a href="mailto:comunidadconectada@gmail.com" class="contact">
-          Contacto: comunidadconectada@gmail.com
-        </a>
-      </li>
-      <li>
-        <ul class="submenu">
-          <li><a href="#" class="fa fa-facebook"></a></li>
-          <li><a href="#" class="fa fa-twitter"></a></li>
-          <li><a href="#" class="fa fa-instagram"></a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
+            <ul class="footer-links">
+                <li>
+                    <a href="mailto:comunidadconectada@gmail.com" class="contact">
+                      Contacto: comunidadconectada@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <ul class="submenu">
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </footer>
-<script src="js/script.js"></script>
 </body>
 </html>

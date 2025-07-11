@@ -5,9 +5,6 @@
     box-sizing: border-box;
 }
 
-
-
-
 .logo {
     width: 100px;
     height: 40px;
@@ -219,9 +216,5 @@ nav a:hover {
     font-size: 18px;
     color: white;
     pointer-events: none;
-    }
-
-
-    
+    }  
 }
-/*Esto es un cambio de prueba*/

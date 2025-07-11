@@ -1,28 +1,41 @@
+/* PublicacionesAdmin.css */
+
 .PubliAdmin {
-    width: 100%;
-    max-width: 1100px;
-    margin: auto;
+    flex-grow: 1; /* This makes it take up the remaining horizontal space next to the sidebar */
+    max-width: 1100px; /* You can adjust this max-width if you want the content itself narrower/wider */
+    margin: 0; /* Reset margin as it's a flex item */
     background-color: #fff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 12px rgba(0,0,0,0.05);
 }
 
-.PubliAdmin h1 {
+/* --- Main Title Centering (like "Publicaciones Disponibles" in IMG_1086.jpg) --- */
+.PubliAdmin > h1 { /* Targets the direct <h1> child of .PubliAdmin (e.g., "Detalles de la publicación") */
     font-size: 28px;
     font-weight: 600;
-    margin-bottom: 2rem;
+    margin-bottom: 10px;
     color: #1a1a1a;
+    text-align: center; /* Centers the main title*/
 }
 
-.PubliAdmin h2 {
-    font-size: 22px;
+.PubliAdmin > .info-complete { /* Targets the direct .info-complete child of .PubliAdmin */
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 2rem; /* Space below the centered description */
+    text-align: center; /* Centers the descriptive text below the main title*/
+}
+
+/* --- Subtitles Left Alignment (like "Título del Anuncio", "Imagen Destacada" in IMG_1085.jpg) --- */
+.PubliAdmin h2 { /* Targets all <h2> within .PubliAdmin (e.g., "Título del Anuncio", "Imagen Destacada")*/
+    font-size: 22px; /* Slightly smaller than the main h1 */
     margin-top: 30px;
     margin-bottom: 10px;
     color: #1a1a1a;
+    text-align: left; /* Explicitly left-aligns these section subtitles*/
 }
 
-/* Sección básica con dos columnas */
+/* Sección básica con dos columnas (as seen in IMG_1085.jpg)*/
 .basic-info {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -49,7 +62,7 @@
     color: #555;
 }
 
-/* Placeholder para imagen destacada */
+/* Placeholder para imagen destacada (as seen in IMG_1085.jpg)*/
 .featured-image .image-placeholder {
     width: 100%;
     height: 250px;
@@ -64,7 +77,7 @@
     font-size: 14px;
 }
 
-/* Descripción */
+/* Descripción (as seen in IMG_1085.jpg)*/
 .description p {
     margin-bottom: 1rem;
 }
@@ -77,7 +90,7 @@
     margin-bottom: 1rem;
 }
 
-/* Info del autor */
+/* Info del autor (as seen in IMG_1085.jpg)*/
 .author-info {
     display: flex;
     align-items: center;
@@ -87,11 +100,19 @@
     border-top: 1px solid #ccc;
 }
 
-.author-info .author {
-    background-color: #f1f1f1;
-    padding: 1rem;
-    border-radius: 8px;
-    flex: 1;
+.author-avatar {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    flex-shrink: 0;
+    background-image: url('https://via.placeholder.com/60'); /* Example placeholder image */
+    background-size: cover;
+    background-position: center;
+}
+
+.author-details {
+    flex-grow: 1;
 }
 
 .author-info button {
@@ -101,17 +122,23 @@
     padding: 0.6rem 1rem;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.2s ease;
 }
 
 .author-info button:hover {
     background-color: #0056b3;
 }
 
-/* Acciones contextuales */
+/* Acciones contextuales (as seen in IMG_1085.jpg)*/
 .contextual-actions {
     margin-top: 2rem;
     padding-top: 1rem;
     border-top: 1px solid #ccc;
+}
+.contextual-actions p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 1rem;
 }
 
 .contextual-actions ul {
@@ -123,40 +150,94 @@
 }
 
 .contextual-actions li {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    /* No direct styles needed for <li> here */
 }
 
-.contextual-actions input[type="checkbox"] {
-    transform: scale(1.2);
-}
-
-/* Botones con íconos, sin color de fondo */
-.contextual-actions button {
+.contextual-actions .action-btn {
     background: none;
-    border: none;
-    padding: 0.5rem;
+    border: 1px solid #ccc;
+    padding: 0.75rem 1rem;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #444;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 5px;
+    transition: all 0.2s ease;
 }
 
-.contextual-actions button:hover {
+.contextual-actions .action-btn:hover {
+    background-color: #f0f0f0;
     color: #000;
-    opacity: 0.9;
+    border-color: #999;
 }
 
-/* Responsive*/
+/* Specific button colors (as seen in IMG_1085.jpg)*/
+.contextual-actions .approve {
+    color: #28a745;
+    border-color: #28a745;
+}
+.contextual-actions .approve:hover {
+    background-color: #e6ffe6;
+    color: #218838;
+}
+
+.contextual-actions .reject {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+.contextual-actions .reject:hover {
+    background-color: #ffe6e6;
+    color: #c82333;
+}
+
+.contextual-actions .delete {
+    color: #6c757d;
+    border-color: #6c757d;
+}
+.contextual-actions .delete:hover {
+    background-color: #e2e6ea;
+    color: #545b62;
+}
+
+.contextual-actions .edit {
+    color: #007BFF;
+    border-color: #007BFF;
+}
+.contextual-actions .edit:hover {
+    background-color: #e6f2ff;
+    color: #0056b3;
+}
+
+/* Responsive for PubliAdmin content itself*/
 @media (max-width: 768px) {
+    .PubliAdmin {
+        padding: 1.5rem;
+    }
     .basic-info {
         grid-template-columns: 1fr;
     }
 
     .author-info {
         flex-direction: column;
+        text-align: center;
+    }
+    .author-info .author-details {
+        margin-top: 10px;
+    }
+    .author-info button {
+        margin-top: 15px;
+    }
+    .contextual-actions ul {
+        flex-direction: column;
+        align-items: center;
+    }
+    .contextual-actions li {
+        width: 100%;
+    }
+    .contextual-actions .action-btn {
+        width: 100%;
+        justify-content: center;
     }
 }
