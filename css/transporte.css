@@ -46,19 +46,62 @@ transporteadmin
   border: 1px solid #ccc;
   font-size: 14px;
 }
-
-
 .form-button {
-    justify-content:center;
+    /*background-color: red;*/
+    max-width: 300px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+    max-height: 150px;
+    justify-content: center;
+    /*background-color: red;*/
+    gap: 30px;
+    
+    
+}
+.form-button button {
+    align-items: center;
     display: flex;
+    justify-content: center;
     gap: 16px;
+    border: solid black;
+    border-radius: 8px;
+    margin: 0 auto;
+   width: 150px;
+   height: 25px;;
+   padding: 0;
+   font-family: "puppins", sans-serif;
+   font-size: 12px;
+   /*box-shadow: 0px 4px 6px rgba(0,0,0,0.1);*/
+   cursor: pointer;
+   margin-bottom: 30px;;
+ 
+   
+    
+
 }
 
-.form-button button {
-    border: none;
-    color: white;
-    cursor: pointer;
+
+
+
+.formbutton-white {
+   background-color: white;
+   color:black;
+   transition: 0.3s;
    
+
+   
+}
+
+.formbutton-black {
+    background-color: black;
+    color:white;
+    transition: 0.3s ease;
+    
+}
+
+.formbutton-white:hover, .formbutton-black:hover  {
+    transform: scale(1.03);
 }
 
     
@@ -90,7 +133,7 @@ transporteadmin
     text-align: left
 }
 
-.route-card img, .route-usercard img, .fee-usercard img {
+.route-card img, .route-usercard img {
      width: 50px;
     height: 50px;
     object-fit:cover;
@@ -211,17 +254,12 @@ transporteadmin
     gap: 24px;
     padding: 40px 20px;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
 }
 
-.fee-usercard {
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.2s;
+
+.usercard-content {
+   width: 300px;
+
 }
