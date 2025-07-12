@@ -37,6 +37,12 @@ button {
     margin-bottom: 50px;
 }
 
+.a_mainIndex{
+
+    color: white;
+
+}
+
 button:hover{
     background-color:#004c99;
     transform: translateY(-2px);

@@ -37,7 +37,7 @@
 
             </div>
 
-            <form class="formRegistro" action="">
+            <form class="formRegistro" action="" id="formLogin">
 
                 <div>
                     <img class="emailIMG" src="img/email.png" alt="">
@@ -78,3 +78,15 @@
 </body>
 
 </html>
+
+
+<script>
+  const formLogin = document.getElementById('formLogin');
+
+  formLogin.addEventListener('submit', function(e) {
+    if (formLogin.checkValidity()) {
+      e.preventDefault(); // no se envía al servidor
+      window.location.href = 'index.html'; // redirige a home (ajustalo si querés otro)
+    }
+  });
+</script>
