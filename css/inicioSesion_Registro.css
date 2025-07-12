@@ -417,6 +417,24 @@ body {
 
 /* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */ 
 
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS PEQUEÑOS-- */
+
+@media (max-width:330px){
+
+.all_container{
+    margin-top:min(10vw,10vh);
+}
+    
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS PEQUEÑOS-- */
+
+
+
+
 /* --- MEDIA QUERIES PARA RESPONSIVE - Tablets-- */ 
 
 @media (min-width:601px) and (max-width:1024px) {
