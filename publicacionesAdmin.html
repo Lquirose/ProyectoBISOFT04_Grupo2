@@ -7,12 +7,13 @@
 
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/panelAdmin.css"> <link rel="stylesheet" href="css/PublicacionesAdmin.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/PublicacionesAdmin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href='https://cdn.boxicons.com/css/boxicons.min.css' rel='stylesheet'>
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -49,116 +50,172 @@
         </div>
     </header>
 
-    <main class="layout">
+    <div class="page-layout-container">
         <aside class="sidebar">
-            <nav>
-                <ul class="menu">
-                    <li class="active"><a href="publicacionesAdmin.html">📄 Publicaciones</a></li>
-                    <li><a href="ReportesAdmin.html">📢 Reportes ciudadanos</a></li>
-                    <li><a href="EmprendimientosAdmin.html">💼 Emprendimientos</a></li>
-                    <li><a href="OfertaAdmin.html">🏷️ Ofertas</a></li>
-                    <li><a href="transporteadmin.html">🚌 Transporte</a></li>
-                    <li class="logout" id="salir">🚪 Salir del sistema</li>
-                </ul>
-            </nav>
+            <ul class="sidebar-list">
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-home' ></i> 
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="panelAdmin.html">Panel Principal</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-mountain-view'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="publicacionesAdmin.html">Publicaciones</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-megaphone-alt'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="ReportesAdmin.html">Reportes</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-store'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="EmprendimientosAdmin.html">Emprendimientos</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-price-tag'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="OfertasAdmin.html">Ofertas</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-bus'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="transporteadmin.html">Transporte</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-arrow-right-stroke-square'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="index.html">Salir del Sistema</a></p>
+                    </div>
+                </li>
+            </ul>
         </aside>
 
-        <section class="PubliAdmin">
-            <h1>Detalles de la publicación</h1>
-            <div class="info-complete">
-                <p>Información completa sobre la publicación seleccionada.</p>
+        <div class="content-area-wrapper">
+            <div class="main-content-container">
+                <div class="header-section">
+                    <h2>Detalles de la Publicación</h2>
+                    <p>Información completa sobre la publicación seleccionada.</p>
+                </div>
+
+                <div class="main-content-grid">
+                    <div class="section-title-wrapper">
+                        <h1 class="section-title">Título del Anuncio</h1>
+                        <p>Descripción</p>
+                    </div>
+
+                    <div class="section-content-wrapper">
+                        <div class="side-info-cards">
+                            <div class="info-card">
+                                <h4>Nombre del Anuncio</h4>
+                                <p>Texto de ejemplo de anuncio para ilustrar el detalle.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Autor</h4>
+                                <p>Juan Pérez</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Fecha de Publicación</h4>
+                                <p>23 de marzo, 2023</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Categoría</h4>
+                                <p>Servicios</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Estado</h4>
+                                <p>Pendiente</p>
+                                <p>Activo</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title-wrapper">
+                        <h3 class="section-title">Imagen Destacada</h3>
+                    </div>
+                    <div class="section-content-wrapper">
+                        <div class="featured-image-section">
+                            <div class="image-placeholder">
+                                <p>Imagen destacada del anuncio.</p>
+                            </div>
+                            <p>Esta imagen representa el detalle del anuncio. <br> Placeholder si no existe imagen.</p>
+                        </div>
+                    </div>
+
+                    <div class="section-title-wrapper">
+                        <h3 class="section-title">Descripción</h3>
+                    </div>
+                    <div class="section-content-wrapper">
+                        <div class="side-info-cards">
+                            <div class="info-card wide">
+                                <h4>Texto Extenso</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Ubicación</h4>
+                                <p>Provincia: San José, Cantón: Escazú, Distrito: Escazú</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="full-width-block">
+                        <div class="user-profile-card">
+                            <div class="avatar"></div>
+                            <div class="user-info">
+                                <h4>Juan Pérez</h4>
+                                <p>Autor</p>
+                                <p>Fecha de registro: 15 de enero, 2021</p>
+                            </div>
+                            <button class="view-profile-button">Ver perfil</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title-wrapper">
+                        <h3 class="section-title">Acciones Contextuales</h3>
+                    </div>
+                    <div class="section-content-wrapper">
+                        <div class="contextual-actions-list">
+                            <ul>
+                                <li class="action-approve">
+                                    <i class='bx bx-check-circle'></i> Aprobar
+                                </li>
+                                <li class="action-reject">
+                                    <i class='bx bx-x-circle'></i> Rechazar
+                                </li>
+                                <li class="action-delete">
+                                    <i class='bx bx-trash'></i> Eliminar
+                                </li>
+                                <li class="action-edit">
+                                    <i class='bx bx-edit'></i> Editar publicación
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <section class="basic-info">
-                <div class="detail-field">
-                    <strong>Nombre del Anuncio</strong>
-                    <p>Este es un ejemplo de descripción corta para el anuncio.</p>
-                </div>
-                <div class="detail-field">
-                    <strong>Autor</strong>
-                    <p>Juan Pérez</p>
-                </div>
-                <div class="detail-field">
-                    <strong>Fecha de Publicación</strong>
-                    <p>23 de marzo, 2023</p>
-                </div>
-                <div class="detail-field">
-                    <strong>Categoría</strong>
-                    <p>Servicios</p>
-                </div>
-                <div class="detail-field">
-                    <strong>Estado</strong>
-                    <p>Pendiente</p>
-                </div>
-                <div class="detail-field">
-                    <strong>ID del Anuncio</strong>
-                    <p>#123456</p>
-                </div>
-            </section>
-
-            <section class="ad-title">
-                <h2>Título del Anuncio</h2>
-                <p>Descripción.</p>
-            </section>
-
-            <section class="featured-image">
-                <h2>Imagen Destacada</h2>
-                <div class="image-placeholder">
-                    <p>Imagen destacada del anuncio</p>
-                    <small>Esta imagen representa el detalle del anuncio. Placeholder si no existe imagen.</small>
-                </div>
-            </section>
-
-            <section class="description">
-                <h2>Descripción</h2>
-                <p>Texto extendido con detalles sobre la publicación.</p>
-                <div class="extra-detail">
-                    <strong>Texto Extenso</strong>
-                    <p>Este texto ofrece una descripción detallada del anuncio…</p>
-                </div>
-                <div class="extra-detail">
-                    <strong>Ubicación</strong>
-                    <p>Comunidad: San José, Cantón: Escazú, Distrito: Escazú</p>
-                </div>
-            </section>
-
-            <section class="author-info">
-                <div class="author-avatar"></div>
-                <div class="author-details">
-                    <p><strong>Juan Pérez</strong></p>
-                    <p>Fecha de registro: 15 de enero, 2021</p>
-                </div>
-                <button>Ver perfil</button>
-            </section>
-
-            <section class="contextual-actions">
-                <h2>Acciones Contextuales</h2>
-                <p>Opciones disponibles según su rol.</p>
-                <ul>
-                    <li>
-                        <button class="action-btn approve" title="Aprobar">
-                            <i class='bx bx-check-circle'></i> Aprobar
-                        </button>
-                    </li>
-                    <li>
-                        <button class="action-btn reject" title="Rechazar">
-                            <i class='bx bx-x-circle'></i> Rechazar
-                        </button>
-                    </li>
-                    <li>
-                        <button class="action-btn delete" title="Eliminar">
-                            <i class='bx bx-trash'></i> Eliminar
-                        </button>
-                    </li>
-                    <li>
-                        <button class="action-btn edit" title="Editar publicación">
-                            <i class='bx bx-edit'></i> Editar publicación
-                        </button>
-                    </li>
-                </ul>
-            </section>
-        </section>
-    </main>
+        </div>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-container">

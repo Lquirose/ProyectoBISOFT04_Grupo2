@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <link rel="stylesheet" href="css/panelAdmin.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/panelAdmin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -17,68 +17,144 @@
 </head>
 <body> 
    <header>
-            <div class = "navbar">
-                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
-                <div class="mobile-nav">
-                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
-                    <label for="responsive-menu" class="hamburger">
-                        <i class='bx bx-menu'></i>
-                    </label>
-                    <div class="menu-content">
-                        <nav>
-                            <div class="menu-item">
-                                <ul>
-                                    <li><a href="index.html">Inicio</a></li>
-                                    <li><a href="publicaciones.html">Publicaciones</a></li>
-                                    <li><a href="transporte.html">Transporte</a></li>
-                                    <li><a href="oferta.html">Oferta</a></li>
-                                    <li><a href="RegistroEmprendimiento.html">Emprendimientos</a></li>
-                                    <li><a href="panelAdmin.html">Administración</a></li>
-                                    <li><a href="perfil.html">Perfil</a></li>
-                                    <li class="search-container">
-                                        <form action="search">
-                                            <input type="text" name="query" placeholder="buscar">
-                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
+        <div class="navbar">
+            <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
+            <div class="mobile-nav">
+                <input type="checkbox" id="responsive-menu" class="responsive-menu">
+                <label for="responsive-menu" class="hamburger">
+                    <i class='bx bx-menu'></i>
+                </label>
+                <div class="menu-content">
+                    <nav>
+                        <div class="menu-item">
+                            <ul>
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="publicaciones.html">Publicaciones</a></li>
+                                <li><a href="transporte.html">Transporte</a></li>
+                                <li><a href="oferta.html">Oferta</a></li>
+                                <li><a href="RegistroEmprendimiento.html">Emprendimientos</a></li>
+                                <li><a href="panelAdmin.html">Administración</a></li>
+                                <li><a href="perfil.html">Perfil</a></li>
+                                <li class="search-container">
+                                    <form action="search">
+                                        <input type="text" name="query" placeholder="buscar">
+                                        <span class="icon" ><i class='bxr  bx-search'></i></span>
+                                    </form>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
     </header>
-<main class="layout">
-  <aside class="sidebar">
-    <nav>
-      <ul class="menu">
-        <li> <a href="publicacionesAdmin.html"> 📄 Publicaciones</a></li> <!--Acá hay que seguir uniendo los "botones"-->
-        <li><a href="ReportesAdmin.html">📢 Reportes ciudadanos</a></li>
-        <li> <a href="EmprendimientosAdmin.html">💼 Emprendimientos</a></li>
-        <li> <a href="OfertaAdmin.html">🏷️ Ofertas</a></li>
-        <li> <a href="transporteadmin.html">🚌 Transporte</a></li>
-        <li class="logout" id="salir">🚪 Salir del sistema</li> <!--JS-->
-      </ul>
-    </nav>
-  </aside>
-</main>
-   <footer class="site-footer">
-       <div class="footer-container">
-    <ul class="footer-links">
-      <li>
-        <a href="mailto:comunidadconectada@gmail.com" class="contact">
-          Contacto: comunidadconectada@gmail.com
-        </a>
-      </li>
-      <li>
-        <ul class="submenu">
-          <li><a href="#" class="fa fa-facebook"></a></li>
-          <li><a href="#" class="fa fa-twitter"></a></li>
-          <li><a href="#" class="fa fa-instagram"></a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-   </footer>
+
+    <div class="page-layout-container">
+        <aside class="sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-home' ></i> 
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="panelAdmin.html">Panel Principal</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-mountain-view'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="publicacionesAdmin.html">Publicaciones</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-megaphone-alt'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="ReportesAdmin.html">Reportes</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-store'></a></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="EmprendimientosAdmin.html">Emprendimientos</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-price-tag'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="OfertasAdmin.html">Ofertas</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-bus'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="transporteadmin.html">Transporte</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-arrow-right-stroke-square'></i>
+                    </div>
+                    <div class="sidebar-text-hide">
+                        <p><a href="index.html">Salir del Sistema</a></p>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="content-area-wrapper">
+            <div class="main-content-panel-admin">
+                <section class="panel-welcome-section">
+                    <h2 class="panel-welcome-title">Bienvenido al Panel Administrativo</h2>
+                    <p class="panel-welcome-text">Desde aquí puedes gestionar todas las secciones de la plataforma: publicaciones, reportes, emprendimientos, ofertas y transporte. Utiliza el menú lateral para navegar.</p>
+                </section>
+
+                <section class="panel-summary-cards">
+                    <div class="summary-card">
+                        <h3>Publicaciones Pendientes</h3>
+                        <p>5</p>
+                        <a href="publicacionesAdmin.html">Ver Publicaciones</a>
+                    </div>
+                     <div class="summary-card">
+                        <h3>Reportes Recientes</h3>
+                        <p>2</p>
+                        <a href="ReportesAdmin.html">Ver Reportes</a>
+                    </div>
+                     <div class="summary-card">
+                        <h3>Emprendimientos Nuevos</h3>
+                        <p>1</p>
+                        <a href="EmprendimientosAdmin.html">Ver Emprendimientos</a>
+                    </div>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li>
+                    <a href="mailto:comunidadconectada@gmail.com" class="contact">
+                      Contacto: comunidadconectada@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <ul class="submenu">
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>
