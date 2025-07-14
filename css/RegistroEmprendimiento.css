@@ -143,13 +143,16 @@
 main{
     display: flex;
     flex-direction: column;
-    justify-content: center;
   }
 
 .registro-info{
   display: none;
 }
 
+.registro{
+  margin-left: min(27vh,27vw);
+  padding: 10% 0;
+}
 
 
 }
