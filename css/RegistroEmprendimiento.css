@@ -1,4 +1,4 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -134,4 +134,22 @@
 
 .btn-enviar:hover {
   background-color: #1d4ed8;
+}
+
+
+@media (max-width: 600px){
+
+  
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+.registro-info{
+  display: none;
+}
+
+
+
 }
