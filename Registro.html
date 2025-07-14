@@ -37,21 +37,26 @@
 
             </div>
 
-            <form class="formRegistro" action="" id="formLogin">
+            <form class="formRegistro" action="" id="form">
 
-                <div>
+                <div class="form-group">
                     <img class="userIMG" src="img/user.png" alt="">
-                    <input class="inputText" type="text" placeholder="Usuario" required>
+                    <input class="inputText" type="text" id="usuario" name="usuario"placeholder="Usuario" required>
+                    <p class="form-message-error">Por favor ingresá un correo válido</p>
                 </div>
 
-                <div>
+                <div class="form-group">
                     <img class="emailIMG" src="img/email.png" alt="">
-                    <input class="inputEmail" type="email" placeholder="Email" required>
+                    <input class="inputEmail" type="email" id="email" name="email" placeholder="Email" required>
+                    <p class="form-message-error">usuario": "el usuario solo puede contar con letras Mayusculas, Minusculas, números, guión bajo y guion. Rango caracteres 4 a 16</p>
+                    
+                    
                 </div>
 
-                <div>
+                <div class="form-group">
                     <img class="lockIMG" src="img/locked.png" alt="">
-                    <input class="inputPass" type="password" placeholder="Contraseña" required>
+                    <input class="inputPass" type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <p class="form-message-error">La contraseña debe tener al menos 6 caracteres</p>
                 </div>
 
                 <button class="submit" type="submit">Sign In</button>
@@ -79,7 +84,7 @@
         </div>
 
     </div>
-
+<script src="js/formulario_script.js"></script>
 </body>
 
 </html>

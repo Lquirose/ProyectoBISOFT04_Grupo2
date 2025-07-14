@@ -26,13 +26,13 @@ transporteadmin
 }
 
 
-.input-group {
+.transportform-group {
     display:flex;
     flex-direction:column;
 }
 
 
-.input-group label {
+.transportform-group label {
 
     margin-bottom: 8px;
     font-size: 14px;
@@ -40,7 +40,7 @@ transporteadmin
     text-align: left;
 }
     
-.input-group input {
+.transportform-group input {
   padding: 10px;
   border-radius: 8px;
   border: 1px solid #ccc;
@@ -262,4 +262,43 @@ transporteadmin
 .usercard-content {
    width: 300px;
 
+}
+
+/*JAVA SCRIP--> VALIDACION-CAMBIO DE COLOR*/
+
+/*FORMULARIO CORRECTO*/
+
+.formgroup-correct input {
+  border: 2px solid #039634; /* verde */
+}
+
+
+/*FORMULARIO INCORRECTO*/
+
+.form-group-incorrect input {
+  border: 2px solid crimson;
+}
+
+
+
+
+
+
+
+/*Mensaje de error*/
+.form-message-error  {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #9e0202;
+  display: none;
+}
+
+.formerror-active {
+  display: block;
+}
+
+/* Oculta ícono nativo del input de hora en Chrome/Safari */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
 }
