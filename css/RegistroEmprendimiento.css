@@ -154,5 +154,11 @@ main{
   padding: 10% 0;
 }
 
+.inputSize::placeholder{
+  font-size: min(3vh,3vw);
+}
+
+
+
 
 }
