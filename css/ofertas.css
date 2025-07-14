@@ -168,3 +168,118 @@ main {
     margin-top: 10px;
     cursor: pointer;
 }
+
+/* === Estilo para hamburguesa === */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  color: #000;
+}
+
+/* Asegurar visibilidad y flexibilidad del menú */
+.menu-content {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-item {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+/* === MEDIA QUERY para dispositivos móviles === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-content {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .menu-toggle:checked ~ .menu-content {
+    display: block;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-item li a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    display: block;
+  }
+
+  /* Ajustes al layout general */
+  .registro-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registro-info {
+    text-align: center;
+    margin-right: 0;
+    padding-top: 20px;
+  }
+
+  .ofertas-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ofertas-card {
+    max-width: 90%;
+  }
+
+  .white-button,
+  .blue-buttton {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .celeste-button,
+  .btn-buscar {
+    width: 100%;
+  }
+
+  .top-ofertas-div {
+    padding: 20px;
+  }
+
+  .ofertas-text h1 {
+    font-size: 2rem;
+  }
+
+  .ofertas-text h5 {
+    font-size: 0.9rem;
+  }
+
+  .site-footer .footer-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .site-footer .submenu {
+    justify-content: center;
+  }
+}
