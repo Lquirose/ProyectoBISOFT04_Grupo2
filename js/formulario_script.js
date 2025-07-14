@@ -31,9 +31,10 @@ const validadores = {// Se declara e inicializa la varable validadores
     const minutos = hh * 60 + mm;
     return minutos >= 10 && minutos <= 180;
   },
+  "usuario": (value)=>/^[a-zA-Z0-9\_\-]{4,16}$/.test(value),
   "email": (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-  "password": (value) => value.length >= 6,
-  "usuario": (value)=>/^[a-zA-Z0-9\_\-]{4,16}$/.test(value)
+  "password": (value) => value.length >= 6
+  
 }
 
 //Función para validar inputs 
