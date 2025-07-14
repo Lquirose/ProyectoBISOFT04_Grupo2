@@ -1,4 +1,16 @@
-.perfil-main {
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+body, html {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+
+main {
     font-family: "poppins", sans-serif;
     text-align: center;
 }
@@ -296,9 +308,9 @@ hr {
 }
 
 .my-posts-p {
-    
+   font-size: x-small; 
 }
-.profile-text.posts{
+.ofertas-button{
     text-align: center;
 }
 
@@ -355,7 +367,7 @@ hr {
     text-size-adjust: 100%;
     justify-content: center;
     align-items: center;
-    background-color: #c0bbbb84;
+    background-color: #007BFF;
     color: black;
     font-size: small;
     padding: 5px;/* Opcional: ajusta el relleno */
@@ -416,3 +428,220 @@ hr {
     border-radius: 0%;
     background-color: #dbd6d6; /* Color de fondo para la imagen */
 }
+
+@media (max-width: 768px) {
+    .profile-card,
+    .mini-profile-card,
+    .mini-emprendimiento-card {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+        align-items: center;
+    }
+
+    .profile-card img,
+    .mini-profile-card img,
+    .mini-emprendimiento img,
+    .historial-actividades img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        margin: 0 auto 15px auto;
+    }
+
+    .profile-actions-column,
+    .profile-actions-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mini-emprendimiento-card {
+        gap: 20px;
+    }
+
+    .mini-emprendimiento {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .my-posts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-posts {
+        margin: 0 auto 20px auto;
+    }
+
+    .historial-actividades {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .perfil-div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .my-posts-h1 {
+        font-size: 2rem;
+    }
+
+    .my-posts-p {
+        font-size: small;
+    }
+
+    .white-button,
+    .blue-buttton,
+    .gray-button {
+        width: 100%;
+        max-width: 250px;
+    }
+}
+
+/* === HAMBURGER MENU FOR MOBILE === */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.responsive-menu {
+  display: none;
+}
+
+/* Hide menu-content on small screens by default */
+.menu-content {
+  display: flex;
+  justify-content: center;
+}
+
+/* RESPONSIVE STYLES */
+@media (max-width: 768px) {
+
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+    z-index: 1000;
+  }
+
+  /* Menu hidden by default */
+  .menu-content {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  /* Show menu when checkbox is checked */
+  .responsive-menu:checked ~ .menu-content {
+    display: block;
+  }
+
+  .menu-content nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    gap: 10px;
+  }
+
+  .menu-content nav ul li {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu-content nav ul li a {
+    width: 100%;
+    display: block;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* Adjust widths and layout for profile cards */
+  .profile-card,
+  .mini-profile-card,
+  .mini-emprendimiento-card {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .mini-profile-card img,
+  .mini-emprendimiento img,
+  .profile-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .my-posts-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .my-posts {
+    max-width: 90%;
+  }
+
+  .historial-actividades {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .historial-actividades img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .profile-actions-row,
+  .profile-actions-column {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mini-emprendimiento {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .flex-column {
+    gap: 30px;
+  }
+
+  .my-posts-h1 {
+    font-size: 2rem;
+  }
+
+  .my-posts-p {
+    font-size: 0.9rem;
+  }
+
+  .site-footer .footer-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .site-footer .submenu {
+    flex-direction: row;
+    justify-content: center;
+    padding: 0;
+  }
+}
+
