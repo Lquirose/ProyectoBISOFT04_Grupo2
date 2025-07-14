@@ -20,35 +20,35 @@
 
             <div class="header-content" >
                 <!--La clase header-content (contenido del header) sirve para alinear el contenido de header con max-width pero que al hacerlo no limite el tamaño de la pantalla (es decir que el viewport tenga un width del 100%)-->
-                <div class = "navbar">
-
+                <div class="navbar">
                     <div><img class="logo" src="logo/logooficial.png" alt="logo"></div>
 
-                    <div class="mobile-nav">
+                    <!-- Hamburguesa -->
+                    <input type="checkbox" id="menu-toggle" class="menu-toggle">
+                    <label for="menu-toggle" class="hamburger">
+                        <i class="fa fa-bars"></i>
+                    </label>
 
-                        <div class="menu-content">
-                            <nav>
-                                <div class="menu-item">
-                                    <ul>
-                                        <li><a href="index.html">Inicio</a></li>
-                                        <li><a href="publicaciones.html">Publicaciones</a></li>
-                                        <li><a href="transporte.html">Transporte</a></li>
-                                        <li><a href="calendario.html">Calendario</a></li>
-                                        <li><a href="oferta.html">Oferta</a></li>
-                                        <li><a href="mapa.html">Mapa</a></li>
-                                        <li><a href="soporte.html">Soporte</a></li>
-                                        <li><a href="perfil.html">Perfil</a></li>
-                                        <li class="search-container">
-                                            <form action="search">
-                                                <input type="text" name="query" placeholder="buscar">
-                                                <span class="icon" ><i class='bxr  bx-search'></i></span>
-                                                
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
+                    <!-- Menú navegable -->
+                    <div class="menu-content">
+                        <nav>
+                            <ul class="menu-item">
+                                <li><a href="index.html">Inicio</a></li>
+                                <li><a href="publicaciones.html">Publicaciones</a></li>
+                                <li><a href="transporte.html">Transporte</a></li>
+                                <li><a href="calendario.html">Calendario</a></li>
+                                <li><a href="oferta.html">Oferta</a></li>
+                                <li><a href="mapa.html">Mapa</a></li>
+                                <li><a href="soporte.html">Soporte</a></li>
+                                <li><a href="perfil.html">Perfil</a></li>
+                                <li class="search-container">
+                                <form action="search">
+                                    <input type="text" name="query" placeholder="buscar">
+                                    <span class="icon"><i class="fa fa-search"></i></span>
+                                </form>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
