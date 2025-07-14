@@ -38,23 +38,23 @@
 
             </div>
 
-            <form class="formRegistro" action="" id="form">
+            <form class="formRegistro" action="" id="form" class="login-form" name="registro">
 
                 <div class="form-group">
                     <img class="userIMG" src="img/user.png" alt="">
-                    <input class="inputText" type="text" id="usuario" name="usuario"placeholder="Usuario" required>
+                    <input class="inputText" type="text" id="usuario" name="usuario" placeholder="Usuario" >
                     <p class="form-message-error">Por favor ingresá un correo válido</p>
                 </div>
 
                 <div class="form-group">
                     <img class="emailIMG" src="img/email.png" alt="">
-                    <input class="inputEmail" type="email" id="email" name="email" placeholder="Email" required>
+                    <input class="inputEmail" type="email" id="email" name="email" placeholder="Email" >
                     <p class="form-message-error">Mayusculas, Minusculas, números, guión bajo y guion. Rango caracteres 4 a 16</p>
                 </div>
 
                 <div class="form-group">
                     <img class="lockIMG" src="img/locked.png" alt="">
-                    <input class="inputPass" type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <input class="inputPass" type="password" id="password" name="password" placeholder="Contraseña" >
                     <p class="form-message-error">La contraseña debe tener al menos 6 caracteres</p>
                 </div>
 
@@ -90,12 +90,12 @@
 
 
 <script>
-  const formLogin = document.getElementById('formLogin');
+  const formLogin = document.querySelector('form[name="registro"]');
 
-  formLogin.addEventListener('submit', function(e) {
-    if (formLogin.checkValidity()) {
-      e.preventDefault(); // no se envía al servidor
-      window.location.href = 'index.html'; // redirige a home (ajustalo si querés otro)
-    }
-  });
+formLogin.addEventListener('submit', function(e) {
+  if (formLogin.checkValidity()) {
+    e.preventDefault();
+    window.location.href = 'index.html';
+  }
+});
 </script>

@@ -8,7 +8,7 @@ const mensajesError = { //Esto es un objeto literal, sirve para almacena los men
   "trip-duration": "Duración entre 10 minutos y 3 horas.",
   "email": "Ingresá un email válido. Ej: alguien@mail.",
   "password": "La clave debe tener al menos seis dígitos.",
-  "usuario": "4-16 caracteres: letras A-a, números, _ o -"
+  "usuario": " 4 - 16 caracteres: letras A-a, números, _ o -"
 }
 //Validadores
 const validadores = {// Se declara e inicializa la varable validadores
