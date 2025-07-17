@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Document</title>
+</head>
+<body> 
+   <header>
+       <div class = "navbar">
+                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
+                <div class="mobile-nav">
+                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
+                    <label for="responsive-menu" class="hamburger">
+                        <i class='bx bx-menu'></i>
+                    </label>
+                    <div class="menu-content">
+                        <nav>
+                            <div class="menu-item">
+                                <ul>
+                                    <li><a href="index.html">Inicio</a></li>
+                                    <li><a href="publicaciones.html">Publicaciones</a></li>
+                                    <li><a href="transporte.html">Transporte</a></li>
+                                    <li><a href="ofertas.html">Oferta</a></li>
+                                    <li><a href="RegistroEmprendimiento.html">Emprendimientos</a></li>
+                                    <li><a href="panelAdmin.html">Administración</a></li>
+                                    <li><a href="perfil.html">Perfil</a></li>
+                                    <li><a href="perfil.html">Reportes</a></li>
+                                    <li class="search-container">
+                                        <form action="search">
+                                            <input type="text" name="query" placeholder="buscar">
+                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
+                                            
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>      
+    </header>
+    <main class="home-main">
+        <section class="news"> <!--Clase para la sección de noticias-->
+            <h1>Únete a nuestra comunidad</h1>
+            <br>
+            <h5>¿No estás registrado?</h5>
+            <br>
+            <button><a class="a_mainIndex" href="Registro.html">Registrarse</a></button>
+            <br>
+            <h5>¿Ya tienes una cuenta?</h5>
+            <br>
+            <button><a class="a_mainIndex" href="inicioSesion.html">Iniciar sesion</a></button>
+            <!--Aquí hay que poner el boton de iniciar sesion-->    
+        </section>
+        <section class="events"> <!--Clase para la sección de eventos*/-->
+            <h1>Últimos eventos</h1>
+            <br>
+            <h5>Descubre todos los eventos disponibles</h5>
+            <br>
+            <button>Ver todos</button>
+            <div class=" event-links">
+                <a href="evento1.html" class="event-card">
+                    <img src="img/logooficial.png" alt="evento3">
+                    <div class="card-content">
+                        <h5>Evento 1</h5>
+                        <p>Descripción del evento 1</p>
+                    </div>
+                </a>
+                <a href="evento2.html" class="event-card">
+                     <img src="img/logooficial.png" alt="evento2">
+                     <div class="card-content">
+                        <h5>Evento 2</h5>
+                        <p>Descripción del evento 2</p>
+                    </div>
+                </a>
+                <a href="evento3.html" class="event-card">
+                     <img src="img/logooficial.png" alt="evento3">
+                      <div class="card-content">
+                        <h5>Evento 3</h5>
+                        <p>Descripción del evento 3</p>
+                    </div>
+                </a>
+            </div>
+            <!--Aquí hay que poner el boton de ver todos-->
+            <!--También se debe de averiguar como hacer para colocar los accesos directos de los eventos-->
+
+        </section>
+        <section class="business"> <!--Clase para la sección de emprendedores-->
+            <h1>Emprendedores de la comunidad</h1>
+            <div class="business-links">
+                <a href="business1.html" class="business-card">
+                    <img src="img/logooficial.png" alt="post1">
+                    <div class="card-content">
+                        <h5>emprendimiento 1</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+                <a href="post2.html" class="business-card">
+                    <img src="img/logooficial.png" alt="post2">
+                    <div class="card-content">
+                        <h5>emprendimiento 2</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+                <a href="post2.html" class="business-card">
+                    <img src="img/logooficial.png" alt="post2">
+                    <div class="card-content">
+                        <h5>emprendimiento 3</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+            </div>
+            <!--Se debe de averiguar como hacer los accesos directos de los Emprendedores-->
+        </section>
+        <section class="recent-post"> <!--Clase para la sección de publicaciones recientes-->
+            <h1>Publicaciones recientes</h1>
+            <h5>Conéctate con lo que otros están diciendo</h5>
+            <div class="post-links">
+                <a href="post1.html" class="post-card">
+                    <img src="img/logooficial.png" alt="post1">
+                    <div class="card-content">
+                        <h5>Publicación 1</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+                <a href="post2.html" class="post-card">
+                    <img src="img/logooficial.png" alt="post2">
+                    <div class="card-content">
+                        <h5>Publicación 2</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+            </div>
+
+            <!--Aqui hay que averiguar como poner accesos directos de los eventos principales del Calendario-->
+        </section>
+    </main>
+   <footer class="site-footer">
+        <div class="footer-container">
+    <ul class="footer-links">
+      <li>
+        <a href="mailto:comunidadconectada@gmail.com" class="contact">
+          Contacto: comunidadconectada@gmail.com
+        </a>
+      </li>
+      <li>
+        <ul class="submenu">
+          <li><a href="#" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="#" class="fa fa-instagram"></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+   </footer>
+<script src="js/script.js"></script>
+</body>
+</html>

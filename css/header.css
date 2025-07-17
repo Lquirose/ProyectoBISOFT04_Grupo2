@@ -1,0 +1,220 @@
+*{
+    text-decoration: none;
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+header {
+    background-color: #0056ff;
+    padding:15px 10px 15px 10px ;
+    color: white;
+}
+
+.header-content {
+    max-width: 100%;
+    margin: 0 auto;
+     display: flex;
+    justify-content:flex-start;
+    align-items: center;
+}
+
+.navbar {
+    display:flex;
+    align-items: center;
+    gap: 150px;
+
+}
+
+/*.navbar > div { 
+    margin-right: 100px;
+    
+}
+.navbar nav {
+    margin-left:auto;/*Hace que se el nav se haga a la derecha todo lo que se pueda
+    padding-right: 100px;
+    
+}*/
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+nav a {
+    color: white;
+    font-family: "poppins";
+    transition: box-shadow 0.5s ease-in-out;
+    border-radius: 10px;
+    padding: 5px;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease;
+
+  
+}
+
+nav a:hover {
+ box-shadow: 2px 2px 5px #ffffff;
+
+}
+
+.search-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  
+}
+
+.search-container input {
+  padding-left: 20px;
+  width: 200px;
+  background-color: transparent;
+  color: white;
+  font-family: "poppins";
+  font-size: 14px;
+  border: white solid 1px;
+  border-radius: 20px;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.search-container input::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+.search-container input:focus {
+  outline: none;
+  box-shadow: 0 0 5px 2px #ffffff;
+}
+
+.search-container .icon {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+/*PARTE RESPONSIVE*/
+.responsive-menu {
+    display:none;
+}
+.hamburger {
+    display: none;
+}
+@media(max-width: 768px){
+    header {
+        position: relative;
+         z-index: 1000;
+         display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu-content {
+         position: absolute;
+        top: 100%;
+        left: 0;
+        overflow: hidden;
+        /*background-color: #003eb3;*/
+        background-color: rgba(40, 101, 255) ;
+        /*border-radius: 8px;*/
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        padding:0;
+        width:100%;
+        
+}
+    
+    .menu-item{
+        padding: 0;
+        transition: max-height 0.3s ease;
+        max-height: 0;
+        overflow: hidden;
+
+    }
+    .responsive-menu:checked ~ .menu-content .menu-item{
+        max-height: 800px;
+        padding: 16px;
+    }
+    .hamburger{
+        display:block;
+        font-size:28px;
+        padding:10px;
+        cursor: pointer;
+        color: white;
+        
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 16px;
+        padding-left: 0;
+        margin: 0;
+    }
+    nav li{
+        list-style: none;
+        width: 100%;
+    }
+    nav a {
+        width: 100%;
+        text-align: center;
+        display: block;
+        padding: 12px 16px;
+        font-size: 16px;
+        border-radius: 6px;
+        background-color: #0041c2;
+        /*background-color: rgba(40, 101, 255, 0.1) ;*/
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+    nav a:active{
+        background-color:#3366ff;
+    }
+
+    body,
+    header,
+    .menu-content {
+        margin: 0;
+        padding: 0;
+}
+
+    
+   .search-container {
+    position: relative;
+    max-width: 240px;
+    margin: 16px auto;
+    padding: 0;
+}
+
+    
+    .search-container input {
+    width: 100%;
+    padding: 10px 36px 10px 16px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    }
+    .search-container input::placeholder {
+    color: white;
+    opacity: 1;
+    }
+    .search-container .icon {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: white;
+    pointer-events: none;
+    }  
+}

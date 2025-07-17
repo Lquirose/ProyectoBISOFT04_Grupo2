@@ -1,0 +1,164 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", sans-serif;
+}
+.regbusiness{
+  text-align: center;
+  background-color: #e6efff;
+}
+
+.intro {
+  background-color: #e6efff; 
+  padding: 60px 20px;
+  text-align: center;
+  color: #04205c; 
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.intro h2 strong {
+  font-weight: 800;
+}
+.intro p {
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.registro {
+  padding: 60px 20px;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.registro-contenedor {
+   display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+  align-items: center;
+}
+
+.registro-info {
+  width: 40%;
+  
+}
+
+.registro-info h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 11px;
+}
+
+.registro-info p {
+  font-size: 1rem;
+  color: #4b5563;
+
+}
+
+.formulario-emprendimiento {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+}
+
+.campo label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1f2937;
+}
+
+.campo input,
+.campo textarea {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.campo textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.campo small {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.categorias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.categorias button {
+  background-color: #f3f4f6;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition:  0.2s;
+}
+
+.categorias button:hover {
+  background-color: #e0e7ff;
+}
+
+.btn-enviar {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:  0.2s;
+}
+
+.btn-enviar:hover {
+  background-color: #1d4ed8;
+}
+
+
+@media (max-width: 600px){
+
+  
+main{
+    display: flex;
+    flex-direction: column;
+  }
+
+.registro-info{
+  display: none;
+}
+
+.registro{
+  margin-left: min(27vh,27vw);
+  padding: 10% 0;
+}
+
+.inputSize::placeholder{
+  font-size: min(3vh,3vw);
+}
+
+
+
+
+}

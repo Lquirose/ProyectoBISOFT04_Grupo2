@@ -1,0 +1,43 @@
+/*JAVA SCRIP--> VALIDACION-CAMBIO DE COLOR*/
+
+/*FORMULARIO CORRECTO*/
+
+/*
+.formgroup-correct input {
+  border: 2px solid #039634 !important; 
+}
+*/
+
+/*FORMULARIO INCORRECTO*/
+
+.form-group-incorrect input {
+  border: 2px solid crimson !important;
+}
+
+/*Mensaje de error*/
+.form-message-error  {
+  font-size: 12px;
+  color: #9e0202;
+  display: none;
+}
+
+.formerror-active {
+  display: block;
+}
+
+/* Oculta ícono nativo del input de hora en Chrome/Safari */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}
+
+@media(max-width:600px){
+
+.form-message-error{
+  font-size: min(2.3vh,2.3vw);
+  margin-top: min(-1.3vh,-1.3vw);
+  margin-bottom: min(1vh,1vw);
+}
+
+
+}

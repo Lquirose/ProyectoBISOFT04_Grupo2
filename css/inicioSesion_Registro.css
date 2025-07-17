@@ -1,0 +1,450 @@
+body {
+  overflow: hidden;
+}
+
+*{
+    background-color: white;
+    margin: 0;
+    font-family: "Aoboshi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Contenedor principal o MAIN  */
+
+.all_container{
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+/* Logo  */
+
+.logo{
+    display: flex;
+    height: auto;
+    width: 11vw;
+    justify-self: center;
+}
+
+/* !!!!!! Contenedor de la mitad izquierda !!!!!! */
+
+.left-side{
+    width: 55%;
+    height: 100%;
+}
+
+.left-side h1{
+    justify-self: center;
+    font-size: 1.7vw;
+    margin-top: -4%;
+}
+
+.leftP{
+    color: #777777;
+    justify-self: center;
+    margin-right: 10%;
+    font-size: .9vw;
+}
+
+.leftP1{
+    color: #777777;
+    justify-self: center;
+    margin-right: 7%;
+    font-size: .9vw;
+}
+
+.GoogleButton{    /* Boton de Google*/
+    display: flex;
+    height: 2.67vw;
+    width: 17%;
+    margin: 4% auto 0 auto;
+    border: 1.7px solid #cccccc;
+    border-radius:0.5vw ;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.GoogleButton:hover{
+     transform: scale(1.03);
+}
+
+.GoogleButton:active{
+    background-color:#f6f6f6;
+    text-decoration: none;
+}
+
+.textButton{
+    color: black;
+    font-size: 1.2vw;
+    font-weight: 200;
+    background-color: transparent;
+}
+
+.left-side button img{
+    width: 1.6vw;
+    margin-left: 0.7vw;
+    margin-right: 9%;
+    background-color: transparent;
+}
+
+.line_N_P{
+    height: auto;
+    width: 100%;
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.Line{
+    height: 0.1vw;
+    width: 15%;
+    background-color: #aaaaaa;
+    margin-top:.4vw ;
+}
+
+.lineP{
+    margin-left:2.5% ;
+    margin-right:2.5% ;
+    color: #777777;
+    font-size: 1.06vw;
+}
+
+.formRegistro{
+
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vw;
+    align-items: center;
+}
+
+.formRegistro div{
+    height: auto;
+    width: auto;
+    position: relative;
+}
+
+.formRegistro div input{
+    margin-top: .5vw ;
+    margin-bottom:.5vw ;
+    height: 2.3vw;
+    width: 20vw;
+    border: 0.15vw solid #999999;
+    padding-left: 3vw;
+    font-size: 1.2vw;
+}
+
+.formRegistro div img{
+    height: auto;
+    position: absolute;
+    background-color: transparent;
+    
+}
+
+.userIMG{
+    width: 2vw;
+    top:.8vw ;
+    left:.37vw ;
+    filter: opacity(0.5)
+}
+
+.emailIMG{
+    width: 1.9vw;
+    top:.87vw ;
+    left:.47vw ;
+    filter: opacity(0.5)
+}
+
+.lockIMG{
+    width: 2vw;
+    top:.75vw ;
+    left:.35vw ;
+    filter: opacity(0.4)
+}
+
+.formRegistro div input::placeholder{
+    font-size: 1.2vw;
+    position: absolute;
+    left: 3.1vw;
+    top: .37vw;
+}
+
+.submit{
+    margin-top: 1vw;
+    height: 2.2vw;
+    width: 6.8vw;
+    background-color: #2865FF;
+    color: white;
+    border: none;
+    transition: 0.5s;
+    border-radius: 0.1vw;
+    font-size: 1vw;
+}
+
+.submit:hover{
+    transform: scale(1.04);
+}
+
+.submit:active{
+    background-color: #1d4cc5f0;
+}
+
+.text-below{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 1.3vw;
+}
+
+.text-below p{
+    font-size: 1.05vw;
+}
+
+.text-below a{
+    margin-left: 1vw;
+    transition: 0.1s;
+    text-decoration: none;
+    font-size: 1.1vw;
+}
+
+.text-below a:visited{
+    color: #2865FF;
+}
+
+.text-below a:active{
+    color: #1d48b4;
+}
+
+/* !!!!!! Contenedor de la mitad izquierda !!!!!! */
+
+/* !!!!!! Contenedor de la mitad derecha !!!!!! */
+
+.right-side{
+    
+    width: 45%;
+    height: 100%;
+    background-color: #2865FF;
+    position: relative;
+}
+
+.RightIMG{
+    background-color: none;
+    width: 45vw;
+    height: auto;
+    background-color: transparent;
+    position: absolute;
+    z-index: 5;
+    top: -2%;
+}
+
+.Circle1{
+  position: absolute;
+  width: 25vw;
+  height: 25vw;
+  background-color: #ffffff;
+  opacity: .1;
+  top: 18%;
+  left: 18%;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.Circle2{
+      position: absolute;
+  width: 18vw;
+  height: 18vw;
+  background-color: #ffffff;
+  opacity: .25;
+  top: 23%;
+  left: 28%;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+.right-side p{
+    position: absolute;
+    background-color: transparent;
+    color: white;  
+    top: 80%;  
+    left: 28.6%;
+    font-size: 1.07vw;
+}
+
+
+
+/* !!!!!! Contenedor de la mitad derecha !!!!!! */
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */ 
+
+@media (max-width: 600px){
+
+.all_container{
+  
+}
+    
+.right-side{
+    display:none;
+    
+}
+
+.left-side{
+    width:100%;
+    
+}
+
+.logo{
+    height:auto;
+    width:min(40vw, 40vh);
+}
+
+
+.left-side h1{
+    font-size:min(5.6vw, 5.6vh);
+}
+
+.leftP1{
+    font-size:min(3.5vw);
+}
+
+.leftP{
+    font-size:min(3.5vw);
+}
+
+.GoogleButton{
+    height:min(8.9vw,8.9vh);
+    width:min(30vw,30vh);
+    transition: 0.3s;
+    border-radius:min(1vw,1vh);
+}
+
+.textButton{
+    font-size:min(4vw,4vh);
+}
+
+.left-side button img{
+    height:auto;
+    width:min(5.5vw,5.5vh);
+}
+
+.GoogleButton :active{
+    background-color:#eeeeee;
+    transform:scale(1.01);
+}
+
+.lineP{
+    font-size:min(3vw,3vh);
+}
+.Line{
+    height:min(0.4vw,.4vh);
+    margin-top:min(1.5vw);
+}
+
+.formRegistro{
+    margin-top:min(4vw,4vh);
+}
+
+.formRegistro div input{
+    width:min(44vw,44vh);
+    height:min(7vw,7vh);
+    margin-bottom:min(4vw,4vh);
+    font-size:min(4vw,4vh);
+    padding-left:min(8vw);
+}
+
+.formRegistro div input::placeholder{
+    font-size:min(4vw,4vh);
+    position:absolute;
+    top:min(0.5vw,0.5vh);
+    left:min(8vw,8vh);
+}
+
+.formRegistro div img{
+    height: auto;
+    position: absolute;
+    background-color: transparent;
+    
+}
+    
+.userIMG{
+    width:min(5.4vw,5vh);
+    top:min(2vw,2vh);
+    left:min(1.6vw,1.6vh);
+}
+
+.emailIMG{
+    width:min(5.4vw,5vh);
+    top:min(2.1vw,2.1vh);
+    left:min(1.6vw,1.6vh);
+}
+
+.lockIMG{
+    width:min(5.4vw,5.4vh);
+    top:min(1.8vw,1.8vh);
+    left:min(1.6vw,1.6vh);
+}
+
+.submit{
+    height:min(6vw,6vh);
+    width:min(16vw,16vh);
+    font-size:min(3vw,3vh);
+    display:flex;
+    justify-content:center;
+    padding-top:min(0.4vw,0.4vh);
+}
+
+.text-below{
+    margin-top:min(3vw,3vw);
+}
+    
+.text-below p{
+    font-size:min(2.9vw,2.9vh);
+}
+
+.text-below a{
+    font-size:min(2.9vw,2.9vh);
+}
+
+
+    
+    }
+
+
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */ 
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS PEQUEÑOS-- */
+
+@media (max-width:330px){
+
+.all_container{
+    margin-top:min(10vw,10vh);
+}
+    
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS PEQUEÑOS-- */
+
+
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - Tablets-- */ 
+
+@media (min-width:601px) and (max-width:1024px) {
+
+
+    
+}
+
+/* --- MEDIA QUERIES PARA RESPONSIVE - Tablets-- */ 
+
+
+
+

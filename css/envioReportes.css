@@ -1,0 +1,108 @@
+body{
+  font-family: 'Poppins', sans-serif; 
+}
+
+
+.intro {
+  background-color: #f6f8fa; 
+  padding: 60px 20px;
+  text-align: center;
+  color: #02050e; 
+}
+
+.intro h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.intro h2 strong {
+  font-weight: 800;
+}
+.intro p {
+  font-size: 1rem;
+  color: #021127;
+}
+.report-section {
+  background-color: #f4f7ff;
+  padding: 30px;
+  text-align: center;
+  border-top: 2px solid#ffffff;
+ 
+}
+
+.report-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.report-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.report-form input[type="text"],
+.report-form input[type="file"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+
+.report-form button {
+  padding: 10px 20px;
+  background-color: #377dff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.my-reports {
+  padding: 40px 20px;
+  background-color: white;
+  text-align: center;
+}
+
+.my-reports h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.report-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.report-card {
+  background-color: #f5f7fb;
+  border-radius: 16px;
+  padding: 20px;
+  width: 250px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.report-card img {
+  width: 60px;
+  margin-bottom: 15px;
+}
+
+.estado {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.estado.pendiente {
+  color: #ff9800;
+}
+
+.estado.aprobado {
+  color: #4caf50;
+}

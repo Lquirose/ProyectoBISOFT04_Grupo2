@@ -1,0 +1,304 @@
+/*-----------------------------------------------
+transporteadmin
+-----------------------------------------------*/
+
+.transport-main, .transport-usermain {
+    font-family: "poppins", sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.page-title {
+    background-color: #e6efff;
+    padding: 40px;
+}
+
+.transport-form {
+   padding: 32px;
+}
+
+.form-body {
+   display: grid;
+   grid-template-columns: 2fr 2fr;
+   gap: 24px;
+    max-width: 720px;
+    margin: 40px auto
+}
+
+
+.transportform-group {
+    display:flex;
+    flex-direction:column;
+}
+
+
+.transportform-group label {
+
+    margin-bottom: 8px;
+    font-size: 14px;
+   font-weight: 500;
+    text-align: left;
+}
+    
+.transportform-group input {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+.form-button {
+    /*background-color: red;*/
+    max-width: 300px;
+    margin: 0 auto;
+    display:flex;
+    flex-direction: row;
+    max-height: 150px;
+    justify-content: center;
+    /*background-color: red;*/
+    gap: 30px;
+    
+    
+}
+.form-button button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    border: solid black;
+    border-radius: 8px;
+    margin: 0 auto;
+   width: 150px;
+   height: 25px;;
+   padding: 0;
+   font-family: "puppins", sans-serif;
+   font-size: 12px;
+   /*box-shadow: 0px 4px 6px rgba(0,0,0,0.1);*/
+   cursor: pointer;
+   margin-bottom: 30px;;
+ 
+   
+    
+
+}
+
+
+
+
+.formbutton-white {
+   background-color: white;
+   color:black;
+   transition: 0.3s;
+   
+
+   
+}
+
+.formbutton-black {
+    background-color: black;
+    color:white;
+    transition: 0.3s ease;
+    
+}
+
+.formbutton-white:hover, .formbutton-black:hover  {
+    transform: scale(1.03);
+}
+
+    
+
+.popular-routes {
+    padding-bottom: 100px;
+}
+.route-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; 
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.route-card, .route-usercard, .fee-usercard {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+    padding: 12px 16px;
+    max-width: 300px;
+    text-align: left
+}
+
+.route-card img, .route-usercard img {
+     width: 50px;
+    height: 50px;
+    object-fit:cover;
+    border-radius: 8px;
+    margin-right:12px;
+    flex-shrink: 0
+}
+
+.route-card p {
+    margin:0;
+    font-family: "poppins", sans-serif;
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+.route-card .card-content h5, .route-usercard .usercard-content h5 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: "poppins", sans-serif;
+}
+
+.route-card:hover, .route-usercard:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .form-body {
+        grid-template-columns: 1fr;
+        
+  }
+
+  .form-button {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .form-button button {
+    width: 100%;
+    max-width: 300px;
+  }
+  .route-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.route-card {
+  flex: 1 1 100%; /* tarjetas responsivas */
+  max-width: 100%;
+}
+
+
+
+.transport-form
+.page-title {
+    padding: 20px;
+    
+
+}
+
+}
+
+/*Página de transporte*/
+
+.routelinks-container {
+     display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding: 70px;
+    max-width: 800px;
+    width:100%;
+    height: auto;
+    border: none;
+   border-radius: 20px;
+   box-sizing: border-box;
+   box-shadow:  0 2px 8px rgba(0,0,0,0.3);
+   margin: 0 auto;
+   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+   
+}
+.user-routes{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    align-items: center;
+    padding: 70px;
+    
+
+    
+}
+
+
+.route-userlinks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    margin-top: 20px;
+   justify-content:center;
+   padding: 0 50px;
+
+   
+   
+}
+.user-fee {
+    display:grid;
+    justify-content: center;
+    
+}
+
+.userfee-links > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    padding: 40px 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.usercard-content {
+   width: 300px;
+
+}
+
+/*JAVA SCRIP--> VALIDACION-CAMBIO DE COLOR*/
+
+/*FORMULARIO CORRECTO*/
+
+.formgroup-correct input {
+  border: 2px solid #039634; /* verde */
+}
+
+
+/*FORMULARIO INCORRECTO*/
+
+.form-group-incorrect input {
+  border: 2px solid crimson;
+}
+
+
+
+
+
+
+
+/*Mensaje de error*/
+.form-message-error  {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #9e0202;
+  display: none;
+}
+
+.formerror-active {
+  display: block;
+}
+
+/* Oculta ícono nativo del input de hora en Chrome/Safari */
+input[type="time"]::-webkit-calendar-picker-indicator {
+  display: none;
+  -webkit-appearance: none;
+}

@@ -1,0 +1,95 @@
+.post-main {
+  max-width: 1400px; 
+  margin: 32px auto;
+  padding: 0 32px;
+  display: flex;
+  gap: 32px;
+  font-family: 'Poppins', sans-serif; 
+}
+
+.availablePosts {
+  flex: 1; 
+  margin-top: 16px;
+  text-align: left; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+
+.sectionHeader h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333; 
+}
+
+.sectionHeader p {
+  color: #555;
+  margin-top: 8px;
+  font-size: 15px;
+}
+
+.postCards {
+  flex: 2; 
+  display: flex;
+  flex-direction: column; 
+}
+
+.Card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+
+.Card:hover {
+  transform: scale(1.01);
+}
+
+.Card small {
+  display: block;
+  padding: 8px 16px;
+  color: #666;
+  font-size: 13px;
+}
+
+.postImg,
+.postsImg { 
+  background-color: #e0e0e0;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #888;
+  font-size: 14px;
+  background-size: cover; 
+  background-position: center;
+}
+
+.Card h3 {
+  margin: 8px 16px 0 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333; 
+}
+
+.Card p {
+  margin: 8px 16px 16px 16px;
+  color: #444;
+  font-size: 14px;
+}
+
+
+@media (max-width: 992px) {
+    .post-main {
+        flex-direction: column; 
+        padding: 0 20px;
+    }
+
+    .availablePosts {
+        text-align: center; 
+    }
+}

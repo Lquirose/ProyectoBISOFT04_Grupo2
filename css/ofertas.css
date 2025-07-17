@@ -1,0 +1,285 @@
+main {
+    font-family: "poppins", sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.top-blue-section {
+    background-color: rgba(40, 101, 255, 0.1) ;
+    padding-top: 30px;
+}
+
+.top-ofertas-div {
+    padding-bottom: 30px;
+    justify-content: center;
+} 
+
+.ofertas-text {
+    text-align: center;
+}
+
+.ofertas-text h1{
+    font-size: 2.5rem;
+}
+
+.ofertas-text h5{
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+.registro{
+    justify-items: center;
+    margin: 30px;
+}
+
+.registro-contenedor{
+    display: flex;
+    flex-direction: row;
+}
+
+.registro-info{
+    text-align: left;
+    margin-right: 70px;
+    padding-top: 65px;
+}
+
+.ofertas-space{
+    padding-top: 30px;
+}
+
+.ofertas-space .registro h1{
+
+}
+
+.ofertas{
+    padding: 40px 16px;
+    text-align: center;
+}
+
+.ofertas-card{
+    max-width: 300px;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    border-radius: 7px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.156);
+    transition: transform 0.2s ease;
+    text-decoration: none;
+    color: inherit; 
+}
+
+.img-wrapper {
+  width: 100%;
+  aspect-ratio: 3 / 2;         
+  background-color: #a9a7a7;   
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ofertas-links{
+    display: flex;
+    flex-wrap: row;
+    gap: 20px; 
+    justify-content: center;
+}
+
+.card-content{
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 15px;
+    margin-bottom: 10px;
+    color: black;
+    font-weight: normal;
+}
+
+.card-content h5{
+    font-weight: normal;
+}
+
+.ofertas-button{
+    text-align: left;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.white-button{
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color:white;
+    color: #007BFF;
+    border: #007BFF 1px solid;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.blue-buttton{
+    margin-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 70px;
+    padding-right: 70px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.celeste-button{
+    width: 90px; 
+    display:inline-flex;
+    text-size-adjust: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(40, 101, 255, 0.1);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    padding: 5px;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.btn-buscar{
+    width: 90px; 
+    display:inline-flex;
+    text-size-adjust: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: small;
+    padding: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+/* === Estilo para hamburguesa === */
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 10px;
+  color: #000;
+}
+
+/* Asegurar visibilidad y flexibilidad del menú */
+.menu-content {
+  display: flex;
+  justify-content: center;
+}
+
+.menu-item {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
+
+/* === MEDIA QUERY para dispositivos móviles === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu-content {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    padding: 20px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+  }
+
+  .menu-toggle:checked ~ .menu-content {
+    display: block;
+  }
+
+  .menu-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .menu-item li a {
+    text-decoration: none;
+    color: #000;
+    padding: 10px;
+    display: block;
+  }
+
+  /* Ajustes al layout general */
+  .registro-contenedor {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .registro-info {
+    text-align: center;
+    margin-right: 0;
+    padding-top: 20px;
+  }
+
+  .ofertas-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ofertas-card {
+    max-width: 90%;
+  }
+
+  .white-button,
+  .blue-buttton {
+    width: 80%;
+    padding: 10px;
+  }
+
+  .celeste-button,
+  .btn-buscar {
+    width: 100%;
+  }
+
+  .top-ofertas-div {
+    padding: 20px;
+  }
+
+  .ofertas-text h1 {
+    font-size: 2rem;
+  }
+
+  .ofertas-text h5 {
+    font-size: 0.9rem;
+  }
+
+  .site-footer .footer-links {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .site-footer .submenu {
+    justify-content: center;
+  }
+}
