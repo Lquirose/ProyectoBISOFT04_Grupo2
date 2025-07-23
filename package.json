@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src"
   },
   "repository": {
     "type": "git",
@@ -18,6 +18,11 @@
   "homepage": "https://github.com/Lquirose/CopiadelProyectoBISOFT04#readme",
   "description": "",
   "dependencies": {
-    "ejs": "^3.1.10"
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "morgan": "^1.10.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }
