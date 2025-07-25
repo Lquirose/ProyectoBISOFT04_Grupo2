@@ -9,6 +9,13 @@ app.set('views', path.join(__dirname,'views'));
 app.engine('html',require('ejs').renderFile);
 app.set('view engine','ejs');
 
+//Configuración del bodyparser --> Esto es para almacenar la información que escribe el usuario en los formularios dentro del servidor
+
+const bodyparser = require('body-parser');
+app.use(bodyparser.json());//Formato tipo json
+app.use(bodyparser.urlencoded({extended:false}));//Formato tipo url encoded
+
+
 //Archivos estáticos --> Esto es para identificar que dentro de la carpeta public están los archivos que aportan forma a las views.
 app.use(express.static(path.join(__dirname,'public')));
 
@@ -18,7 +25,7 @@ app.listen(3000,()=>{
     console.log("Se conecto el puerto");
 })
 
-//Rutas
+//***Rutas***
 
 // views/General
 app.get('/',(req,res)=>{
@@ -55,8 +62,8 @@ app.get('/ReportesAdmin',(req,res)=>{
     res.render("Administradores/ReportesAdmin.html");
 })
 
-app.get('/transportesadmin',(req,res)=>{
-    res.render("Administradores/transportesadmin.html");
+app.get('/transporteadmin',(req,res)=>{
+    res.render("Administradores/transporteadmin.html");
 })
 
 //views/Usuarios
@@ -85,4 +92,31 @@ app.get('/transporte',(req,res)=>{
 
 app.get('/RegistroEmprendimiento',(req,res)=>{
     res.render("Emprendedores/RegistroEmprendimiento.html");
+})
+
+//***Metodo POST***
+//Transporte
+app.post('/addRoutesInformation',(req,res)=>{
+    console.log(req.body.routeName);
+    console.log(req.body.transportTime);
+    console.log(req.body.transportDestination);
+    console.log(req.body.transportFrecuency);
+    console.log(req.body.transportFee);
+    console.log(req.body.tripDuration);
+    res.redirect('/transporteadmin')
+})
+//Reportes
+app.post('/addReport',(req,res)=>{
+    console.log(req.body.reportTitle);
+    console.log(req.body.reportDescription);
+    console.log(req.body.communityLocation);
+    res.redirect('/envioReportes')
+    //Preguntar a la profe si acá se pone el de cargar archivo
+})
+
+app.post('/LoginSite',(req,res)=>{
+    console.log(req.body.email);
+    console.log(req.body.password);
+    console.log(req.body.communityLocation);
+    res.redirect('/')
 })

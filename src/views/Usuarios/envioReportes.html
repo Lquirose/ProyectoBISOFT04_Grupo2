@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/envioReportes.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
      <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -57,12 +58,26 @@
   </section>
   <div class="report-section">
     <h2>Crear un nuevo reporte</h2>
-    <form class="report-form">
-      <input type="text" placeholder="Título del reporte"  />
-      <input type="text" placeholder="Descripción detallada"  />
-      <input type="text" placeholder="Punto específico dentro de la comunidad" />
-      <input type="file" accept="image/*" />
-      <button type="submit">Enviar reporte</button>
+    <form action="/addReport" method="post" class="report-form" id="form"><!--Los div hacen que se vean disparejos los inputs-->
+        <div class="form-group">
+            <input type="text" id="reportTitle" name="reportTitle" placeholder="Título del reporte"/>
+            <p class="form-message-error"></p>
+        </div>
+        <div class="form-group">
+            <input type="text" id="reportDescription" name="reportDescription" placeholder="Descripción detallada"/>
+            <p class="form-message-error"></p>
+        </div>
+        <div class="form-group">
+            <input type="text" id="communityLocation" name="communityLocation" placeholder="Punto específico dentro de la comunidad"/>
+            <p class="form-message-error"></p>
+        </div> 
+        <div>
+            <input type="file" accept="image/*" /> <!--Consultar a la profe como hacer el js de este input-->
+            <p class="form-message-error"></p>
+        </div>
+        <div>
+            <button type="submit" value="Guardar" "onclick = location.reload()">Enviar reporte</button>
+      </div>
     </form>
   </div>
 
@@ -102,7 +117,7 @@
     </ul>
   </div>
    </footer>
-<script src="js/script.js"></script>
+<script src="js/formulario_script.js"></script>
 
 
 </body>

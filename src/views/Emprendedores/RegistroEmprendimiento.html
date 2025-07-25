@@ -61,19 +61,19 @@
       <p>Llena el formulario a continuación:</p>
     </div>
 
-    <form class="formulario-emprendimiento">
-      <div class="campo">
+    <form action="/addBusiness" method="post" class="formulario-emprendimiento" id="form">
+      <div class="campo form-group">
         <label>Nombre del negocio</label>
-        <input type="text" placeholder="Ingrese el nombre del negocio" />
+        <input type="text" placeholder="Ingrese el nombre del negocio" id="businessName" name="businessName"/>
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Descripción breve del emprendimiento</label>
-        <textarea placeholder="Ingrese una breve descripción"></textarea>
+        <textarea placeholder="Ingrese una breve descripción" id="businessDescription" name="businessDescription"></textarea>
         <small>Máx. 250 caracteres</small>
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Categoría</label>
         <div class="categorias">
           <button type="button">Alimentos</button>
@@ -84,35 +84,35 @@
         </div>
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Teléfono de contacto</label>
-        <input type="tel" placeholder="Ingrese su teléfono" />
+        <input type="tel" placeholder="Ingrese su teléfono" id="businessTelephone" name="businessTelephone" />
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Correo electrónico</label>
-        <input type="email" placeholder="Ingrese su correo electrónico" />
+        <input type="email" placeholder="Ingrese su correo electrónico" id="email" name="email"/>
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Ubicación exacta</label>
-        <input type="text" placeholder="Ingrese su ubicación" />
+        <input type="text" placeholder="Ingrese su ubicación" id="businessLocation" name="businessLocation"/>
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Fecha de registro</label>
-        <input type="date" readonly />
+        <input type="date" readonly id="loginDate" name="loginDate" />
         <small>Campo solo de lectura</small>
       </div>
 
-      <div class="campo">
+      <div class="campo form-group">
         <label>Sube el logo o imagen representativa</label>
         <input type="file" accept=".jpg, .png" />
         <small>Formato JPG o PNG, máx. 5MB</small>
       </div>
 
-      <div class="campo">
-        <button type="submit" class="btn-enviar">Enviar solicitud de registro</button>
+      <div class="campo form-group">
+        <button type="submit" class="btn-enviar" value="registrarEmprendimiento" "onclick = location.reload()">Enviar solicitud de registro</button>
       </div>
     </form>
   </div>
@@ -136,5 +136,6 @@
     </ul>
   </div>
    </footer>
+   <script src="js/formulario_script.js"></script>
 </body>
 </html>

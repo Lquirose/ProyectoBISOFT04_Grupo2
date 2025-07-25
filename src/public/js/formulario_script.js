@@ -1,31 +1,37 @@
 //Se declara e inicializa la constante mensajeError
 const mensajesError = { //Esto es un objeto literal, sirve para almacena los mensajes de error. Está dividido en clave y valor, siendo por ejemplo route-name una clave y lo que está después de los dos puntos un valor. Vease como un diccionario de mensajes de error-
-  "route-name": "Debe tener entre 3 y 60 letras. Ej: San Rafael - Alajuela.",
-  "transport-time": "Seleccione una hora válida. Ej: 05:00 a 22:00.",
-  "transport-destination": "Solo letras y espacios. Mínimo 3 caracteres.",
-  "transport-frecuency": "Debe estar entre 5 y 240 minutos.",
-  "transport-fee": "Ingrese una tarifa positiva en colones.",
-  "trip-duration": "Duración entre 10 minutos y 3 horas.",
+  "routeName": "Debe tener entre 3 y 60 letras. Ej: San Rafael - Alajuela.",
+  "transportTime": "Seleccione una hora válida. Ej: 05:00 a 22:00.",
+  "transportDestination": "Solo letras y espacios. Mínimo 3 caracteres.",
+  "transportFrecuency": "Debe estar entre 5 y 240 minutos.",
+  "transportFee": "Ingrese una tarifa positiva en colones.",
+  "tripDuration": "Duración entre 10 minutos y 3 horas.",
   "email": "Ingresá un email válido. Ej: alguien@mail.",
   "password": "La clave debe tener al menos seis dígitos.",
-  "usuario": " 4 - 16 caracteres: letras A-a, números, _ o -"
+  "usuario": " 4 - 16 caracteres: letras A-a, números, _ o -",
+  "reportTitle": "Debe de tener entre 10 y 60 letras",
+  "reportDescription": "Debe de tener entre 10 y 150 letras",
+  "communityLocation": "Debe de tener entre 10 y 60 letras",
+  "businessName": "Debe de tener entre 10 y 60 letras",
+  "businessDescription": "Debe tener de 10 a 250 letras"
+
 }
 //Validadores
 const validadores = {// Se declara e inicializa la varable validadores
-  "route-name": (value) => /^[a-zA-ZÀ-ÿ\s\-]{3,60}$/.test(value),//Expresiones regulares
-  "transport-destination": (value) => /^[a-zA-ZÀ-ÿ\s\-]{3,60}$/.test(value),
-  "transport-time": (value) => {
+  "routeName": (value) => /^[a-zA-ZÀ-ÿ\s\-]{3,60}$/.test(value),//Expresiones regulares
+  "transportDestination": (value) => /^[a-zA-ZÀ-ÿ\s\-]{3,60}$/.test(value),
+  "transportTime": (value) => {
     if (!value) return false;//Retorna error si el usuario deja la casilla en blanco.
     const [hh, mm] = value.split(":").map(Number);// crea el formato de hora ":"
     const minutos = hh * 60 + mm;//Convierte el numero de horas a minutos
     return minutos >= 300 && minutos <= 1320; // entre 05:00 y 22:00
   },
-  "transport-frecuency": (value) => {
+  "transportFrecuency": (value) => {
     const num = Number(value);//Hace que el valor que viene como string se convierta a entero
     return num >= 5 && num <= 240; //El número debe de ser mayor a 5 y menor a 240
   },
-  "transport-fee": (value) => Number(value) > 0, //Igual que transport-time
-  "trip-duration": (value) => {
+  "transportFee": (value) => Number(value) > 0, //Igual que transport-time
+  "tripDuration": (value) => {
     if (!value) return false;
     const [hh, mm] = value.split(":").map(Number);
     const minutos = hh * 60 + mm;
@@ -33,8 +39,11 @@ const validadores = {// Se declara e inicializa la varable validadores
   },
   "usuario": (value)=>/^[a-zA-Z0-9\_\-]{4,16}$/.test(value),
   "email": (value) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),
-  "password": (value) => value.length >= 6
-  
+  "password": (value) => value.length >= 6,
+  "reportTitle": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value), 
+  "reportDescription": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,150}$/.test(value),
+  "communityLocation": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value),
+  "businessName": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value), 
 }
 
 //Función para validar inputs 

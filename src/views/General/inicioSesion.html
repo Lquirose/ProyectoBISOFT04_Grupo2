@@ -38,7 +38,7 @@
 
             </div>
 
-            <form class="formRegistro" action="" id="form" class="login-form" name="InicioSesion">
+            <form class="formRegistro" action="/LoginSite" method="post" id="form" class="login-form" name="InicioSesion">
 
                 <div class="form-group">
                     <img class="emailIMG" src="img/email.png" alt="">
@@ -52,11 +52,11 @@
                     <p class="form-message-error"></p>
                 </div>
 
-                <button class="submit" type="submit">Log In</button>
+                <button class="submit" type="submit" value="Log In" "onclick = location.reload()" >Log In</button>
             </form>
 
             <div class="text-below">
-                 <p>Aun no tienes una cuenta?</p> <a href="Registro.html">Registrate</a>
+                 <p>Aun no tienes una cuenta?</p> <a href="/Registro">Registrate</a>
             </div>
 
             
@@ -77,9 +77,9 @@
         </div>
 
     </div>
-
-</body>
 <script src="js/formulario_script.js"></script>
+</body>
+<!--<script src="js/formulario_script.js"></script>-->
 </html>
 
 
@@ -89,7 +89,7 @@
 formLogin.addEventListener('submit', function(e) {
   if (formLogin.checkValidity()) {
     e.preventDefault();
-    window.location.href = 'index.html';
+    window.location.href = '/';
   }
 });
 </script>
