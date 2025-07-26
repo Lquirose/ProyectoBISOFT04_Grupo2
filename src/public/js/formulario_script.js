@@ -13,7 +13,9 @@ const mensajesError = { //Esto es un objeto literal, sirve para almacena los men
   "reportDescription": "Debe de tener entre 10 y 150 letras",
   "communityLocation": "Debe de tener entre 10 y 60 letras",
   "businessName": "Debe de tener entre 10 y 60 letras",
-  "businessDescription": "Debe tener de 10 a 250 letras"
+  "businessDescription": "Debe tener de 10 a 250 letras",
+  "businessTelephone":"Debe de tener nueve números y empezar con 8,9 o 7",
+  "businessLocation":"Debe tener de 10 a 150 letras",
 
 }
 //Validadores
@@ -43,7 +45,12 @@ const validadores = {// Se declara e inicializa la varable validadores
   "reportTitle": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value), 
   "reportDescription": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,150}$/.test(value),
   "communityLocation": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value),
-  "businessName": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value), 
+  "businessName": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,60}$/.test(value),
+  "businessDescription": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,250}$/.test(value),
+  "businessTelephone": (value) => /^[678]\d{7}$/.test(value),
+  "businessLocation": (value) => /^[a-zA-ZÀ-ÿ\s\-]{10,150}$/.test(value)
+
+
 }
 
 //Función para validar inputs 
@@ -52,6 +59,8 @@ function validarCampo(input) {
   const valor = input.value;                  //  Lo que escribió el usuario
   const esValido = validadores[nombre]?.(valor);  //  Ejecutamos el validador para ese campo
 
+  
+
   const grupo = input.closest(".form-group"); // Contenedor visual del campo
   const mensaje = grupo.querySelector(".form-message-error");  //  Mensaje de error
 
@@ -59,16 +68,18 @@ function validarCampo(input) {
     grupo.classList.add("formgroup-correct");
     grupo.classList.remove("form-group-incorrect");
     mensaje.classList.remove("formerror-active");
+    
   } else { 
     grupo.classList.add("form-group-incorrect");
     grupo.classList.remove("formgroup-correct");
     mensaje.textContent = mensajesError[nombre] || "Campo inválido";
     mensaje.classList.add("formerror-active");
+    
   }
 }
 
 //Validación en tiempo real. Se escuchan eventos (cuando el usuario se posiciona en el input y cuando esta fuera del input) y se llama a la función de validar campo para que se muestre el css correcto
-const inputs = document.querySelectorAll("#form input");
+const inputs = document.querySelectorAll("#form input, #form textarea");
 
 inputs.forEach((input) => {
   input.addEventListener("keyup", () => validarCampo(input)); // se dispara cuando el usuario escribe

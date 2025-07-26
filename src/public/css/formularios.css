@@ -2,17 +2,19 @@
 
 /*FORMULARIO CORRECTO*/
 
-/*
+
 .formgroup-correct input {
   border: 2px solid #039634 !important; 
 }
-*/
+
 
 /*FORMULARIO INCORRECTO*/
 
 .form-group-incorrect input {
   border: 2px solid crimson !important;
 }
+
+
 
 /*Mensaje de error*/
 .form-message-error  {

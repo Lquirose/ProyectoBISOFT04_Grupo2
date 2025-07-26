@@ -120,3 +120,14 @@ app.post('/LoginSite',(req,res)=>{
     console.log(req.body.communityLocation);
     res.redirect('/')
 })
+
+app.post('/addBusiness',(req,res)=>{
+    console.log(req.body.businessName);
+    console.log(req.body.businessDescription);
+    console.log(req.body.communityTelephone);
+    console.log(req.body.email);
+    console.log(req.body.businessLocation);
+    res.redirect('/RegistroEmprendimiento')
+})
+
+
