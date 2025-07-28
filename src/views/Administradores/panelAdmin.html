@@ -16,48 +16,22 @@
     <title>Anuncio Admin</title>
 </head>
 <body> 
-   <header>
-        <div class="navbar">
-            <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
-            <div class="mobile-nav">
-                <input type="checkbox" id="responsive-menu" class="responsive-menu">
-                <label for="responsive-menu" class="hamburger">
-                    <i class='bx bx-menu'></i>
-                </label>
-                <div class="menu-content">
-                    <nav>
-                        <div class="menu-item">
-                            <ul>
-                               <li><a href="/">Inicio</a></li>
-                                <li><a href="/publicaciones">Publicaciones</a></li>
-                                <li><a href="/transporte">Transporte</a></li>
-                                <li><a href="/ofertas">Oferta</a></li>
-                                <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
-                                <li><a href="/panelAdmin">Administración</a></li>
-                                <li><a href="/perfil">Perfil</a></li>
-                                <li><a href="/envioReportes">Reportes</a></li>
-                                <li class="search-container">
-                                    <form action="search">
-                                        <input type="text" name="query" placeholder="buscar">
-                                        <span class="icon" ><i class='bxr  bx-search'></i></span>
-                                    </form>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-    </header>
 
+    <div class="header">
+        <input type="checkbox" id="check"> 
+        <label for="check" class="checkbtn">
+            <i class='bx bx-menu'></i> 
+        </label>
+    </div>
 
-    <div class="page-layout-container">
-        <aside class="sidebar">
+    
+    <aside class="sidebar">
             <ul class="sidebar-list">
                 <li class="sidebar-element"> 
                     <div class="sidebar-icon">
                         <i class='bx  bx-home' ></i> 
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/panelAdmin">Panel Principal</a></p>
                     </div>
                 </li>
@@ -65,7 +39,7 @@
                     <div class="sidebar-icon">
                         <i class='bx  bx-mountain-view'></i>
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/publicacionesAdmin">Publicaciones</a></p>
                     </div>
                 </li>
@@ -73,7 +47,7 @@
                     <div class="sidebar-icon">
                         <i class='bx  bx-megaphone-alt'></i>
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/ReportesAdmin">Reportes</a></p>
                     </div>
                 </li>
@@ -81,7 +55,7 @@
                     <div class="sidebar-icon">
                         <i class='bx  bx-store'></a></i>
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/EmprendimientosAdmin">Emprendimientos</a></p>
                     </div>
                 </li>
@@ -89,7 +63,7 @@
                     <div class="sidebar-icon">
                         <i class='bx  bx-price-tag'></i>
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/OfertasAdmin">Ofertas</a></p>
                     </div>
                 </li>
@@ -97,7 +71,7 @@
                     <div class="sidebar-icon">
                         <i class='bx  bx-bus'></i>
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/transporteadmin">Transporte</a></p>
                     </div>
                 </li>
@@ -105,12 +79,14 @@
                     <div class="sidebar-icon">
                         <i class='bx  bx-arrow-right-stroke-square'></i>
                     </div>
-                    <div class="sidebar-text-hide">
+                    <div class="sidebar-text">
                         <p><a href="/">Salir del Sistema</a></p>
                     </div>
                 </li>
             </ul>
         </aside>
+
+    <div class="page-layout-container">
 
         <div class="content-area-wrapper">
             <div class="main-content-panel-admin">

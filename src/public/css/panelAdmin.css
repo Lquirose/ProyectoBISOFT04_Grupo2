@@ -22,15 +22,29 @@ body {
 
 .page-layout-container {
     display: flex;
-    flex: 1;
+    flex: 1; 
     width: 100%;
     max-width: 1400px;
-    margin-top: var(--header-height-desktop);
+    margin-top: 0; 
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 20px;
     padding: 0 20px;
     box-sizing: border-box;
+    height: calc(100vh - 20px);
+}
+
+.checkbtn{
+    font-size: 40px;
+    margin-top: 3;
+    cursor: pointer;
+    float: left;
+    margin-left: 40px;
+    display: none ;
+}
+
+#check{
+    display: none;
 }
 
 .sidebar{
@@ -41,6 +55,10 @@ body {
   width: 250px;
   margin-right: 20px;
   flex-shrink: 0;
+  display: flex; 
+  flex-direction: column; 
+  height: 100%; 
+  
 }
 
 .sidebar:hover .sidebar-element{
@@ -50,10 +68,11 @@ body {
 .sidebar-list{
   list-style: none;
   padding: 0;
-  min-height: 600px;
   display: flex;
   flex-direction:column;
   gap: .4rem;
+  flex-grow: 1; 
+  overflow-y: auto; 
 }
 
 .sidebar-element{
@@ -77,12 +96,11 @@ body {
   color: navy;
 }
 
-.sidebar-text-hide{
-  overflow: hidden;
-  text-wrap: nowrap;
+.sidebar-text{
+  white-space: nowrap;
 }
 
-.sidebar-text-hide p a{
+.sidebar-text p a{
   color: navy;
 }
 
@@ -92,9 +110,15 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     padding: 30px;
+    display: flex;
+    flex-direction: column; 
+    height: 100%; 
+    overflow-y: auto; 
 }
 
 .main-content-panel-admin {
+    flex-grow: 1; 
+    overflow-y: auto; 
 }
 
 .panel-welcome-section {
@@ -169,50 +193,134 @@ body {
     background-color: #0056b3;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 710px) {
     .page-layout-container {
-        flex-direction: column;
-        padding: 0 10px;
-        margin-top: 20px;
+        flex-direction: column; /* Apila el sidebar y el contenido */
+        padding: 0 10px; /* Reduce el padding lateral */
+        margin-top: 0; /* Asegura que el contenido empieza arriba */
+        margin-bottom: 0; /* Permite que el footer se pegue a la parte inferior del contenido */
+        flex: 1; /* Permite que este contenedor crezca */
+    }
+    
+    .checkbtn {
+        display: block; /* Muestra el botón de hamburguesa */
+        position: fixed; /* Lo fija en la pantalla */
+        top: 10px; /* A una distancia del borde superior */
+        left: 20px; /* A una distancia del borde izquierdo */
+        z-index: 1200; /* Asegura que esté por encima de todo */
+        background-color: #0056ff; /* Fondo para el botón */
+        color: white;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 30px; /* Ajusta el tamaño del ícono */
+        line-height: 1; /* Asegura que el ícono esté centrado verticalmente */
     }
 
+    /* El sidebar se posiciona de forma fija fuera de la pantalla */
     .sidebar {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
+        position: fixed; /* Fijo para que se deslice sobre el contenido */
+        width: 250px; /* Un ancho fijo para el menú deslizante */
+        height: 100vh; /* Ocupa toda la altura de la ventana */
+        top: 0;
+        left: -250px; /* Oculto completamente a la izquierda */
+        margin-right: 0; /* Elimina márgenes de escritorio */
+        transition: left 0.5s ease-in-out; /* Transición suave para el deslizamiento */
+        z-index: 1000; /* Por encima del contenido, por debajo del botón */
+        background-color: #e6efff; /* Color de fondo del menú desplegado */
+        padding: 2rem 1rem; /* Padding interno del sidebar */
+        border-radius: 0; /* Sin bordes redondeados para un menú lateral */
+        box-shadow: 2px 0 5px rgba(0,0,0,0.2); /* Sombra para efecto de elevación */
+        flex-shrink: 0; /* No se encoge */
+        display: flex; /* Sigue siendo flex para su contenido interno */
+        flex-direction: column;
     }
 
+    /* Cuando el checkbox #check está marcado, el sidebar se mueve a la vista */
+    #check:checked ~ .page-layout-container .sidebar {
+        left: 0; /* Muestra el sidebar */
+    }
+
+    /* Ajustes para la lista de elementos dentro del sidebar cuando está desplegado */
+    .sidebar-list {
+        flex-direction: column; /* Vuelve a ser una lista vertical */
+        justify-content: flex-start;
+        align-items: flex-start; /* Alinea los ítems al inicio */
+        gap: .8rem; /* Espacio entre los ítems de la lista */
+        flex-grow: 1; /* Permite que la lista crezca */
+        overflow-y: auto; /* Scroll si hay muchos ítems */
+        padding: 0; /* Asegúrate de que no haya padding extra aquí */
+    }
+
+    /* Los elementos del sidebar: ícono y texto en la misma línea */
+    .sidebar-element {
+        display: grid; /* Vuelve a usar grid para alinear ícono y texto */
+        grid-template-columns: 40px 1fr; /* Muestra el icono y el texto */
+        padding: .8rem 1.3rem; /* Padding original */
+        text-align: left; /* Alineación del texto a la izquierda */
+        width: 100%; /* Ocupa todo el ancho del sidebar */
+    }
+
+    /* Esto sobrescribe el hover de escritorio, asegurando que el texto siempre sea visible */
+    .sidebar:hover .sidebar-element {
+        grid-template-columns: 40px 1fr;
+    }
+
+    .sidebar-icon {
+        width: 100%; /* Ocupa el 100% de su columna */
+        overflow: hidden;
+        justify-self: center; /* Centra el ícono */
+    }
+
+    .sidebar-text {
+        white-space: nowrap; /* Mantiene el texto en una sola línea */
+        overflow: hidden; /* Oculta el texto si es demasiado largo */
+        text-overflow: ellipsis; /* Añade puntos suspensivos si se corta */
+    }
+
+    .sidebar-text p a {
+        color: navy; /* Color del texto */
+    }
+
+    /* El contenido principal y el footer se ajustan */
     .content-area-wrapper {
         padding: 20px;
+        height: auto; /* La altura se adapta al contenido */
+        overflow-y: visible; /* Elimina el scroll a nivel de wrapper */
+        flex-grow: 1; /* Permite que crezca y empuje el footer hacia abajo */
+        margin-top: 60px; /* Para dejar espacio al botón de hamburguesa y un poco de aire */
+    }
+
+    .main-content-panel-admin {
+        overflow-y: auto; /* Mantiene el scroll si el contenido es largo */
     }
 
     .panel-welcome-section {
         padding: 20px;
+        margin-bottom: 20px;
     }
+
     .panel-welcome-title {
-        font-size: 24px;
+        font-size: 22px;
     }
+
     .panel-welcome-text {
-        font-size: 15px;
+        font-size: 14px;
     }
+
     .panel-summary-cards {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 15px;
     }
-}
 
-@media (max-width: 768px) {
-    .page-layout-container {
-        margin-top: var(--header-height-mobile);
-        padding: 0 10px;
+    .summary-card {
+        padding: 20px;
     }
-}
 
-@media (max-width: 576px) {
-    .page-layout-container {
-        padding: 0 5px;
+    .summary-card h3 {
+        font-size: 18px;
     }
-    .content-area-wrapper {
-        padding: 15px;
+
+    .summary-card p {
+        font-size: 30px;
     }
 }
