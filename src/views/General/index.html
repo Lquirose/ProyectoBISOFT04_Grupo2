@@ -51,17 +51,44 @@
             </div>      
     </header>
     <main class="home-main">
-        <section class="news"> <!--Clase para la sección de noticias-->
-            <h1>Únete a nuestra comunidad</h1>
-            <br>
-            <h5>¿No estás registrado?</h5>
-            <br>
-            <button><a class="a_mainIndex" href="/Registro">Registrarse</a></button>
-            <br>
-            <h5>¿Ya tienes una cuenta?</h5>
-            <br>
-            <button><a class="a_mainIndex" href="/inicioSesion">Iniciar sesion</a></button>
-            <!--Aquí hay que poner el boton de iniciar sesion-->    
+        <section class="auth-bar">
+            <p>¿Nuevo en la comunidad?</p> 
+            <button class="indexButton_White"><a class="a_mainIndex_Blue" href="/Registro">Registrarse</a></button>
+            <button class="indexButton_Blue"><a class="a_mainIndex_White" href="/inicioSesion">Iniciar sesion</a></button>
+        </section>
+        <section class="welcomeBanner">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <div class="hero-icon">🚀</div>
+                    <h1>¡Bienvenido a tu Comunidad!</h1>
+                    <p>Apoya a nuestros emprendedores, aprovecha nuestras ofertas</p>
+                    <button class="hero-btn">ir a ofertas</button>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-icon">🚌</div>
+                    <h1>¿Tarde al trabajo?</h1>
+                    <p>Explora las rutas de autobus cerca de ti</p>
+                    <button class="hero-btn">Ver Rutas</button>
+                </div>
+            </div>
+
+ 
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-icon">📋</div>
+                    <h1>Cuéntanos lo que piensas</h1>
+                    <p>Has un repote o deja una sugerencia</p>
+                    <button class="hero-btn">Ir a Reportes</button>
+                </div>
+            </div>
+
+            <div class="carousel-indicators">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
         </section>
         <section class="events"> <!--Clase para la sección de eventos*/-->
             <h1>Últimos eventos</h1>
@@ -164,5 +191,6 @@
     </ul>
   </div>
    </footer>
+   <script src="js/carrusel.js"></script>
 </body>
 </html>
