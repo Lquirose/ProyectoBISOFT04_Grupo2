@@ -305,6 +305,7 @@ body {
     top: min(-.2vh,-.2vw);
     right: min(-.06vh,-.06vw);
     cursor: pointer;
+    filter: opacity(0.7)
 }
 
 /* !!!!!! Contenedor de la mitad derecha !!!!!! */
