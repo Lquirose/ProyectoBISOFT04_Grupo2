@@ -16,26 +16,21 @@
 
     <div class="all_container">
 
-
-
         <div class="left-side">
 
             <img class="logo" src="img/logoOficialLetrasNegras.png" alt="">
-            <H1>¿Ya tienes una cuenta?</H1>
-            <p class="leftP1">Bienvenido! Inicia sesion con:</p>
+            <h1>¿Ya tienes una cuenta?</h1>
+            <p class="leftP1">¡Bienvenido! Inicia sesión con:</p>
 
-            <button class="GoogleButton"><img src="img/Google.png" alt="">
+            <button class="GoogleButton">
+                <img src="img/Google.png" alt="">
                 <p class="textButton">Google</p>
             </button>
 
             <div class="line_N_P">
-
                 <div class="Line"></div>
-
-                <p class="lineP">o continua con:</p>
-
+                <p class="lineP">o continúa con:</p>
                 <div class="Line"></div>
-
             </div>
 
             <form class="formRegistro" action="/LoginSite" method="post" id="form" class="login-form" name="InicioSesion">
@@ -47,52 +42,50 @@
                 </div>
 
                 <div class="form-group">
-                    <img class="lockIMG" src="img/locked.png" alt="" >
+                    <img class="lockIMG" src="img/locked.png" alt="">
                     <input class="inputPass" type="password" placeholder="Contraseña" id="password" name="password">
-                    <button class="passViewButton"><img src="/src/public/img/passwordview.png" alt=""></button>
+                    <button type="button" class="passViewButton" onclick="togglePassword()">
+                        <img class="passViewButtonIMG" src="img/passwordview.png" alt="">
+                    </button>
                     <p class="form-message-error"></p>
                 </div>
 
-                <button class="submit" type="submit" value="Log In" "onclick = location.reload()" >Log In</button>
+                <button class="submit" type="submit" value="Log In">Log In</button>
             </form>
 
             <div class="textBelowSpace"></div>
 
             <div class="text-below">
-                 <p>Aun no tienes una cuenta?</p> <a href="/Registro">Registrate</a>
+                <p>¿Aún no tienes una cuenta?</p> <a href="/Registro">Regístrate</a>
             </div>
-
-            
-
-
         </div>
 
-
         <div class="right-side">
-
             <img class="RightIMG" src="img/PCSocial.png" alt="">
-
             <div class="Circle1"></div>
             <div class="Circle2"></div>
-
-            <p>¡Conectate con toda la comunidad!</p>
-
+            <p>¡Conéctate con toda la comunidad!</p>
         </div>
 
     </div>
-<script src="js/formulario_script.js"></script>
+
+    <script src="js/formulario_script.js"></script>
+
+    <script>
+        const formLogin = document.querySelector('form[name="InicioSesion"]');
+
+        formLogin.addEventListener('submit', function (e) {
+            if (formLogin.checkValidity()) {
+                e.preventDefault();
+                window.location.href = '/';
+            }
+        });
+
+        function togglePassword() {
+            const input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    </script>
+
 </body>
-<!--<script src="js/formulario_script.js"></script>-->
 </html>
-
-
-<script>
-  const formLogin = document.querySelector('form[name="InicioSesion"]');
-
-formLogin.addEventListener('submit', function(e) {
-  if (formLogin.checkValidity()) {
-    e.preventDefault();
-    window.location.href = '/';
-  }
-});
-</script>

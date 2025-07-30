@@ -16,53 +16,51 @@
 
     <div class="all_container">
 
-
-
         <div class="left-side">
 
             <img class="logo" src="img/logoOficialLetrasNegras.png" alt="">
-            <H1>¿No tienes una cuenta?</H1>
-            <p class="leftP">Bienvenido! Registrate con:</p>
+            <h1>¿No tienes una cuenta?</h1>
+            <p class="leftP">¡Bienvenido! Regístrate con:</p>
 
             <button class="GoogleButton"><img src="img/Google.png" alt="">
                 <p class="textButton">Google</p>
             </button>
 
             <div class="line_N_P">
-
                 <div class="Line"></div>
-
-                <p class="lineP">o continua con:</p>
-
+                <p class="lineP">o continúa con:</p>
                 <div class="Line"></div>
-
             </div>
 
             <form class="formRegistro" action="" id="form" class="login-form" name="registro">
 
                 <div class="form-group">
                     <img class="userIMG" src="img/user.png" alt="">
-                    <input class="inputText" type="text" id="usuario" name="usuario" placeholder="Usuario" >
+                    <input class="inputText" type="text" id="usuario" name="usuario" placeholder="Usuario">
                     <p class="form-message-error">Por favor ingresá un correo válido</p>
                 </div>
 
                 <div class="form-group">
                     <img class="emailIMG" src="img/email.png" alt="">
-                    <input class="inputEmail" type="email" id="email" name="email" placeholder="Email" >
-                    <p class="form-message-error">Mayusculas, Minusculas, números, guión bajo y guion. Rango caracteres 4 a 16</p>
+                    <input class="inputEmail" type="email" id="email" name="email" placeholder="Email">
+                    <p class="form-message-error">Mayúsculas, minúsculas, números, guión bajo y guion. Rango caracteres 4 a 16</p>
                 </div>
 
                 <div class="form-group">
-                    <img class="lockIMG" src="img/locked.png" alt="" >
+                    <img class="lockIMG" src="img/locked.png" alt="">
                     <input class="inputPass" type="password" placeholder="Contraseña" id="password" name="password">
-                    <button class="passViewButton"><img src="img/passwordview" alt=""></button>
+                    <button type="button" class="passViewButton" onclick="togglePassword(this)">
+                        <img class="passViewButtonIMG" src="img/passwordview.png" alt="">
+                    </button>
                     <p class="form-message-error"></p>
                 </div>
 
                 <div class="form-group">
-                    <img class="lockIMG" src="img/locked.png" alt="" >
-                    <input class="inputPass" type="password" placeholder="Contraseña" id="password" name="password">
-                    <button class="passViewButton"><img src="img/passwordview" alt=""></button>
+                    <img class="lockIMG" src="img/locked.png" alt="">
+                    <input class="inputPass" type="password" placeholder="Confirmar contraseña" id="confirmPassword" name="confirmPassword">
+                    <button type="button" class="passViewButton" onclick="togglePassword(this)">
+                        <img class="passViewButtonIMG" src="img/passwordview.png" alt="">
+                    </button>
                     <p class="form-message-error"></p>
                 </div>
 
@@ -72,40 +70,43 @@
             <div class="textBelowSpaceX"></div>
 
             <div class="text-below">
-                 <p>Ya tienes una cuenta?</p> <a href="/inicioSesion">Inicia Sesion</a>
+                <p>¿Ya tienes una cuenta?</p> <a href="/inicioSesion">Inicia Sesión</a>
             </div>
-
-            
-
 
         </div>
 
-
         <div class="right-side">
-
             <img class="RightIMG" src="img/PCSocial.png" alt="">
-
             <div class="Circle1"></div>
             <div class="Circle2"></div>
-
-            <p>¡Conectate con toda la comunidad!</p>
-
+            <p>¡Conéctate con toda la comunidad!</p>
         </div>
 
     </div>
-<script src="js/formulario_script.js"></script>
-</body>
 
-</html>
+    <script src="js/formulario_script.js"></script>
 
+    <script>
+    const formLogin = document.querySelector('form[name="registro"]');
 
-<script>
-  const formLogin = document.querySelector('form[name="registro"]');
+    formLogin.addEventListener('submit', function (e) {
+        e.preventDefault(); // Siempre prevenir comportamiento por defecto
 
-formLogin.addEventListener('submit', function(e) {
-  if (formLogin.checkValidity()) {
-    e.preventDefault();
-    window.location.href = '/';
-  }
-});
+        if (formLogin.checkValidity()) {
+            // Si es válido, redirige
+            window.location.href = '/';
+        } else {
+            // Si no es válido, que el navegador muestre los errores
+            formLogin.reportValidity();
+        }
+    });
+
+    function togglePassword(button) {
+        const input = button.parentElement.querySelector('input[type="password"], input[type="text"]');
+        input.type = input.type === 'password' ? 'text' : 'password';
+    }
 </script>
+
+
+</body>
+</html>
