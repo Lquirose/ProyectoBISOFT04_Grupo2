@@ -25,6 +25,7 @@ body {
     height: auto;
     width: 11vw;
     justify-self: center;
+    margin-bottom: min(-3vw,-3vh);
 }
 
 /* !!!!!! Contenedor de la mitad izquierda !!!!!! */
@@ -45,6 +46,7 @@ body {
     justify-self: center;
     margin-right: 10%;
     font-size: .9vw;
+    margin-bottom:min(-1vw,-1vh);
 }
 
 .leftP1{
@@ -65,6 +67,7 @@ body {
     display: flex;
     align-items: center;
     transition: transform 0.3s ease;
+    margin-bottom:min(-1vw,-1vh);
 }
 
 .GoogleButton:hover{
@@ -183,6 +186,7 @@ body {
     transition: 0.5s;
     border-radius: 0.1vw;
     font-size: 1vw;
+    margin-bottom:min(-1vw,-1vh);
 }
 
 .submit:hover{
@@ -274,7 +278,28 @@ body {
     font-size: 1.07vw;
 }
 
+.textBelowSpace{
+    
+    height: min(1vw,1vh);
+    width: auto;
+}
 
+.textBelowSpaceX{
+    
+    height: min(1vw,1vh);
+    width: auto;
+}
+
+.passViewButton{
+    position: absolute;
+    height: min(3vw,3vh);
+    width: min(2vw,2vw);
+    top: min(2.5vw,2.5vh);
+}
+
+.passViewButton img{
+    
+}
 
 /* !!!!!! Contenedor de la mitad derecha !!!!!! */
 
