@@ -26,6 +26,7 @@ body {
     width: 11vw;
     justify-self: center;
     margin-bottom: min(-3vw,-3vh);
+    margin-top: min(-1vh,-1vw);
 }
 
 /* !!!!!! Contenedor de la mitad izquierda !!!!!! */
