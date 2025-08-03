@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/panelAdmin.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,14 +17,16 @@
 <body> 
 
     <div class="header">
-        <input type="checkbox" id="check"> 
         <label for="check" class="checkbtn">
-            <i class='bx bx-menu'></i> 
+            <i class='bx bx-menu'></i>
         </label>
     </div>
 
-    
-    <aside class="sidebar">
+    <input type="checkbox" id="check" style="display: none;">
+
+    <div class="page-layout-container">
+
+        <aside class="sidebar">
             <ul class="sidebar-list">
                 <li class="sidebar-element"> 
                     <div class="sidebar-icon">
@@ -85,8 +86,6 @@
                 </li>
             </ul>
         </aside>
-
-    <div class="page-layout-container">
 
         <div class="content-area-wrapper">
             <div class="main-content-panel-admin">
