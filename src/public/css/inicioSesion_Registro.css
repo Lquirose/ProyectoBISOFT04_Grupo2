@@ -34,7 +34,15 @@ body {
 .left-side{
     width: 55%;
     height: 100%;
+    overflow: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
+
+.left-side::-webkit-scrollbar{
+    display: none; 
+}
+
 
 .left-side h1{
     justify-self: center;
@@ -135,7 +143,7 @@ body {
 .formRegistro div input{
     margin-top: .5vw ;
     margin-bottom:.5vw ;
-    height: 2.3vw;
+    height: 2vw;
     width: 20vw;
     border: 0.15vw solid #999999;
     padding-left: 3vw;
@@ -158,23 +166,63 @@ body {
 
 .emailIMG{
     width: 1.9vw;
-    top:.87vw ;
+    top:.8vw ;
     left:.47vw ;
     filter: opacity(0.5)
 }
 
 .lockIMG{
-    width: 2vw;
+    width: 1.9vw;
     top:.75vw ;
     left:.35vw ;
     filter: opacity(0.4)
 }
 
+.idIMG{
+    width: 2vw;
+    top:.8vw ;
+    left:.37vw ;
+    filter: opacity(0.5)
+}
+
+.nameIMG{
+    width: 2vw;
+    top:.8vw ;
+    left:.37vw ;
+    filter: opacity(0.5)
+}
+
+.cellphoneIMG{
+    width: 1.7vw;
+    top:.8vw ;
+    left:.37vw ;
+    filter: opacity(0.5)
+}
+
+.dateIMG{
+    width: 1.7vw;
+    top:.8vw;
+    left:.37vw ;
+    filter: opacity(0.5)
+}
+
 .formRegistro div input::placeholder{
-    font-size: 1.2vw;
+    font-size: 1.14vw;
     position: absolute;
     left: 3.1vw;
     top: .37vw;
+}
+
+input[type="date"]::placeholder {
+    filter: opacity(0.5);
+}
+
+input[type="date"]::-webkit-datetime-edit{
+    filter: opacity(0.5);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator{
+    filter: opacity(0.5);
 }
 
 .submit{
@@ -203,6 +251,7 @@ body {
     flex-direction: row;
     justify-content: center;
     margin-top: 1.3vw;
+    margin-bottom: min(10vw,10vh);
 }
 
 .text-below p{
