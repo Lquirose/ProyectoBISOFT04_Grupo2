@@ -32,12 +32,17 @@ body {
 }
 
 .checkbtn {
-    font-size: 30px;
+    font-size: 28px;
     cursor: pointer;
-    color: #ffffff;
+    color: #0056ff; /* azul como en publicaciones */
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: transparent;
+    border: none;
+    padding: 0;
     display: none;
-    z-index: 1001;
-    margin-right: 20px; 
 }
 
 .page-layout-container {
@@ -63,37 +68,7 @@ body {
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.sidebar-element {
-    padding: .8rem 1.3rem;
-    border-radius: 3px;
-    display: grid;
-    align-items: center;
-    grid-template-columns: 40px 1fr; 
-    transition: grid-template-columns .4s;
-}
 
-.sidebar-element:hover {
-    grid-template-columns: 40px 1fr; 
-    box-shadow: 2px 2px 5px #ffffff;
-    cursor: pointer;
-}
-
-.sidebar-icon {
-    width: 100%;
-    overflow: hidden;
-    justify-self: center;
-    color: navy;
-}
-
-.sidebar-text {
-    white-space: normal;
-    overflow: visible;
-}
-
-.sidebar-text p a {
-    color: navy;
-    text-decoration: none;
-}
 
 /* --- Contenido Principal --- */
 .content-area-wrapper {
@@ -213,19 +188,21 @@ body {
     }
 
     .sidebar {
-        position: absolute;
-        top: 0; 
-        left: 0; 
-        width: var(--sidebar-width-mobile-expanded);
-        height: 100%; 
-        margin-right: 0;
-        border-radius: 0 8px 8px 0;
+        position: fixed;
+        top: var(--header-height-mobile);
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - var(--header-height-mobile));
+        margin: 0;
+        border-radius: 0 0 8px 0;
         padding: 2rem 1rem;
         overflow-y: auto;
         flex-shrink: 0;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 900; 
-        transform: translateX(-100%); 
+        box-shadow: none;
+        background-color: #e6efff;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1050;
     }
 
     .sidebar-element {
@@ -254,18 +231,18 @@ body {
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
-        height: 100%;
+        width: 100vw;
+        height: 100vh;
         background-color: rgba(0, 0, 0, 0.5);
-        z-index: 899;
-        display: none;
+        z-index: 1040;
         opacity: 0;
+        visibility: hidden;
         transition: opacity 0.3s ease;
     }
     
     #check:checked ~ .overlay {
-        display: block;
         opacity: 1;
+        visibility: visible;
     }
 }
 
@@ -290,4 +267,59 @@ body {
     .panel-welcome-text {
         font-size: 13px;
     }
+}
+
+/*
+Lo pedi a gemini, porque no entendía como hacer que se expandiera jaja
+*/
+
+/* Ajustes para expandir y centrar el contenido */
+
+/* Primero, hacemos que el wrapper del contenido ocupe todo el espacio sobrante */
+.content-area-wrapper {
+    flex-grow: 1; /* Esta es la clave para que se extienda */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 30px; /* Añade un padding para separar del borde */
+}
+
+/* Luego, hacemos que el contenido principal se centre dentro del wrapper */
+.transport-main, .transport-usermain {
+    flex-grow: 1;
+    display: flex; /* Usamos Flexbox para centrar todo el contenido */
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    width: 100%;
+}
+
+/* Y limitamos el ancho de cada sección para que no se estire */
+.page-title {
+    background-color: #e6efff;
+    padding: 40px;
+    width: 100%; /* Asegura que el fondo ocupe el 100% del padre */
+    text-align: center;
+}
+
+.transport-form {
+   padding: 32px;
+   width: 100%;
+   /* Usamos un contenedor interno para limitar el ancho y centrarlo */
+   max-width: 800px; /* Define el ancho máximo del formulario */
+   margin: 0 auto; /* Centra el formulario */
+}
+
+.form-body {
+    grid-template-columns: 2fr 2fr;
+    gap: 24px;
+    width: 100%;
+    margin: 40px auto;
+}
+
+.popular-routes {
+    padding: 0;
+    width: 100%;
+    /* Limita el ancho del contenedor de rutas y lo centra */
+    max-width: 800px;
+    margin: 0 auto 100px auto;
 }

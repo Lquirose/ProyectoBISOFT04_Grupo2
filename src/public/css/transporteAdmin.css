@@ -2,6 +2,45 @@
 transporteadmin
 -----------------------------------------------*/
 
+
+/*NUEVO PARA QUE SE EXTIENDA*/
+.page-layout-container {
+    display: flex;
+    min-height: 100vh;   /* para que ocupe toda la altura */
+    flex-wrap: nowrap;
+    background-color: #f9f9f9; /* mismo fondo */
+}
+
+.sidebar {
+    width: 280px; /* o el ancho que uses en tus otros layouts */
+    background-color: #e6efff; /* el mismo color que .page-title para mantener coherencia */
+    padding: 1.5rem 1rem;
+    box-sizing: border-box;
+    min-height: 100vh; /* que abarque toda la altura */
+    overflow-y:
+     auto; /* por si el contenido del sidebar es largo */
+}
+
+.transport-main {
+    flex-grow: 1;
+    padding: 2rem 3rem;
+    box-sizing: border-box;
+    min-height: 100vh;
+    background-color: #f9f9f9; 
+}
+
+/* título esté centrado */
+.page-title h1 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.checkbtn {
+  display: none;
+}
+
+/*ACÁ TERMINA LO NUEVO*/
+
 .transport-main, .transport-usermain {
     font-family: "poppins", sans-serif;
     text-align: center;
@@ -11,6 +50,11 @@ transporteadmin
 .page-title {
     background-color: #e6efff;
     padding: 40px;
+}
+
+.page-title h1 {
+    text-align: center;
+    margin: 0 auto;
 }
 
 .transport-form {
@@ -75,22 +119,16 @@ transporteadmin
    /*box-shadow: 0px 4px 6px rgba(0,0,0,0.1);*/
    cursor: pointer;
    margin-bottom: 30px;;
- 
-   
-    
+
 
 }
-
-
 
 
 .formbutton-white {
    background-color: white;
    color:black;
    transition: 0.3s;
-   
 
-   
 }
 
 .formbutton-black {
@@ -103,8 +141,6 @@ transporteadmin
 .formbutton-white:hover, .formbutton-black:hover  {
     transform: scale(1.03);
 }
-
-    
 
 .popular-routes {
     padding-bottom: 100px;
@@ -163,6 +199,18 @@ transporteadmin
 }
 
 @media (max-width: 768px) {
+
+    .checkbtn {
+    display: block;
+    position: fixed; /* o absolute según diseño */
+    top: 10px; /* ajusta la posición */
+    left: 10px; /* ajusta la posición */
+    font-size: 28px;
+    cursor: pointer;
+    color: #000; /* o el color que prefieras */
+    z-index: 1001; /* para que esté sobre otros elementos */
+  }
+
     .form-body {
         grid-template-columns: 1fr;
         
@@ -189,13 +237,9 @@ transporteadmin
   max-width: 100%;
 }
 
-
-
 .transport-form
 .page-title {
     padding: 20px;
-    
-
 }
 
 }

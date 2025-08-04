@@ -1,3 +1,6 @@
+:root {
+  --sidebar-width-mobile-expanded: 250px; /* o el valor que desees */
+}
 
 .page-title {
     padding: 40px;
@@ -27,11 +30,9 @@
 .sidebar-element{
   padding: .8rem 1.3rem;
   border-radius: 3px;
-  
+  grid-template-columns: 40px auto; /* <- cambio aquí */
   display: grid;
   align-items: center;
-  grid-template-columns: 40px 0fr;
-
   transition: grid-template-columns .4s;
 }
 
@@ -47,11 +48,199 @@
   color: navy;
 }
 
-.sidebar-text-hide{
+.sidebar-text{
+  white-space: nowrap;
+  text-overflow: ellipsis;
   overflow: hidden;
-  text-wrap: nowrap;
+  flex-shrink: 0;
 }
 
-.sidebar-text-hide p a{
+.sidebar-text p a{
   color: navy;
+  text-decoration:none;
 }
+
+.sidebar-text p a:visited {
+  color: navy;
+  text-decoration: none;
+}
+
+.sidebar-text p a:hover {
+  color: navy; /* o cualquier otro color si quieres efecto al pasar el cursor */
+  text-decoration: none;
+}
+
+.sidebar {
+    font-family: "poppins", sans-serif;
+    background-color: #e6efff;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    width: var(--sidebar-width-desktop); 
+    margin-right: 20px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.sidebar-element {
+    padding: .8rem 1.3rem;
+    border-radius: 3px;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 40px 1fr; 
+    transition: grid-template-columns .4s;
+}
+
+.sidebar-element:hover {
+    grid-template-columns: 40px 1fr; 
+    box-shadow: 2px 2px 5px #ffffff;
+    cursor: pointer;
+}
+
+.sidebar-icon {
+    width: 100%;
+    overflow: hidden;
+    justify-self: center;
+    color: navy;
+}
+
+.sidebar-text {
+    white-space: normal;
+    overflow: visible;
+}
+
+.sidebar-text p a {
+    color: navy;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 901;
+    position: relative;
+    padding: 1rem;
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width-mobile-expanded);
+    height: 100%;
+    border-radius: 0 8px 8px 0;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    background-color: #e6efff;
+  }
+
+  .sidebar-element {
+    grid-template-columns: 40px 1fr;
+    text-align: left;
+    padding: 0.8rem 1.3rem;
+  }
+
+  .sidebar-text {
+    opacity: 1;
+    width: auto;
+    display: block;
+  }
+
+  /* Mostrar el sidebar al marcar el checkbox */
+  #check:checked ~ .page-layout-container .sidebar {
+    transform: translateX(0);
+  }
+
+  /* Overlay oscuro */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 899;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #check:checked ~ .overlay {
+    display: block;
+    opacity: 1;
+  }
+}
+@media (max-width: 768px) {
+  .checkbtn {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 901;
+    position: relative;
+    padding: 1rem;
+    color: #0056ff;
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width-mobile-expanded);
+    height: 100%;
+    border-radius: 0 8px 8px 0;
+    padding: 2rem 1rem;
+    overflow-y: auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 900;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    background-color: #e6efff;
+  }
+
+  .sidebar-element {
+    grid-template-columns: 40px 1fr;
+    text-align: left;
+    padding: 0.8rem 1.3rem;
+  }
+
+  .sidebar-text {
+    opacity: 1;
+    width: auto;
+    display: block;
+  }
+
+  /* Mostrar el sidebar al marcar el checkbox */
+  #check:checked ~ .page-layout-container .sidebar {
+    transform: translateX(0);
+  }
+
+  /* Overlay oscuro */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 899;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  #check:checked ~ .overlay {
+    display: block;
+    opacity: 1;
+  }
+}
+
+

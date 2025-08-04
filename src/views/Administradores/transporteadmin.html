@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/transporteAdmin.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/panelAdmin.css">
     <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,13 +18,15 @@
 </head>
 <body> 
 
-    <input type="checkbox" id="check" style="display: none;">
+    <div class="mobile-header"></div>
 
-    <div class="header">
-        <label for="check" class="checkbtn">
-            <i class='bx bx-menu'></i>
-        </label>
-    </div>
+    <input type="checkbox" id="check" style="display: none;">
+        <div>
+            <label for="check" class="checkbtn">
+                <i class='bx bx-menu'></i>
+            </label>
+        </div>
+    <label for="check" class="overlay"></label>
 
      <div class="page-layout-container">
         <aside class="sidebar">

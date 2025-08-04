@@ -1,14 +1,10 @@
-
-:root {
-    --header-height-desktop: 70px;
-    --header-height-mobile: 80px;
-}
+/* CSS publicaciones con añadidos para sidebar responsive y botón hamburguesa */
 
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
 }
 
 body {
@@ -22,21 +18,121 @@ body {
 .page-layout-container {
     display: flex;
     flex: 1;
+    height: auto;
+    margin-top: 0;
     width: 100%;
+    padding: 0 20px;
     max-width: 1400px;
-    margin-top: var(--header-height-desktop);
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 20px;
-    padding: 0 20px;
-    box-sizing: border-box;
 }
 
+/* --- Añadidos para sidebar --- */
 .sidebar {
-    width: 250px;
+    font-family: "poppins", sans-serif;
+    background-color: #e6efff;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    width: 280px; /* ancho fijo desktop */
     margin-right: 20px;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    transition: transform 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
 }
+
+/* Botón hamburguesa */
+.checkbtn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 901;
+    position: relative;
+    padding: 1rem;
+    color: #0056ff;
+}
+
+/* Checkbox oculto */
+#check {
+    display: none;
+}
+
+/* Overlay para el sidebar */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 899;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar overlay cuando sidebar está abierto */
+#check:checked ~ .overlay {
+    display: block;
+    opacity: 1;
+}
+
+/* Mostrar sidebar en desktop */
+@media (min-width: 769px) {
+    .checkbtn,
+    #check,
+    .overlay {
+        display: none !important;
+    }
+    .page-layout-container {
+        flex-direction: row;
+    }
+    .sidebar {
+        transform: translateX(0) !important;
+    }
+}
+
+/* Responsive para móvil */
+@media (max-width: 768px) {
+    .checkbtn {
+        display: block;
+    }
+
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px; /* ancho sidebar móvil */
+        height: 100vh;
+        border-radius: 0 8px 8px 0;
+        padding: 2rem 1rem;
+        overflow-y: auto;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        z-index: 900;
+        background-color: #e6efff;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    /* Mostrar sidebar al activar checkbox */
+    #check:checked ~ .page-layout-container .sidebar {
+        transform: translateX(0);
+    }
+
+    /* Ajustes para el layout principal cuando sidebar está abierto (opcional, según diseño) */
+    .page-layout-container {
+        position: relative;
+        padding: 0;
+        max-width: 100%;
+        margin: 0;
+        flex-direction: column;
+    }
+}
+
+/* El resto de estilos de publicaciones sigue igual, sin cambios */
 
 .content-area-wrapper {
     flex-grow: 1;
@@ -106,10 +202,6 @@ body {
 
 .section-content-wrapper {
     grid-column: 2 / 3;
-}
-
-.side-info-cards {
-
 }
 
 .info-card {
@@ -306,7 +398,7 @@ body {
 
 @media (max-width: 768px) {
     .page-layout-container {
-        margin-top: var(--header-height-mobile);
+        margin-top: 0;
         padding: 0 10px;
     }
 }
