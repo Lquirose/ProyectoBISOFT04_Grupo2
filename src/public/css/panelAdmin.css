@@ -3,7 +3,7 @@
 :root {
     --header-height-desktop: 70px;
     --header-height-mobile: 60px;
-    --sidebar-width-desktop: 250px;
+    --sidebar-width-desktop: 280px;
     --sidebar-width-mobile-expanded: 250px; 
 }
 
@@ -24,19 +24,7 @@ body {
 }
 
 .header {
-    background-color:#0056ff;
-    padding: 0 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed; 
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start; 
-    height: var(--header-height-desktop);
-    box-sizing: border-box;
+    padding: 0;
 }
 
 #check {
@@ -56,12 +44,7 @@ body {
     display: flex;
     flex: 1;
     width: 100%;
-    max-width: 1400px;
-    margin-top: var(--header-height-desktop); 
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
-    padding: 0 20px;
+    padding: 0;
     box-sizing: border-box;
 }
 
@@ -76,7 +59,7 @@ body {
     display: flex;
     flex-direction: column;
     height: auto;
-    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease; /* la animación de deslizamiento */
+    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -89,7 +72,7 @@ body {
     transition: grid-template-columns .4s;
 }
 
-.sidebar:hover .sidebar-element{
+.sidebar-element:hover {
     grid-template-columns: 40px 1fr; 
     box-shadow: 2px 2px 5px #ffffff;
     cursor: pointer;
@@ -103,10 +86,8 @@ body {
 }
 
 .sidebar-text {
-    white-space: nowrap;
-    overflow: hidden;
-    transition: width 0.3s ease, opacity 0.3s ease;
-    opacity: 1; /* Visible por defecto en desktop */
+    white-space: normal;
+    overflow: visible;
 }
 
 .sidebar-text p a {
@@ -125,7 +106,7 @@ body {
     flex-direction: column;
     height: auto;
     overflow-y: visible;
-    transition: margin-left 0.3s ease; /* Para desplazar el contenido */
+    transition: margin-left 0.3s ease;
 }
 
 .main-content-panel-admin {
@@ -212,7 +193,6 @@ body {
     }
 }
 
-
 @media (max-width: 768px) {
     .header {
         height: var(--header-height-mobile);
@@ -245,8 +225,6 @@ body {
         flex-shrink: 0;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         z-index: 900; 
-
-        
         transform: translateX(-100%); 
     }
 
@@ -284,6 +262,7 @@ body {
         opacity: 0;
         transition: opacity 0.3s ease;
     }
+    
     #check:checked ~ .overlay {
         display: block;
         opacity: 1;
@@ -295,15 +274,19 @@ body {
         height: var(--header-height-mobile);
         padding: 10px 15px;
     }
+    
     .checkbtn {
         font-size: 28px;
     }
+    
     .panel-welcome-section {
         padding: 15px;
     }
+    
     .panel-welcome-title {
         font-size: 20px;
     }
+    
     .panel-welcome-text {
         font-size: 13px;
     }
