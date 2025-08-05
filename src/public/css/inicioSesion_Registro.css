@@ -233,7 +233,7 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     color: white;
     border: none;
     transition: 0.5s;
-    border-radius: 0.1vw;
+    border-radius: 0.2vw;
     font-size: 1.1vw;
     margin-bottom:min(-1vw,-1vh);
 }
@@ -356,6 +356,17 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     right: min(-.06vh,-.06vw);
     cursor: pointer;
     filter: opacity(0.7)
+}
+
+.SpaceSpace{
+    
+    height: 3vh;
+    width: auto;
+}
+
+.SpaceSpaceX{
+    height: 7vh;
+    width: auto;
 }
 
 /* !!!!!! Contenedor de la mitad derecha !!!!!! */
