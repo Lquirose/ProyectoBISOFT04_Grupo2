@@ -4,21 +4,22 @@ transporteadmin
 
 
 /*NUEVO PARA QUE SE EXTIENDA*/
-.page-layout-container {
-    display: flex;
-    min-height: 100vh;   /* para que ocupe toda la altura */
-    flex-wrap: nowrap;
-    background-color: #f9f9f9; /* mismo fondo */
+body {
+  background-color: #f0f2f5; /* Gris azulado como en la imagen */
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-.sidebar {
-    width: 280px; /* o el ancho que uses en tus otros layouts */
-    background-color: #e6efff; /* el mismo color que .page-title para mantener coherencia */
-    padding: 1.5rem 1rem;
+.page-layout-container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding: 0;
     box-sizing: border-box;
-    min-height: 100vh; /* que abarque toda la altura */
-    overflow-y:
-     auto; /* por si el contenido del sidebar es largo */
+    margin-left: 0;
+    margin-top: 0;
+    padding: 0 20px;
 }
 
 .transport-main {
@@ -26,7 +27,6 @@ transporteadmin
     padding: 2rem 3rem;
     box-sizing: border-box;
     min-height: 100vh;
-    background-color: #f9f9f9; 
 }
 
 /* título esté centrado */
@@ -120,9 +120,7 @@ transporteadmin
    cursor: pointer;
    margin-bottom: 30px;;
 
-
 }
-
 
 .formbutton-white {
    background-color: white;
@@ -202,13 +200,13 @@ transporteadmin
 
     .checkbtn {
     display: block;
-    position: fixed; /* o absolute según diseño */
-    top: 10px; /* ajusta la posición */
-    left: 10px; /* ajusta la posición */
+    position: fixed; 
+    top: 10px; 
+    left: 10px; 
     font-size: 28px;
     cursor: pointer;
-    color: #000; /* o el color que prefieras */
-    z-index: 1001; /* para que esté sobre otros elementos */
+    color: #000; 
+    z-index: 1001; 
   }
 
     .form-body {

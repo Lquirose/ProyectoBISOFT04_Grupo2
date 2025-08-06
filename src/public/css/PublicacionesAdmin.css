@@ -27,22 +27,6 @@ body {
     margin-right: auto;
 }
 
-/* --- Añadidos para sidebar --- */
-.sidebar {
-    font-family: "poppins", sans-serif;
-    background-color: #e6efff;
-    border-radius: 10px;
-    padding: 2rem 1rem;
-    width: 280px; /* ancho fijo desktop */
-    margin-right: 20px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    transition: transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: relative;
-}
 
 /* Botón hamburguesa */
 .checkbtn {
@@ -90,36 +74,12 @@ body {
     .page-layout-container {
         flex-direction: row;
     }
-    .sidebar {
-        transform: translateX(0) !important;
-    }
 }
 
-/* Responsive para móvil */
+/* Responsive */
 @media (max-width: 768px) {
     .checkbtn {
         display: block;
-    }
-
-    .sidebar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 250px; /* ancho sidebar móvil */
-        height: 100vh;
-        border-radius: 0 8px 8px 0;
-        padding: 2rem 1rem;
-        overflow-y: auto;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        z-index: 900;
-        background-color: #e6efff;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-    }
-
-    /* Mostrar sidebar al activar checkbox */
-    #check:checked ~ .page-layout-container .sidebar {
-        transform: translateX(0);
     }
 
     /* Ajustes para el layout principal cuando sidebar está abierto (opcional, según diseño) */
@@ -131,8 +91,6 @@ body {
         flex-direction: column;
     }
 }
-
-/* El resto de estilos de publicaciones sigue igual, sin cambios */
 
 .content-area-wrapper {
     flex-grow: 1;
@@ -355,12 +313,6 @@ body {
         flex-direction: column;
         padding: 0 10px;
         margin-top: 20px;
-    }
-
-    .sidebar {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 20px;
     }
 
     .content-area-wrapper {
