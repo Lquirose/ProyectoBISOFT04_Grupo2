@@ -6,11 +6,13 @@ const userSchema = new mongoose.Schema({
     usuario: {
         type: String,
         required: true,
+        unique: true,
         trim: true
     },
     Identification: {
         type: String,
         required: true,
+        unique: true,
         trim: true
     },
     nombre: {

@@ -272,10 +272,16 @@ app.post('/registroUsuario', async (req, res) => {
 });
 
 app.post('/LoginSite', async (req, res) => {
-  const { email, password } = req.body;
+  const { usuario, email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ 
+      $or: [
+        {usuario:usuario},
+        {email:email}
+      ]
+      
+    });
 
     if (!user) {
       return res.render('General/inicioSesion', { error: 'Email no registrado' });
