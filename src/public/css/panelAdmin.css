@@ -51,24 +51,10 @@ body {
     width: 100%;
     padding: 0;
     box-sizing: border-box;
-}
-
-.sidebar {
-    font-family: "poppins", sans-serif;
-    background-color: #e6efff;
-    border-radius: 10px;
-    padding: 2rem 1rem;
-    width: var(--sidebar-width-desktop); 
-    margin-right: 20px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    transition: width 0.3s ease, padding 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-
+    margin-left: 0px;  /* Alineado exacto con sidebar */
+    margin-top: 0;   /* Altura para header fijo */
+    padding: 0 20px;     /* Separación lateral del contenido */
+    }
 
 /* --- Contenido Principal --- */
 .content-area-wrapper {
@@ -187,39 +173,6 @@ body {
         position: relative; 
     }
 
-    .sidebar {
-        position: fixed;
-        top: var(--header-height-mobile);
-        left: 0;
-        width: 100vw;
-        height: calc(100vh - var(--header-height-mobile));
-        margin: 0;
-        border-radius: 0 0 8px 0;
-        padding: 2rem 1rem;
-        overflow-y: auto;
-        flex-shrink: 0;
-        box-shadow: none;
-        background-color: #e6efff;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        z-index: 1050;
-    }
-
-    .sidebar-element {
-        grid-template-columns: 40px 1fr; 
-        text-align: left;
-        padding: .8rem 1.3rem;
-    }
-
-    .sidebar-text {
-        opacity: 1; 
-        width: auto;
-        display: block; 
-    }
-    
-    #check:checked ~ .page-layout-container .sidebar {
-        transform: translateX(0); 
-    }
     
     .content-area-wrapper {
         margin-left: 0; 
@@ -227,19 +180,6 @@ body {
         transition: none; 
     }
 
-    .overlay {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: rgba(0, 0, 0, 0.5);
-        z-index: 1040;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease;
-    }
-    
     #check:checked ~ .overlay {
         opacity: 1;
         visibility: visible;

@@ -1,5 +1,5 @@
 :root {
-  --sidebar-width-mobile-expanded: 250px; /* o el valor que desees */
+  --sidebar-width-mobile-expanded: 300px; /* o el valor que desees */
 }
 
 .page-title {
@@ -77,6 +77,7 @@
     padding: 2rem 1rem;
     width: var(--sidebar-width-desktop); 
     margin-right: 20px;
+    margin-left: 0;
     flex-shrink: 0;
     display: flex;
     flex-direction: column;
@@ -128,19 +129,17 @@
   }
 
   .sidebar {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    width: var(--sidebar-width-mobile-expanded);
+    width: 50vw;
     height: 100%;
-    border-radius: 0 8px 8px 0;
     padding: 2rem 1rem;
-    overflow-y: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 900;
+    z-index: 1000;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
     background-color: #e6efff;
+    overflow-y: auto;
   }
 
   .sidebar-element {
@@ -179,67 +178,19 @@
     opacity: 1;
   }
 }
-@media (max-width: 768px) {
-  .checkbtn {
-    display: block;
-    font-size: 28px;
-    cursor: pointer;
-    z-index: 901;
-    position: relative;
-    padding: 1rem;
-    color: #0056ff;
-  }
 
+@media (min-width: 769px) {
   .sidebar {
-    position: absolute;
+    position: relative; /* evita que se mueva con el contenido */
     top: 0;
     left: 0;
-    width: var(--sidebar-width-mobile-expanded);
-    height: 100%;
-    border-radius: 0 8px 8px 0;
-    padding: 2rem 1rem;
-    overflow-y: auto;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    z-index: 900;
-    transform: translateX(-100%);
-    transition: transform 0.3s ease;
+    width: 280px;
+    height: auto;
     background-color: #e6efff;
-  }
-
-  .sidebar-element {
-    grid-template-columns: 40px 1fr;
-    text-align: left;
-    padding: 0.8rem 1.3rem;
-  }
-
-  .sidebar-text {
-    opacity: 1;
-    width: auto;
-    display: block;
-  }
-
-  /* Mostrar el sidebar al marcar el checkbox */
-  #check:checked ~ .page-layout-container .sidebar {
-    transform: translateX(0);
-  }
-
-  /* Overlay oscuro */
-  .overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 899;
-    display: none;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  #check:checked ~ .overlay {
-    display: block;
-    opacity: 1;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 1000;
+    border-radius: 0 8px 8px 0;
   }
 }
 

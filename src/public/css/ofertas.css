@@ -1,285 +1,237 @@
-main {
-    font-family: "poppins", sans-serif;
-    text-align: center;
-    background-color: #f9f9f9;
-}
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
 
-.top-blue-section {
-    background-color: rgba(40, 101, 255, 0.1) ;
-    padding-top: 30px;
-}
+      body {
+        line-height: 1.6;
+      }
 
-.top-ofertas-div {
-    padding-bottom: 30px;
-    justify-content: center;
-} 
+      header {
+        background-color: #1e3a8a;
+        color: white;
+        padding: 1rem;
+      }
 
-.ofertas-text {
-    text-align: center;
-}
+      .navbar {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-.ofertas-text h1{
-    font-size: 2.5rem;
-}
+      .logo {
+        max-width: 120px;
+      }
 
-.ofertas-text h5{
-    font-weight: normal;
-    font-size: 0.8rem;
-}
+      nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        gap: 1rem;
+      }
 
-.registro{
-    justify-items: center;
-    margin: 30px;
-}
+      nav ul li {
+        display: flex;
+        align-items: center;
+      }
 
-.registro-contenedor{
-    display: flex;
-    flex-direction: row;
-}
+      nav ul li a {
+        color: white;
+        text-decoration: none;
+      }
 
-.registro-info{
-    text-align: left;
-    margin-right: 70px;
-    padding-top: 65px;
-}
+      .search-container input {
+        padding: 0.3rem;
+        border-radius: 5px;
+        border: none;
+      }
 
-.ofertas-space{
-    padding-top: 30px;
-}
+      .top-blue-section {
+        background-color: #3b82f6;
+        color: white;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
 
-.ofertas-space .registro h1{
+      .registro {
+        padding: 2rem 1rem;
+        background-color: #f9fafb;
+      }
 
-}
+      .registro-contenedor {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        max-width: 800px;
+        margin: auto;
+      }
 
-.ofertas{
-    padding: 40px 16px;
-    text-align: center;
-}
+      .celeste-button{
+        width: 90px; 
+        display:inline-flex;
+        text-size-adjust: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(40, 101, 255, 0.1);
+        color: black;
+        border: none;
+        border-radius: 5px;
+        font-size: small;
+        padding: 5px;
+        margin-bottom: 15px;
+        cursor: pointer;
+      }
 
-.ofertas-card{
-    max-width: 300px;
-    width:100%;
-    display: flex;
-    flex-direction: column;
-    text-align: left;
-    border-radius: 7px;
-    overflow: hidden;
-    border: 1px solid rgba(0, 0, 0, 0.156);
-    transition: transform 0.2s ease;
-    text-decoration: none;
-    color: inherit; 
-}
+      .btn-buscar{
+        width: 90px; 
+        display:inline-flex;
+        text-size-adjust: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: #007BFF;
+        color: #ffffff;
+        border: none;
+        border-radius: 5px;
+        font-size: small;
+        padding: 5px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
 
-.img-wrapper {
-  width: 100%;
-  aspect-ratio: 3 / 2;         
-  background-color: #a9a7a7;   
-  overflow: hidden;
-}
+      .ofertas-space {
+        text-align: center;
+        padding: 2rem 1rem;
+      }
 
-.img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
+      .white-button,
+      .blue-button {
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
 
-.ofertas-links{
-    display: flex;
-    flex-wrap: row;
-    gap: 20px; 
-    justify-content: center;
-}
+      .img-wrapper {
+        width: 100%;
+        aspect-ratio: 3 / 2;         
+        background-color: #a9a7a7;   
+        overflow: hidden;
+      }
 
-.card-content{
-    display:flex;
-    flex-direction: column;
-    text-align: left;
-    margin-left: 15px;
-    margin-bottom: 10px;
-    color: black;
-    font-weight: normal;
-}
+      .img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
 
-.card-content h5{
-    font-weight: normal;
-}
+      .card-content{
+          display:flex;
+          flex-direction: column;
+          text-align: left;
+          margin-left: 15px;
+          margin-bottom: 10px;
+          color: black;
+          font-weight: normal;
+      }
 
-.ofertas-button{
-    text-align: left;
-    padding-top: 30px;
-    padding-bottom: 30px;
-}
+      .card-content h5{
+        font-weight: normal;
+      }
 
-.white-button{
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 70px;
-    padding-right: 70px;
-    background-color:white;
-    color: #007BFF;
-    border: #007BFF 1px solid;
-    border-radius: 5px;
-    cursor: pointer;
-}
+      .white-button{
+        margin-bottom: 10px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 70px;
+        padding-right: 70px;
+        background-color:white;
+        color: #007BFF;
+        border: #007BFF 1px solid;
+        border-radius: 5px;
+        cursor: pointer;
+      }
 
-.blue-buttton{
-    margin-bottom: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 70px;
-    padding-right: 70px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+      .blue-button {
+        background-color: #1e3a8a;
+        color: white;
+      }
 
-.celeste-button{
-    width: 90px; 
-    display:inline-flex;
-    text-size-adjust: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(40, 101, 255, 0.1);
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: small;
-    padding: 5px;
-    margin-bottom: 15px;
-    cursor: pointer;
-}
+      .ofertas {
+        padding: 2rem 1rem;
+        background-color: #f1f5f9;
+      }
 
-.btn-buscar{
-    width: 90px; 
-    display:inline-flex;
-    text-size-adjust: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: #007BFF;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    font-size: small;
-    padding: 5px;
-    margin-top: 10px;
-    cursor: pointer;
-}
+      .ofertas-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: center;
+      }
 
-/* === Estilo para hamburguesa === */
-.menu-toggle {
-  display: none;
-}
+      .ofertas-card {
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        width: 250px;
+        overflow: hidden;
+      }
 
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 10px;
-  color: #000;
-}
+      .ofertas-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+      }
 
-/* Asegurar visibilidad y flexibilidad del menú */
-.menu-content {
-  display: flex;
-  justify-content: center;
-}
+      .card-content {
+        padding: 1rem;
+        text-align: center;
+      }
 
-.menu-item {
-  display: flex;
-  gap: 15px;
-  list-style: none;
-}
+      footer {
+        background-color: #1e3a8a;
+        color: white;
+        padding: 2rem 1rem;
+      }
 
-/* === MEDIA QUERY para dispositivos móviles === */
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
 
-  .menu-content {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    right: 0;
-    background-color: white;
-    padding: 20px 0;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    z-index: 999;
-  }
+      .submenu {
+        display: flex;
+        gap: 1rem;
+      }
 
-  .menu-toggle:checked ~ .menu-content {
-    display: block;
-  }
+      .submenu a {
+        color: white;
+        font-size: 1.5rem;
+      }
 
-  .menu-item {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+      @media (max-width: 768px) {
+        nav ul {
+          flex-direction: column;
+          gap: 0.5rem;
+        }
 
-  .menu-item li a {
-    text-decoration: none;
-    color: #000;
-    padding: 10px;
-    display: block;
-  }
+        .registro-contenedor {
+          padding: 1rem;
+        }
 
-  /* Ajustes al layout general */
-  .registro-contenedor {
-    flex-direction: column;
-    align-items: center;
-  }
+        .ofertas-links {
+          flex-direction: column;
+          align-items: center;
+        }
 
-  .registro-info {
-    text-align: center;
-    margin-right: 0;
-    padding-top: 20px;
-  }
-
-  .ofertas-links {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .ofertas-card {
-    max-width: 90%;
-  }
-
-  .white-button,
-  .blue-buttton {
-    width: 80%;
-    padding: 10px;
-  }
-
-  .celeste-button,
-  .btn-buscar {
-    width: 100%;
-  }
-
-  .top-ofertas-div {
-    padding: 20px;
-  }
-
-  .ofertas-text h1 {
-    font-size: 2rem;
-  }
-
-  .ofertas-text h5 {
-    font-size: 0.9rem;
-  }
-
-  .site-footer .footer-links {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .site-footer .submenu {
-    justify-content: center;
-  }
-}
+        .logo {
+          max-width: 100px;
+        }
+      }

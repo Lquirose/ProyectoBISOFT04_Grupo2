@@ -137,9 +137,7 @@ body {
   cursor: pointer;
   margin-bottom: 30px;;
 
-
 }
-
 
 .formbutton-white {
   background-color: white;
@@ -229,6 +227,16 @@ body {
 
 @media (max-width: 768px) {
 
+    .checkbtn {
+    display: block;
+    position: fixed; 
+    top: 10px; 
+    left: 10px; 
+    font-size: 28px;
+    cursor: pointer;
+    color: #000; 
+    z-index: 1001; 
+  }
 
    .checkbtn {
    display: block;

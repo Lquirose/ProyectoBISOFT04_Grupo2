@@ -1,166 +1,146 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/header.css">
-        <link rel="stylesheet" href="./css/ofertas.css">
-        <link rel="stylesheet" href="./css/footer.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <title>Document</title>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/ofertas.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Ofertas</title>
     </head>
-
-    <body> 
-          <header>
-       <div class = "navbar">
-                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
-                <div class="mobile-nav">
-                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
-                    <label for="responsive-menu" class="hamburger">
-                        <i class='bx bx-menu'></i>
-                    </label>
-                    <div class="menu-content">
-                        <nav>
-                            <div class="menu-item">
-                                <ul>
-                                    <li><a href="/index">Inicio</a></li>
-                                    <li><a href="/publicaciones">Publicaciones</a></li>
-                                    <li><a href="/transporte">Transporte</a></li>
-                                    <li><a href="/ofertas">Oferta</a></li>
-                                    <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
-                                    <li><a href="/panelAdmin">Administración</a></li>
-                                    <li><a href="/perfil">Perfil</a></li>
-                                    <li><a href="/envioReportes">Reportes</a></li>
-                                    <li class="search-container">
-                                        <form action="search">
-                                            <input type="text" name="query" placeholder="buscar">
-                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
-                                            
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
-            </div>      
+  <body>
+    <header>
+      <div class="header-content" >
+                <!--La clase header-content (contenido del header) sirve para alinear el contenido de header con max-width pero que al hacerlo no limite el tamaño de la pantalla (es decir que el viewport tenga un width del 100%)-->
+        <div class="navbar">
+          <div><img class="logo" src="logo/logooficial.png" alt="logo" /></div>
+          <div class="mobile-nav">
+          <div class="menu-content">
+            <nav>
+            <div class="menu-item">
+              <ul>
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="publicaciones.html">Publicaciones</a></li>
+              <li><a href="transporte.html">Transporte</a></li>
+              <li><a href="calendario.html">Calendario</a></li>
+              <li><a href="oferta.html">Oferta</a></li>
+              <li><a href="mapa.html">Mapa</a></li>
+              <li><a href="soporte.html">Soporte</a></li>
+              <li><a href="perfil.html">Perfil</a></li>
+              <li class="search-container">
+                <form action="search">
+                  <input type="text" name="query" placeholder="buscar" />
+                </form>
+              </li>
+              </ul>
+            </div>
+            </nav>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
 
-        <main>
+    <main>
+      <section class="top-blue-section">
+        <div class="top-ofertas-div">
+          <div class="ofertas-text">
+            <h1>Ofertas de la Comunidad</h1>
+            <h5>Descubre promociones activas y apoya los emprendimientos locales</h5>
+          </div>
+        </div>
+      </section>
 
-            <section class="top-blue-section"> 
-                <div class="top-ofertas-div">
-                        <div class="ofertas-text" >
-                            <h1>Ofertas de la Comunidad</h1>
-                            <h5>Descubre promociones activas y apoya los emprendimientos locales</h5>
-                        </div>
-                </div>
-            </section>
+      <section class="registro">
+        <div class="registro-contenedor">
+          <div class="registro-info">
+            <h2>Registro de Emprendimiento</h2>
+            <p>Llena el formulario a continuación:</p>
+          </div>
 
-            <section class="registro">
-                <div class="registro-contenedor">
+          <div class="ofertas-button">
+            <p>Selecciona una categoría</p>
+            <button class="celeste-button">Gastronomía</button>
+            <button class="celeste-button">Servicios</button>
+            <button class="celeste-button">Educación</button>
+            <button class="celeste-button">Tecnología</button>
 
-                    <div class="registro-info">
-                        <h2>Registro de Emprendimiento</h2>
-                        <p>Llena el formulario a continuación:</p>
-                    </div>
+            <form class="formulario-emprendimiento">
+              <label>Buscar por palabra clave</label><br />
+              <input type="text" placeholder="Ingrese su palabra." /><br />
+              <button type="submit" class="btn-buscar">Buscar</button>
+            </form>
+          </div>
+        </div>
+      </section>
 
-                    
-                    <div class="ofertas-button">
-                        <p>Selecciona una categoría</p>
-                        <button class="celeste-button">Gastronomía</button>
-                        <button class="celeste-button">Servicios</button>
-                        <button class="celeste-button">Educación</button>
-                        <button class="celeste-button">Tecnología</button>
+      <hr />
 
-                        <form class="formulario-emprendimiento">
-                            <label>Buscar por palabra clave</label> <br>
-                            <input type="text" placeholder="Ingrese su palabra."/> <br>
-                            <button type="submit" class="btn-buscar">Buscar</button>
-                        </form>
+      <section class="ofertas-space">
+        <h1 class="my-posts-h1">Ofertas activas</h1>
+        <br />
+        <button class="white-button">Contactar</button>
+        <button class="blue-button">Ver más</button>
+      </section>
 
-                    </div>
-                </div>
-            </section>
+      <section class="ofertas">
+        <div class="ofertas-links">
+          <div class="ofertas-card">
+            <a href="oferta1.html">
+              <div class="img-wrapper">
+                <img>    
+              </div>
+              <div class="card-content">
+                <h5>Pizza Gourmet</h5>
+                <p>$15</p>
+              </div>
+            </a>
+          </div>
+          <div class="ofertas-card">
+            <a href="oferta2.html">
+              <div class="img-wrapper">
+                <img>    
+              </div>
+              <div class="card-content">
+                <h5>Limpieza a domicilio</h5>
+                <p>$50</p>
+              </div>
+            </a>
+          </div>
+          <div class="ofertas-card">
+            <a href="oferta3.html">
+              <div class="img-wrapper">
+                <img>    
+              </div>
+              <div class="card-content">
+                <h5>Curso de programación</h5>
+                <p>$100</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
 
-            <hr>
-        
-
-            <section class="ofertas-space"> 
-                <h1 class="my-posts-h1">Ofertas activas</h1>
-                <br>
-                <button class="white-button">Contactar</button>
-                <button class="blue-buttton">Ver más</button>   
-            </section>
-
-           
-            <section class="ofertas">
-                <div>
-                    <div class="ofertas-links">
-                        <div class="ofertas-card">
-                            <a href="oferta1.html">
-                                <div class="img-wrapper">
-                                    <img>    
-                                </div>
-                                <div class="card-content">
-                                    <h5>Pizza Gourmet</h5>
-                                    <p>$15</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="ofertas-card">
-                            <a href="oferta2.html">
-                                <div class="img-wrapper">
-                                    <img>    
-                                </div>
-                                <div class="card-content">
-                                    <h5>Limpieza a domicilio</h5>
-                                    <p>$50</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="ofertas-card">
-                            <a href="oferta3.html">
-                                <div class="img-wrapper">
-                                    <img>    
-                                </div>
-                                <div class="card-content">
-                                    <h5>Curso de programación</h5>
-                                    <p>$100</p>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <!--Se debe de averiguar como hacer los accesos directos de los Emprendedores-->
-            </section>
-
-        
-        </main>
-
-            <footer class="site-footer">
-            <div class="footer-container">
-                <ul class="footer-links">
-                <li>
-                    <a href="mailto:comunidadconectada@gmail.com" class="contact">
-                    Contacto: comunidadconectada@gmail.com
-                    </a>
-                </li>
-                <li>
-                    <ul class="submenu">
-                    <li><a href="#" class="fa fa-facebook"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                    </ul>
-                </li>
-                </ul>
-            </div>
-            </footer>
-
-            </body>
-        </html>
+    <footer class="site-footer">
+      <div class="footer-container">
+      <ul class="footer-links">
+        <li>
+          <a href="mailto:comunidadconectada@gmail.com" class="contact">Contacto: comunidadconectada@gmail.com</a>
+        </li>
+        <li>
+          <ul class="submenu">
+            <li><a href="#" class="fa fa-facebook"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-instagram"></a></li>
+          </ul>
+        </li>
+      </ul>
+      </div>
+    </footer>
+  </body>
+</html>
