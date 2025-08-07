@@ -224,13 +224,26 @@ body {
     line-height: 1.5;
 }
 
-.featured-image-section {
+/*.featured-image-section {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     margin-bottom: 20px;
 }
+
+
+#cardImagen {
+  max-width: 100%;
+  height:100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+
+
 .featured-image-section .image-placeholder {
     background-color: #e0e0e0;
     height: 200px;
@@ -244,12 +257,90 @@ body {
     font-size: 14px;
     text-align: center;
 }
+
+.image-placeholder {
+  width: 100%;
+  max-width: 600px;
+  background-color: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+
+.featured-image-section p {
+    font-size: 13px;
+    color: #888;
+    margin: 0;
+    line-height: 1.4;
+}*/
+
+.featured-image-section {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+}
+
+#cardImagen {
+    width:auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    display: block;
+    margin:auto;
+}
+
+.image-placeholder {
+  background-color: #e0e0e0;
+  min-height: 200px;       /* Mantiene altura mínima sin forzar recorte */
+  height: auto;            /* Permite que crezca si la imagen lo necesita */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-style: italic;
+  font-size: 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;        /* Evita que la imagen se desborde */
+}
+
+/* Imagen dentro del placeholder */
+.image-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;     /* Mantiene proporción sin recortar */
+  display: block;
+}
+
+
+.image-placeholder .placeholder-text {
+    display: block;
+}
+
+.image-placeholder.has-image .placeholder-text {
+    display: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
 .featured-image-section p {
     font-size: 13px;
     color: #888;
     margin: 0;
     line-height: 1.4;
 }
+
 
 .description-section {
     background-color: #f9f9f9;

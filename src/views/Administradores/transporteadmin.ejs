@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/transporteadmin.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/tablasCrud.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+
+
+    <title>Document</title>
+</head>
+<body> 
+   
+     
+
+   <div class="mobile-header"></div>
+
+
+   <input type="checkbox" id="check" style="display: none;">
+       <div>
+           <label for="check" class="checkbtn">
+               <i class='bx bx-menu'></i>
+           </label>
+       </div>
+   <label for="check" class="overlay"></label>
+
+
+    <div class="page-layout-container">
+       <aside class="sidebar">
+           <ul class="sidebar-list">
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-home' ></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/panelAdmin">Panel Principal</a></p>
+                   </div>
+               </li>
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-mountain-view'></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/publicacionesAdmin">Publicaciones</a></p>
+                   </div>
+               </li>
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-megaphone-alt'></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/ReportesAdmin">Reportes</a></p>
+                   </div>
+               </li>
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-store'></a></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/EmprendimientosAdmin">Emprendimientos</a></p>
+                   </div>
+               </li>
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-price-tag'></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/OfertasAdmin">Ofertas</a></p>
+                   </div>
+               </li>
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-bus'></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/transporteadmin">Transporte</a></p>
+                   </div>
+               </li>
+               <li class="sidebar-element">
+                   <div class="sidebar-icon">
+                       <i class='bx  bx-arrow-right-stroke-square'></i>
+                   </div>
+                   <div class="sidebar-text">
+                       <p><a href="/">Salir del Sistema</a></p>
+                   </div>
+               </li>
+           </ul>
+       </aside>
+
+    <main class="transport-main">
+        <section class="page-title">
+            <h1>Transporte Público</h1>
+        </section>
+         <form action="/addRoutesInformation" method="post" class="form" id="form">
+            <section class="transport-form">
+                <div class="form-title">
+                    <h2>Actualizar Rutas</h2>
+                </div>
+                <div class="form-body">
+                    <div class="transportform-group form-group">
+                        <label class="form-label">Nombre de la ruta</label>
+                        <input type="text" id="routeName" name="routeName" placeholder="Ingrese el nombre de la ruta">
+                        <p class="form-message-error">mensaje</p>
+                    </div>
+
+                    <div class="transportform-group form-group">
+                        <label class="form-label">Salida</label>
+                        <input type="time" id="transportTime" name="transportTime" step="60" placeholder="Ingrese la salida del transporte">
+                        <p class="form-message-error">mensaje</p>
+                    </div>
+
+                    <div class="transportform-group form-group">
+                        <label class="form-label">Destino</label>
+                        <input type="text" id="transportDestination" name="transportDestination" placeholder="Ingrese el destino">
+                        <p class="form-message-error">mensaje</p>
+                    </div>
+
+                    <div class="transportform-group form-group">
+                        <label class="form-label">Frecuencia</label>
+                        <input type="number" id="transportFrecuency" name="transportFrecuency" placeholder="Ingrese la frecuencia (minutos)">
+                        <p class="form-message-error">mensaje</p>
+                    </div>
+
+                    <div class="transportform-group form-group">  
+                        <label class="form-label">Tarifa</label>
+                        <input type="number" id="transportFee" name="transportFee" placeholder="Ingrese la tarifa en colones">
+                        <p class="form-message-error">mensaje</p>
+                    </div>
+                    
+                    <div class="transportform-group form-group">  
+                        <label class="form-label">Duración estimada</label>
+                        <input type="time" id="tripDuration" name="tripDuration" step="60"  placeholder="HH:MM">
+                        <p class="form-message-error">mensaje</p>
+                    </div> 
+
+                </div>
+                <div class="form-button">
+                    <button class="formbutton-white">Cancelar</button>
+                    <button type = submit value="Guardar" "onclick = location.reload()" class= "formbutton-black">Guardar</button>
+                </div>
+            </section>
+        </form>
+        <section>
+            <h2>Rutas registradas</h2>
+            <table class="ruta-table">
+                <thead>
+                    <tr>
+                    <th>Ruta</th>
+                    <th>Hora</th>
+                    <th>Destino</th>
+                    <th>Frecuencia</th>
+                    <th>Tarifa</th>
+                    <th>Duración</th>
+                    <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% rutas.forEach(ruta => { %>
+                        <tr data-id="<%= ruta._id %>">
+                            <td>
+                                <span><%= ruta.routeName %></span>
+                                <input type="text" name="routeName" value="<%= ruta.routeName %>" class="edit-field" hidden>
+                            </td>
+                            <td>
+                                <span><%= ruta.transportTime %></span>
+                                <input type="text" name="transportTime" value="<%= ruta.transportTime %>" class="edit-field" hidden>
+                            </td>
+                            <td>
+                                <span><%= ruta.transportDestination %></span>
+                                <input type="text" name="transportDestination" value="<%= ruta.transportDestination %>" class="edit-field" hidden>
+                            </td>
+                            <td>
+                                <span><%= ruta.transportFrecuency %></span>
+                                <input type="text" name="transportFrecuency" value="<%= ruta.transportFrecuency %>" class="edit-field" hidden>
+                            </td>
+                            <td>
+                                <span><%= ruta.transportFee %></span>
+                                <input type="text" name="transportFee" value="<%= ruta.transportFee %>" class="edit-field" hidden>
+                            </td>
+                            <td>
+                                <span><%= ruta.tripDuration %></span>
+                                <input type="text" name="tripDuration" value="<%= ruta.tripDuration %>" class="edit-field" hidden>
+                            </td>
+
+                            <td class="action-buttons">
+                                <form action="/updateRoute/<%= ruta._id %>" method="POST" class="edit-form">
+                                <button type="button" class="btn-crud btn-editar" onclick="activarEdicion(this)">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button type="submit" class="btn-crud btn-guardar" style="display:none;">
+                                    <i class="fa fa-check"></i>
+                                </button>
+                                <button type="button" onclick="cancelarEdicion(this)" class="btn-crud btn-cancelar" style="display:none;">
+                                    <i class="fa fa-times"></i>
+                                </button>
+
+                                <!-- Inputs ocultos para enviar los datos -->
+                                <input type="hidden" name="routeName">
+                                <input type="hidden" name="transportTime">
+                                <input type="hidden" name="transportDestination">
+                                <input type="hidden" name="transportFrecuency">
+                                <input type="hidden" name="transportFee">
+                                <input type="hidden" name="tripDuration">
+                                </form>
+
+                                <form action="/deleteRoute/<%= ruta._id %>" method="POST" class="delete-form" onsubmit="return confirmarEliminacion()">
+                                <button type="submit" class="btn-crud btn-eliminar">
+                                    <i class="fa fa-trash"></i>
+                                </button>
+                                </form>
+                            </td>
+                            </tr>
+
+                    <% }) %>
+                </tbody>
+            </table>
+
+            
+        </section>
+         
+    </main>
+</div>
+  
+<script src="js/formulario_script.js"></script>
+<script src="/js/tablasCrud.js"></script>
+<footer class="site-footer">
+        <div class="footer-container">
+    <ul class="footer-links">
+      <li>
+        <a href="mailto:comunidadconectada@gmail.com" class="contact">
+          Contacto: comunidadconectada@gmail.com
+        </a>
+      </li>
+      <li>
+        <ul class="submenu">
+          <li><a href="#" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="#" class="fa fa-instagram"></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</footer>
+</body>
+</html>
+  

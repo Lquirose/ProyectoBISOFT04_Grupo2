@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/inicioSesion_Registro.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&display=swap" rel="stylesheet">
+    <title>Iniciar sesion</title>
+</head>
+
+<body>
+
+    <div class="all_container">
+
+        <div class="left-side">
+
+            <img class="logo" src="img/logoOficialLetrasNegras.png" alt="">
+            <h1>¿Ya tienes una cuenta?</h1>
+            <p class="leftP1">¡Bienvenido! Inicia sesión con:</p>
+
+
+
+
+            <form class="formRegistro" action="/LoginSite" method="post" id="form" class="login-form" name="InicioSesion">
+
+                <div class="form-group">
+                    <img class="emailIMG" src="img/email.png" alt="">
+                    <input class="inputEmail" type="email" placeholder="Email" id="email" name="email">
+                    <p class="form-message-error"></p>
+                </div>
+
+                <div class="form-group">
+                    <img class="lockIMG" src="img/locked.png" alt="">
+                    <input class="inputPass" type="password" placeholder="Contraseña" id="password" name="password">
+                    <button type="button" class="passViewButton" onclick="togglePassword()">
+                        <img class="passViewButtonIMG" src="img/passwordview.png" alt="">
+                    </button>
+                    <p class="form-message-error"></p>
+                </div>
+
+                <button class="submit" type="submit" value="Log In">Log In</button>
+                <% if (error) { %>
+                    <p class="error"><%= error %></p>
+                <% } %>
+            </form>
+
+            <div class="textBelowSpace"></div>
+
+            <div class="text-below">
+                <p>¿Aún no tienes una cuenta?</p> <a href="/Registro">Regístrate</a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <img class="RightIMG" src="img/PCSocial.png" alt="">
+            <div class="Circle1"></div>
+            <div class="Circle2"></div>
+            <p>¡Conéctate con toda la comunidad!</p>
+        </div>
+
+    </div>
+
+    <script src="js/formulario_script.js"></script>
+
+    <!--<script>
+        const formLogin = document.querySelector('form[name="InicioSesion"]');
+
+        formLogin.addEventListener('submit', function (e) {
+            if (formLogin.checkValidity()) {
+                e.preventDefault();
+                window.location.href = '/';
+            }
+        });
+
+        function togglePassword() {
+            const input = document.getElementById('password');
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    </script>-->
+
+</body>
+</html>

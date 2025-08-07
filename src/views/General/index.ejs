@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+    <title>Document</title>
+</head>
+<body> 
+   <header>
+       <div class = "navbar">
+                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
+                <div class="mobile-nav">
+                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
+                    <label for="responsive-menu" class="hamburger">
+                        <i class='bx bx-menu'></i>
+                    </label>
+                    <div class="menu-content">
+                        <nav>
+                            <div class="menu-item">
+                                <ul>
+                                    <li><a href="/index">Inicio</a></li>
+                                    <li><a href="/publicaciones">Publicaciones</a></li>
+                                    <li><a href="/transporte">Transporte</a></li>
+                                    <li><a href="/ofertas">Oferta</a></li>
+                                    <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
+                                    <li><a href="/panelAdmin">Administración</a></li>
+                                    <li><a href="/perfil">Perfil</a></li>
+                                    <li><a href="/envioReportes">Reportes</a></li>
+                                    <li class="search-container">
+                                        <form action="search">
+                                            <input type="text" name="query" placeholder="buscar">
+                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
+                                            
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>      
+    </header>
+    <main class="home-main">
+        <section class="auth-bar">
+            <p>¿Nuevo en la comunidad?</p> 
+            <button class="indexButton_White"><a class="a_mainIndex_Blue" href="/Registro">Registrarse</a></button>
+            <button class="indexButton_Blue"><a class="a_mainIndex_White" href="/">Iniciar sesion</a></button>
+        </section>
+        <section class="welcomeBanner">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <div class="hero-icon">🚀</div>
+                    <h1>¡Bienvenido a tu Comunidad!</h1>
+                    <p>Apoya a nuestros emprendedores, aprovecha nuestras ofertas</p>
+                    <button class="hero-btn">ir a ofertas</button>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-icon">🚌</div>
+                    <h1>¿Tarde al trabajo?</h1>
+                    <p>Explora las rutas de autobus cerca de ti</p>
+                    <button class="hero-btn">Ver Rutas</button>
+                </div>
+            </div>
+
+ 
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-icon">📋</div>
+                    <h1>Cuéntanos lo que piensas</h1>
+                    <p>Has un repote o deja una sugerencia</p>
+                    <button class="hero-btn">Ir a Reportes</button>
+                </div>
+            </div>
+
+            <div class="carousel-indicators">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </section>
+        <section class="events"> <!--Clase para la sección de eventos*/-->
+            <h1>Últimos eventos</h1>
+            <br>
+            <h5>Descubre todos los eventos disponibles</h5>
+            <br>
+            <button>Ver todos</button>
+            <div class=" event-links">
+                <a href="evento1.html" class="event-card">
+                    <img src="img/logooficial.png" alt="evento3">
+                    <div class="card-content">
+                        <h5>Evento 1</h5>
+                        <p>Descripción del evento 1</p>
+                    </div>
+                </a>
+                <a href="evento2.html" class="event-card">
+                     <img src="img/logooficial.png" alt="evento2">
+                     <div class="card-content">
+                        <h5>Evento 2</h5>
+                        <p>Descripción del evento 2</p>
+                    </div>
+                </a>
+                <a href="evento3.html" class="event-card">
+                     <img src="img/logooficial.png" alt="evento3">
+                      <div class="card-content">
+                        <h5>Evento 3</h5>
+                        <p>Descripción del evento 3</p>
+                    </div>
+                </a>
+            </div>
+            <!--Aquí hay que poner el boton de ver todos-->
+            <!--También se debe de averiguar como hacer para colocar los accesos directos de los eventos-->
+
+        </section>
+        <section class="business"> <!--Clase para la sección de emprendedores-->
+            <h1>Emprendedores de la comunidad</h1>
+            <div class="business-links">
+                <a href="business1.html" class="business-card">
+                    <img src="img/logooficial.png" alt="post1">
+                    <div class="card-content">
+                        <h5>emprendimiento 1</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+                <a href="post2.html" class="business-card">
+                    <img src="img/logooficial.png" alt="post2">
+                    <div class="card-content">
+                        <h5>emprendimiento 2</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+                <a href="post2.html" class="business-card">
+                    <img src="img/logooficial.png" alt="post2">
+                    <div class="card-content">
+                        <h5>emprendimiento 3</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+            </div>
+            <!--Se debe de averiguar como hacer los accesos directos de los Emprendedores-->
+        </section>
+        <section class="recent-post"> <!--Clase para la sección de publicaciones recientes-->
+            <h1>Publicaciones recientes</h1>
+            <h5>Conéctate con lo que otros están diciendo</h5>
+            <div class="post-links">
+                <a href="post1.html" class="post-card">
+                    <img src="img/logooficial.png" alt="post1">
+                    <div class="card-content">
+                        <h5>Publicación 1</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+                <a href="post2.html" class="post-card">
+                    <img src="img/logooficial.png" alt="post2">
+                    <div class="card-content">
+                        <h5>Publicación 2</h5>
+                        <p>Categoría o descripción corta</p>
+                    </div>
+                </a>
+            </div>
+
+            <!--Aqui hay que averiguar como poner accesos directos de los eventos principales del Calendario-->
+        </section>
+    </main>
+   <footer class="site-footer">
+        <div class="footer-container">
+    <ul class="footer-links">
+      <li>
+        <a href="mailto:comunidadconectada@gmail.com" class="contact">
+          Contacto: comunidadconectada@gmail.com
+        </a>
+      </li>
+      <li>
+        <ul class="submenu">
+          <li><a href="#" class="fa fa-facebook"></a></li>
+          <li><a href="#" class="fa fa-twitter"></a></li>
+          <li><a href="#" class="fa fa-instagram"></a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+   </footer>
+   <script src="js/carrusel.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.ruta-table{
+    max-width: 720px;
+    width:100%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);   
+}
+
+.action-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+}
+
+
+.btn-crud {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 6px;
+  margin: 0 4px;
+  color: #333;
+  transition: transform 0.2s ease;
+}
+
+.btn-crud:hover {
+  transform: scale(1.1);
+}
+
+.btn-editar i { color: #007bff; }
+.btn-eliminar i { color: crimson; }
+.btn-guardar i { color: green; }
+.btn-cancelar i { color: gray; }
+
+/* Fila en modo edición */
+tr.editando {
+  background-color: #f0f8ff; /* azul claro */
+  transition: background-color 0.3s ease;
+}
+
+/* Inputs visibles en modo edición */
+tr.editando input {
+  border: 1px solid #007bff;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botones de acción en modo edición */
+tr.editando .btn-crud i {
+  font-size: 16px;
+  opacity: 0.9;
+}

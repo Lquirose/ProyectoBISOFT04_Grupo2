@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de los Emprendimientos - Administración</title>
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/PublicacionesAdmin.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="mobile-header"></div>
+    
+    <input type="checkbox" id="check" style="display: none;">
+        <div>
+            <label for="check" class="checkbtn">
+                <i class='bx bx-menu'></i>
+            </label>
+        </div>
+     <label for="check" class="overlay"></label>
+  
+
+    <div class="page-layout-container">
+        <aside class="sidebar">
+            <ul class="sidebar-list">
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-home' ></i> 
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/panelAdmin">Panel Principal</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-mountain-view'></i>
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/publicacionesAdmin">Publicaciones</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-megaphone-alt'></i>
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/ReportesAdmin">Reportes</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element">
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-store'></a></i>
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/EmprendimientosAdmin">Emprendimientos</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-price-tag'></i>
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/OfertasAdmin">Ofertas</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-bus'></i>
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/transporteadmin">Transporte</a></p>
+                    </div>
+                </li>
+                <li class="sidebar-element"> 
+                    <div class="sidebar-icon">
+                        <i class='bx  bx-arrow-right-stroke-square'></i>
+                    </div>
+                    <div class="sidebar-text">
+                        <p><a href="/">Salir del Sistema</a></p>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="content-area-wrapper">
+            <div class="main-content-container">
+                <div class="header-section">
+                    <h2>Detalles del Emprendimiento</h2>
+                    <p>Información completa sobre el emprendimiento seleccionado.</p>
+                </div>
+
+                <div class="main-content-grid">
+                    <div class="section-title-wrapper">
+                        <h1 class="section-title">Título del Emprendimiento</h1>
+                        <p>Descripción</p>
+                    </div>
+
+                    <div class="section-content-wrapper">
+                        <div class="side-info-cards">
+                            <div class="info-card">
+                                <h4>Nombre del Emprendimiento</h4>
+                                <p id="cardNombre"></p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Autor</h4>
+                                <p id="cardAutor"></p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Fecha de Publicación</h4>
+                                <p id="cardFecha"></p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Categoría</h4>
+                                <p id="cardCategoria"></p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Estado</h4>
+                                <p id="cardEstado">Pendiente</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section-title-wrapper">
+                        <h3 class="section-title">Imagen Destacada</h3>
+                    </div>
+                <div class="section-content-wrapper">
+                    <div class="featured-image-section">
+                        <div class="image-placeholder" id="imagePlaceholder">
+                            <img id="cardImagen" alt="imagen del emprendimiento" class="hidden">
+                            <p class="placeholder-text">Imagen destacada del emprendimiento.</p>
+                        </div>
+                        <p>Esta imagen representa el detalle del emprendimiento. <br> Placeholder si no existe imagen.</p>
+                    </div>
+                </div>
+
+                    <div class="section-title-wrapper">
+                        <h3 class="section-title">Descripción</h3>
+                    </div>
+                    <div class="section-content-wrapper">
+                        <div class="side-info-cards">
+                            <div class="info-card wide">
+                                <h4>Descripción del emprendimiento</h4>
+                                <p id="cardDescripcion"></p>
+                            </div>
+                            <div class="info-card">
+                                <h4>Ubicación</h4>
+                                <p id="cardUbicacion"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="full-width-block">
+                        <div class="user-profile-card">
+                            <div class="avatar"></div>
+                            <div class="user-info">
+                                <h4>Juan Pérez</h4>
+                                <p>Autor</p>
+                                <p>Fecha de registro: 15 de enero, 2021</p>
+                            </div>
+                            <button class="view-profile-button">Ver perfil</button>
+                        </div>
+                    </div>
+
+                    <div class="section-title-wrapper">
+                         <h3 class="section-title">Lista de Emprendimientos</h3>
+                    </div>
+
+                   <div class="section-content-wrapper">
+                        <div class="emprendimientos-table-wrapper">
+                            <table>
+                            <thead>
+                                <tr>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% emprendimientos.forEach(emp => { %>
+                                <tr onclick="mostrarDetallePorId('<%= emp._id %>')">
+                                    <td><%= emp.businessName %></td>
+                                    <td>
+                                    <form action="/aprobarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">✅</button>
+                                    </form>
+                                    <form action="/rechazarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">❌</button>
+                                    </form>
+                                    <form action="/eliminarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
+                                        <button type="submit">🗑️</button>
+                                    </form>
+                                    <a href="/editarEmprendimiento/<%= emp._id %>">📝</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+                            </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <label for="check" class="overlay"></label>
+    <footer class="site-footer">
+        <div class="footer-container">
+            <ul class="footer-links">
+                <li>
+                    <a href="mailto:comunidadconectada@gmail.com" class="contact">
+                      Contacto: comunidadconectada@gmail.com
+                    </a>
+                </li>
+                <li>
+                    <ul class="submenu">
+                        <li><a href="#" class="fa fa-instagram"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+    
+<script type="application/json" id="data-emprendimientos">
+  <%- JSON.stringify(emprendimientos) %>
+</script>
+
+
+
+
+<script>
+  const emprendimientos = JSON.parse(
+    document.getElementById('data-emprendimientos').textContent
+  );
+
+  function mostrarDetallePorId(id) {
+    const emp = emprendimientos.find(e => e._id === id);
+    if (!emp) return;
+
+    mostrarDetalle({
+      nombre: emp.businessName,
+      autor: emp.usuario?.nombre || '—',
+      fecha: new Date(emp.loginDate).toLocaleDateString(),
+      categoria: emp.category,
+      estado: emp.aprobado ? 'Aprobado' : 'Pendiente',
+      descripcion: emp.businessDescription,
+      ubicacion: emp.businessLocation,
+      imagen: emp.imagePath
+    });
+  }
+</script>
+
+<script>
+  function mostrarDetalle(datos) {
+    console.log('Datos recibidos:', datos);
+    document.getElementById('cardNombre').textContent = datos.nombre;
+    document.getElementById('cardAutor').textContent = datos.autor;
+    document.getElementById('cardFecha').textContent = datos.fecha;
+    document.getElementById('cardCategoria').textContent = datos.categoria;
+    document.getElementById('cardEstado').textContent = datos.estado;
+    document.getElementById('cardDescripcion').textContent = datos.descripcion;
+    document.getElementById('cardUbicacion').textContent = datos.ubicacion;
+
+const img = document.getElementById('cardImagen');
+const contenedor = document.getElementById('imagePlaceholder');
+
+if (datos.imagen) {
+  img.src = datos.imagen;
+  img.alt = `Imagen de ${datos.nombre}`;
+  img.classList.remove('hidden');
+  contenedor.classList.add('has-image');
+} else {
+  img.removeAttribute('src');
+  img.alt = 'No hay imagen disponible';
+  img.classList.add('hidden');
+  contenedor.classList.remove('has-image');
+}
+
+
+
+
+  }
+</script>
+
+
+
+</body>
+</html>

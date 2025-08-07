@@ -121,6 +121,14 @@
   background-color: #e0e7ff;
 }
 
+
+.categorias button.seleccionado {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff; /*Esto se agrega nuevo 03 ago 25*/
+}
+
+
 .btn-enviar {
   background-color: #2563eb;
   color: white;
@@ -162,3 +170,13 @@ main{
 
 
 }
+
+.mensaje-exito {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 12px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-weight: bold;
+}/*Esto es un nuevo cambio 03 ago 25*/

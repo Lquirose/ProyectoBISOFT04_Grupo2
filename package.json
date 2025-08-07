@@ -18,9 +18,13 @@
   "homepage": "https://github.com/Lquirose/CopiadelProyectoBISOFT04#readme",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
-    "morgan": "^1.10.1"
+    "express-session": "^1.18.2",
+    "mongoose": "^8.17.0",
+    "morgan": "^1.10.1",
+    "multer": "^2.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"
