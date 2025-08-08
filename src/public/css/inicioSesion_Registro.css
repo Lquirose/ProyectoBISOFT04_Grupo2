@@ -369,6 +369,11 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     width: auto;
 }
 
+.error{
+    background-color: transparent;
+    margin-top: 2vw;
+}
+
 /* !!!!!! Contenedor de la mitad derecha !!!!!! */
 
 /* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */ 

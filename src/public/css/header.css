@@ -30,7 +30,6 @@ header {
     display:flex;
     align-items: center;
     gap: 150px;
-
 }
 
 /*.navbar > div { 
@@ -43,10 +42,17 @@ header {
     
 }*/
 
+nav{
+    
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    gap: 50px;
+}
+
+nav li{
+    margin: 0 1vw;
 }
 
 nav a {

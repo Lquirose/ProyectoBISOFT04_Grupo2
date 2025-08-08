@@ -195,3 +195,16 @@ document.querySelectorAll("form").forEach((formulario) => {
     }
   });
 });
+
+function togglePassword() {
+  const passwordInput = document.getElementById("password");
+  const buttonImg = document.querySelector(".passViewButtonIMG");
+
+  if (passwordInput.type === "password") {
+    passwordInput.type = "text";
+    buttonImg.src = "img/passwordhide.png"; // icono de ocultar
+  } else {
+    passwordInput.type = "password";
+    buttonImg.src = "img/passwordview.png"; // icono de mostrar
+  }
+}
