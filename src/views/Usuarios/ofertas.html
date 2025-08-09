@@ -2,9 +2,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/ofertas.css">
-    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/ofertas.css">
+    <link rel="stylesheet" href="css/footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
@@ -16,33 +16,37 @@
     <header>
       <div class="header-content" >
                 <!--La clase header-content (contenido del header) sirve para alinear el contenido de header con max-width pero que al hacerlo no limite el tamaño de la pantalla (es decir que el viewport tenga un width del 100%)-->
-        <div class="navbar">
-          <div><img class="logo" src="logo/logooficial.png" alt="logo" /></div>
-          <div class="mobile-nav">
-          <div class="menu-content">
-            <nav>
-            <div class="menu-item">
-              <ul>
-              <li><a href="index.html">Inicio</a></li>
-              <li><a href="publicaciones.html">Publicaciones</a></li>
-              <li><a href="transporte.html">Transporte</a></li>
-              <li><a href="calendario.html">Calendario</a></li>
-              <li><a href="oferta.html">Oferta</a></li>
-              <li><a href="mapa.html">Mapa</a></li>
-              <li><a href="soporte.html">Soporte</a></li>
-              <li><a href="perfil.html">Perfil</a></li>
-              <li class="search-container">
-                <form action="search">
-                  <input type="text" name="query" placeholder="buscar" />
-                </form>
-              </li>
-              </ul>
+        <div class = "navbar">
+                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
+                <div class="mobile-nav">
+                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
+                    <label for="responsive-menu" class="hamburger">
+                        <i class='bx bx-menu'></i>
+                    </label>
+                    <div class="menu-content">
+                        <nav>
+                            <div class="menu-item">
+                                <ul>
+                                    <li><a href="/index">Inicio</a></li>
+                                    <li><a href="/publicaciones">Publicaciones</a></li>
+                                    <li><a href="/transporte">Transporte</a></li>
+                                    <li><a href="/ofertas">Oferta</a></li>
+                                    <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
+                                    <li><a href="/panelAdmin">Administración</a></li>
+                                    <li><a href="/perfil">Perfil</a></li>
+                                    <li><a href="/envioReportes">Reportes</a></li>
+                                    <li class="search-container">
+                                        <form action="search">
+                                            <input type="text" name="query" placeholder="buscar">
+                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
+                                        </form>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
             </div>
-            </nav>
-            </div>
-          </div>
-        </div>
-      </div>
     </header>
 
     <main>

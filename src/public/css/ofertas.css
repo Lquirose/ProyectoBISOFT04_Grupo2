@@ -9,46 +9,6 @@
         line-height: 1.6;
       }
 
-      header {
-        background-color: #1e3a8a;
-        color: white;
-        padding: 1rem;
-      }
-
-      .navbar {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-      }
-
-      .logo {
-        max-width: 120px;
-      }
-
-      nav ul {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        gap: 1rem;
-      }
-
-      nav ul li {
-        display: flex;
-        align-items: center;
-      }
-
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-      }
-
-      .search-container input {
-        padding: 0.3rem;
-        border-radius: 5px;
-        border: none;
-      }
-
       .top-blue-section {
         background-color: #3b82f6;
         color: white;
