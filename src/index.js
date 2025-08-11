@@ -49,9 +49,20 @@ const User = require('../modelos/user.js');
 
 // views/General
 
-app.get('/index', verificarSesion, verificarRol('ciudadano', 'emprendedor'), (req, res) => {
-  res.render('General/index', { usuario: req.session.usuario });
+
+app.get('/index', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const emprendimientos = await Business.find({ aprobado: true }).limit(3);
+    res.render('General/index', {
+      usuario: req.session.usuario,
+      emprendimientos
+    });
+  } catch (error) {
+    console.error('Error al cargar emprendimientos:', error);
+    res.status(500).send('Error al cargar la página');
+  }
 });
+
 
 
 app.get('/',(req,res)=>{
@@ -160,6 +171,49 @@ app.get('/RegistroEmprendimiento', verificarSesion, verificarRol ('ciudadano','e
   }
 });
 
+app.get('/tablaEmprendimientosAprobados', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const emprendimientos = await Business.find({ aprobado: true });
+    res.render('Emprendedores/tablaEmprendimientosAprobados', {
+      usuario: req.session.usuario,
+      emprendimientos
+    });
+  } catch (error) {
+    console.error('Error al cargar emprendimientos aprobados:', error);
+    res.status(500).send('Error al cargar la tabla');
+  }
+});
+
+app.get('/detalleEmprendimiento/:id', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const emprendimiento = await Business.findById(req.params.id).populate('usuario');
+
+    if (!emprendimiento || !emprendimiento.aprobado) {
+      return res.status(404).send('Emprendimiento no disponible');
+    }
+
+    res.render('Emprendedores/detalleEmprendimiento', {
+      emprendimiento,
+      usuario: req.session.usuario
+    });
+  } catch (error) {
+    console.error('Error al cargar detalle de emprendimiento:', error);
+    res.status(500).send('Error interno del servidor');
+  }
+});
+
+//Cerrar sesión
+app.get('/logout', (req,res)=>{
+    req.session.destroy(err=>{
+        if(err) {
+            console.error("error al destruir sesión", err);
+            return res.status(500).send('error al cerrar sesion');
+        }
+        //Borra la cookie
+        res.clearCookie('connect.sid');
+        res.redirect('/')
+    })
+})
 
 //***Metodo POST***
 //Transporte

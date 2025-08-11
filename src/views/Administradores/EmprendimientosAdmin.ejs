@@ -271,25 +271,21 @@
     document.getElementById('cardDescripcion').textContent = datos.descripcion;
     document.getElementById('cardUbicacion').textContent = datos.ubicacion;
 
-const img = document.getElementById('cardImagen');
-const contenedor = document.getElementById('imagePlaceholder');
+    const img = document.getElementById('cardImagen');
+    const contenedor = document.getElementById('imagePlaceholder');
 
-if (datos.imagen) {
-  img.src = datos.imagen;
-  img.alt = `Imagen de ${datos.nombre}`;
-  img.classList.remove('hidden');
-  contenedor.classList.add('has-image');
-} else {
-  img.removeAttribute('src');
-  img.alt = 'No hay imagen disponible';
-  img.classList.add('hidden');
-  contenedor.classList.remove('has-image');
+    if (datos.imagen) {
+    img.src = datos.imagen;
+    img.alt = `Imagen de ${datos.nombre}`;
+    img.classList.remove('hidden');
+    contenedor.classList.add('has-image');
+    } else {
+    img.removeAttribute('src');
+    img.alt = 'No hay imagen disponible';
+    img.classList.add('hidden');
+    contenedor.classList.remove('has-image');
+    }
 }
-
-
-
-
-  }
 </script>
 
 

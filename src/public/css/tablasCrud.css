@@ -55,3 +55,54 @@ tr.editando .btn-crud i {
   font-size: 16px;
   opacity: 0.9;
 }
+
+.mainAprobados {
+  min-height: calc(100vh - 160px);
+    font-family: "poppins", sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    max-width: 100%;;
+    margin: 0 auto;  
+  
+    
+}
+
+.titulo-Aprobados {
+    background-color: #e6efff;
+    padding: 40px;
+    margin: 0;
+}
+
+.tabla-Aprobados {
+  max-width: 600px;;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.tabla-Aprobados table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 40px 0;
+}
+
+.tabla-Aprobados th, .tabla-Aprobados td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.tabla-Aprobados th{
+  background-color: #e6efff;
+  font-weight: 600;
+}
+
+.link-detalle {
+  color: #0077cc;
+  text-decoration: none;
+  font-weight: 500;
+  width: 100%;
+}
+.link-detalle:hover {
+  text-decoration: underline;
+}
+

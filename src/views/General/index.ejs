@@ -119,32 +119,19 @@
             <!--También se debe de averiguar como hacer para colocar los accesos directos de los eventos-->
 
         </section>
-        <section class="business"> <!--Clase para la sección de emprendedores-->
+        <section class="business">
             <h1>Emprendedores de la comunidad</h1>
             <div class="business-links">
-                <a href="business1.html" class="business-card">
-                    <img src="img/logooficial.png" alt="post1">
+                <% emprendimientos.slice(0, 3).forEach((emprendimiento, index) => { %>
+                <a href="/tablaEmprendimientosAprobados" class="business-card">
+                    <img src="img/logooficial.png" alt="post<%= index + 1 %>">
                     <div class="card-content">
-                        <h5>emprendimiento 1</h5>
-                        <p>Categoría o descripción corta</p>
+                    <h5><%= emprendimiento.businessName || 'Sin nombre' %></h5>
+                    <p><%= emprendimiento.category || 'Sin categoría' %></p>
                     </div>
                 </a>
-                <a href="post2.html" class="business-card">
-                    <img src="img/logooficial.png" alt="post2">
-                    <div class="card-content">
-                        <h5>emprendimiento 2</h5>
-                        <p>Categoría o descripción corta</p>
-                    </div>
-                </a>
-                <a href="post2.html" class="business-card">
-                    <img src="img/logooficial.png" alt="post2">
-                    <div class="card-content">
-                        <h5>emprendimiento 3</h5>
-                        <p>Categoría o descripción corta</p>
-                    </div>
-                </a>
+                <% }) %>
             </div>
-            <!--Se debe de averiguar como hacer los accesos directos de los Emprendedores-->
         </section>
         <section class="recent-post"> <!--Clase para la sección de publicaciones recientes-->
             <h1>Publicaciones recientes</h1>
