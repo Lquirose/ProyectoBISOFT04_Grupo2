@@ -1,190 +1,167 @@
-:root {
-      --primary: #007BFF;
-      --gray: #c0bbbb84;
-    } 
+    body{
+      overflow: hidden;
+      font-family: 'Poppins', sans-serif; 
+    }
 
-    * {
-      box-sizing: border-box;
+    main{
+      width: auto;
+      height: min(72vh,72vw);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .title{
+      background-color: #f6f8fa;
+      width: auto;
+      height: min(10vh,10vw);
+      display: flex;
+      margin-left: min(4vw,4vh);
+      justify-content: center;
+    }
+
+    .title h1{
+      font-weight:700;
+      font-size: min(4vh,4vw);
+      margin-top: min(3vh,3vw);
+    }
+
+    .main-high{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .user-photo{
+      display: flex;
+      flex-direction:column;
+      align-items: center;
+      height: auto;
+      width: min(52vw,52vh);
+      background-color: #ffffff;
+      border-radius: min(1vw,1vh);
+      box-shadow:  0 2px 8px rgba(0,0,0,0.3);
+      margin-top: min(2vw,2vh);
+      position: relative; 
+    }
+
+    .User{
+      margin-top: min(2vw,2vh);
+      font-size: min(2.3vw,2.3vh);
+      margin-bottom:min(1vw,1vh);
+    }
+
+    .user-Info{
+      margin-top: min(2vw,2vh);
+      font-size: min(2.3vw,2.3vh);
+      align-self: flex-start;
+      margin-left: min(1vw,1vh);
+      display: inline-block;
+    }
+
+    .user-Info span{
+      font-weight: 600;
+      margin-left: min(1vw,1vh);
+    }
+
+    .user-Info:last-of-type{
+      margin-bottom: min(1vw,1vh);
+    }
+
+    .Circle{
+      background-color: #dddddd;
+      height: min(18vw,18vh);
+      width: min(18vw,18vh);
+      border-radius: 50%;
+      overflow: hidden;
+      border: min(0.1vh,0.1vw) solid #dddddd;
+      margin-top: min(1vh,1vw);
+    }
+
+    .Circle img{
+      filter: invert(1);
+      width: 100%;
+      height: auto;
+      margin-top: min(3vw,3vh);
+    }
+
+    .MenuButton{
+      height: auto;
+      width: auto;
+      position: absolute;
+      border: none;
+      background-color: transparent;
+      right: min(1vw,1vh); 
+      top: min(1vw,1vh); 
+      cursor: pointer; 
+    }
+
+    .MenuButton img{
+      height: min(6vw,6vh);
+      width: auto;
+    }
+
+    .MenuButton img:active{
+      filter: opacity(.7);
+    }
+
+ 
+    .dropdown-menu {
+      position: absolute;
+      top: min(7vw,7vh);
+      right: min(1vw,1vh);
+      background-color: white;
+      border-radius: min(0.5vw,0.5vh);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      min-width: min(20vw,20vh);
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+    }
+
+    .dropdown-menu.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .dropdown-menu ul {
+      list-style: none;
       margin: 0;
+      padding: min(1vw,1vh) 0;
+    }
+
+    .dropdown-menu li {
       padding: 0;
     }
 
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #f9f9f9;
+    .dropdown-menu a {
+      display: block;
+      padding: min(1.5vw,1.5vh) min(2vw,2vh);
+      text-decoration: none;
       color: #333;
+      font-size: min(2vw,2vh);
+      font-weight: 400;
+      transition: all 0.2s ease;
     }
 
-    
-
-    .perfil-main {
-      text-align: center;
-      padding: 2rem;
+    .dropdown-menu a:hover {
+      background-color: #f8f9fa;
+      color: #007bff;
     }
 
-    .profile-card img {
-    width: 500px;
-    height: 350px;
-    background-color: #dbd6d6;  
-}
-
-    .perfil-div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .profile-card, .mini-profile-card, .mini-emprendimiento-card, .historial-actividades {
-      background: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 1rem;
-      max-width: 800px;
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
+      height: 100%;
+      background-color: transparent;
+      z-index: 999;
+      display: none;
     }
 
-    .profile-card img,
-    .mini-profile-card img,
-    .mini-emprendimiento img,
-    .historial-actividades img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      background-color: #dbd6d6;
-    }
-
-    .profile-text {
-      flex: 1;
-      text-align: left;
-    }
-
-    .my-posts-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    .my-posts {
-      background: #fff;
-      padding: 1rem;
-      width: 300px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .gray-button,
-    .white-button,
-    .blue-buttton {
-      padding: 0.5rem 1rem;
-      margin: 0.25rem;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .white-button {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color:white;
-    color: #007BFF;
-    border: #007BFF 1px solid;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.blue-buttton {
-    margin-bottom: 10px;
-    padding: 10px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.gray-button {
-    width: 60px; /* Ajusta el ancho según sea necesario */
-    display:inline-flex;
-    text-size-adjust: 100%;
-    justify-content: center;
-    align-items: center;
-    background-color: #007BFF;
-    color: black;
-    font-size: small;
-    padding: 5px;/* Opcional: ajusta el relleno */
-    cursor: pointer; /* Opcional: cambia el cursor al pasar sobre el botón*/ 
-}
-
-    hr {
-      margin: 2rem auto;
-      width: 80%;
-      border: none;
-      height: 1px;
-      background-color: #ccc;
-    }
-
-    footer {
-      background: #333;
-      color: #fff;
-      padding: 1rem 0;
-    }
-
-    .footer-container {
-      max-width: 1200px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      padding: 1rem;
-    }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .submenu {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .submenu a {
-      color: #fff;
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 768px) {
-      .menu-content nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hamburger {
-        display: block;
-      }
-
-      .menu-content {
-        display: none;
-      }
-
-      .responsive-menu:checked ~ .menu-content {
-        display: block;
-      }
-
-      .profile-card, .mini-profile-card, .mini-emprendimiento-card, .historial-actividades {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      .profile-text {
-        text-align: center;
-      }
+    .overlay.show {
+      display: block;
     }

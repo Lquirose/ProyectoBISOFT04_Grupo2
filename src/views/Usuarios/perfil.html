@@ -1,142 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/perfil.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/header.css">
+  <link rel="stylesheet" href="css/perfil.css">
+  <link rel="stylesheet" href="css/footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   <title>Perfil</title>
 </head>
+
 <body>
   <header>
-    <div class = "navbar">
-                <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
-                <div class="mobile-nav">
-                    <input type="checkbox" id="responsive-menu" class="responsive-menu">
-                    <label for="responsive-menu" class="hamburger">
-                        <i class='bx bx-menu'></i>
-                    </label>
-                    <div class="menu-content">
-                        <nav>
-                            <div class="menu-item">
-                                <ul>
-                                    <li><a href="/index">Inicio</a></li>
-                                    <li><a href="/publicaciones">Publicaciones</a></li>
-                                    <li><a href="/transporte">Transporte</a></li>
-                                    <li><a href="/ofertas">Oferta</a></li>
-                                    <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
-                                    <li><a href="/panelAdmin">Administración</a></li>
-                                    <li><a href="/perfil">Perfil</a></li>
-                                    <li><a href="/envioReportes">Reportes</a></li>
-                                    <li class="search-container">
-                                        <form action="search">
-                                            <input type="text" name="query" placeholder="buscar">
-                                            <span class="icon" ><i class='bxr  bx-search'></i></span>
-                                        </form>
-                                    </li>
-                                </ul>
-                            </div>
-                        </nav>
-                    </div>
-                </div>
+    <div class="navbar">
+      <div><img class="logo" src="img/logooficial.png" alt="logo"></div>
+      <div class="mobile-nav">
+        <input type="checkbox" id="responsive-menu" class="responsive-menu">
+        <label for="responsive-menu" class="hamburger">
+          <i class='bx bx-menu'></i>
+        </label>
+        <div class="menu-content">
+          <nav>
+            <div class="menu-item">
+              <ul>
+                <li><a href="/index">Inicio</a></li>
+                <li><a href="/publicaciones">Publicaciones</a></li>
+                <li><a href="/transporte">Transporte</a></li>
+                <li><a href="/ofertas">Oferta</a></li>
+                <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
+                <li><a href="/panelAdmin">Administración</a></li>
+                <li><a href="/perfil">Perfil</a></li>
+                <li><a href="/envioReportes">Reportes</a></li>
+                <li class="search-container">
+                  <form action="search">
+                    <input type="text" name="query" placeholder="buscar">
+                    <span class="icon"><i class='bxr  bx-search'></i></span>
+                  </form>
+                </li>
+              </ul>
             </div>
+          </nav>
+        </div>
+      </div>
+    </div>
   </header>
-  <main class="perfil-main">
-    <section class="perfil-div">
-      <div class="profile-card">
-        <div class="profile-text">
-            <h1>Perfil de usuario</h1>
-            <h5>Detalles de tus actividades en la plataforma</h5>
+
+  <main>
+
+    <div class="title">
+      <h1>Perfil </h1>
+    </div>
+
+    <div class="main-high">
+
+      <div class="user-photo">
+
+        <button class="MenuButton" id="menuButton">
+          <img src="img/menu1.png" alt="">
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <ul>
+            <li><a href="#">Editar perfil</a></li>
+            <li><a href="#">Cambiar contraseña</a></li>
+            <li><a href="#">Cerrar sesion</a></li>
+          </ul>
         </div>
-        
-        <img>
+
+        <div class="Circle">
+          <img src="img/userProfile.png" alt="">
+        </div>
+
+        <h5 class="User">@Usuario</h5>
+
+        <h5 class="user-Info">Identificacion: <span>119410542</span></h5>
+        <h5 class="user-Info">Nombre: <span>Jean Marco Lopez Mejia</span></h5>
+        <h5 class="user-Info">Telefono: <span>72443340</span></h5>
+        <h5 class="user-Info">Fecha: <span> 20-7-2005</span></h5>
+        <h5 class="user-Info">Email: <span> jlopez@gmail.com</span></h5>
+
       </div>
-    </section>
 
-    <section class="perfil-div">
-      <div class="mini-profile-card">
-        <img>
-        <div class="profile-text">
-          <h1>Nombre de usuario</h1>
-          <h5>usuario@email.com | 123-456-789 | 01/01/1999</h5>
-        </div>
-        <div class="profile-actions-column">
-          <button class="white-button">Cambiar contraseña</button>
-          <button class="blue-buttton">Editar perfil</button>
-        </div>
-      </div>
-    </section>
+    </div>
 
-    <hr>
-
-    <section>
-      <h1 class="my-posts-h1">Mis publicaciones</h1>
-      <p class="my-posts-p">Publicaciones hechas por ti en la plataforma</p>
-      <div class="my-posts-container">
-        <div class="my-posts">
-          <img src="logo/logoOficialLetrasNegras.png" alt="post">
-          <div class="profile-text posts">
-            <p>Título de publicación 1</p>
-            <h5>Estado: aprobado</h5>
-            <p>Fecha 01/01/2001</p>
-            <button class="gray-button">Ver</button>
-            <button class="gray-button">Editar</button>
-            <button class="gray-button">Eliminar</button>
-          </div>
-        </div>
-        <!-- Repetir otras publicaciones si es necesario -->
-      </div>
-    </section>
-
-    <hr>
-
-    <section class="perfil-div">
-      <div class="mini-emprendimiento-card">
-        <div class="profile-text">
-          <h1>Mi emprendimiento</h1>
-          <h5>Detalles sobre tu negocio</h5>
-          <div class="profile-actions-row">
-            <button class="white-button">Agregar oferta</button>
-            <button class="blue-buttton">Editar datos</button>
-          </div>
-        </div>
-        <div class="mini-emprendimiento">
-          <img alt="Emprendimiento" />
-          <div>
-            <h4>Nombre del negocio</h4>
-            <h5>Categoría: Servicios</h5>
-            <h4>Descripción breve del negocio</h4>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <hr>
-
-    <section class="perfil-div">
-      <div class="mini-emprendimiento-card">
-        <h1>Historial de actividad</h1>
-        <div class="flex-column">
-          <div class="historial-actividades">
-            <img alt="Actividad" />
-            <div>
-              <h4>01/01/2023</h4>
-              <p>Publicaste un evento</p>
-              <h5>Descripción breve del negocio</h5>
-              <button class="gray-button">Ver</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
+
+
+  <div class="overlay" id="overlay"></div>
+
   <footer class="site-footer">
     <div class="footer-container">
       <ul class="footer-links">
@@ -153,5 +111,41 @@
       </ul>
     </div>
   </footer>
+
+  <script>
+
+    const menuButton = document.getElementById('menuButton');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      const isVisible = dropdownMenu.classList.contains('show');
+
+      if (isVisible) {
+        hideMenu();
+      } else {
+        showMenu();
+      }
+    }
+
+    function showMenu() {
+      dropdownMenu.classList.add('show');
+      overlay.classList.add('show');
+    }
+
+    function hideMenu() {
+      dropdownMenu.classList.remove('show');
+      overlay.classList.remove('show');
+    }
+
+    menuButton.addEventListener('click', function (e) {
+      e.stopPropagation();
+      toggleMenu();
+    });
+
+    overlay.addEventListener('click', hideMenu);
+
+  </script>
 </body>
+
 </html>
