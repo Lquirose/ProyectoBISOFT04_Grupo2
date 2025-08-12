@@ -26,6 +26,7 @@
       display: flex;
       flex-direction: row;
       justify-content: center;
+      gap: min(4vw, 4vh);
     }
 
     .user-photo {
@@ -48,17 +49,18 @@
     }
 
     .user-Info {
+      display: flex; /* cambio clave para alinear texto e input */
+      align-items: center; /* centra verticalmente */
+      justify-content: flex-start;
       margin-top: min(2vw, 2vh);
+      margin-left: min(1vw, 1vh);
       font-size: min(2.3vw, 2.3vh);
-      align-self: flex-start;
-      margin-left: min(1vw, 1vh);
-      display: inline-block;
-    }
+      min-height: min(4vh, 4vw); /* asegura altura constante */
+      gap: min(1vw, 1vh); /* espacio entre label y valor/input */
+      }
 
-    .user-Info span {
-      font-weight: 600;
-      margin-left: min(1vw, 1vh);
-    }
+
+    
 
     .user-Info:last-of-type {
       margin-bottom: min(1vw, 1vh);
@@ -162,3 +164,111 @@
     .overlay.show {
       display: block;
     }
+
+  .input-editable {
+  padding: min(0.8vh, 0.8vw) min(1vh, 1vw);
+  margin: 0;
+  font-size: min(2.3vw, 2.3vh);
+  font-weight: 600;
+  border: 1px solid #ccc;
+  border-radius: min(0.5vh, 0.5vw);
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+  height: min(4vh, 4vw); /* igualar altura al contenedor */
+  transition: all 0.3s ease;
+}
+
+
+  .input-editable:focus {
+    border-color: #0077cc;
+    outline: none;
+    background-color: #fff;
+  }
+
+  .user-Info span,
+  .user-Info input.input-editable {
+    font-size: min(2.3vw, 2.3vh);
+    font-weight: 600;
+    margin-left: 0;
+    flex: 1;
+}
+
+.user-Info span {
+  color: #444;
+  background-color: #f9f9f9;
+  padding: min(0.5vh, 0.5vw);
+  border-radius: min(0.3vh, 0.3vw);
+}
+
+.password-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: min(52vw, 52vh);
+  background-color: #ffffff;
+  border-radius: min(1vw, 1vh);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  margin-top: min(2vw, 2vh);
+  padding: min(2vw, 2vh);
+  gap: min(1.5vw, 1.5vh);
+}
+
+.password-block h4 {
+  font-size: min(2.5vw, 2.5vh);
+  font-weight: 700;
+  margin-bottom: min(1vw, 1vh);
+}
+
+.password-form label {
+  font-size: min(2vw, 2vh);
+  font-weight: 500;
+  margin-bottom: min(0.5vw, 0.5vh);
+}
+
+.password-form input[type="password"] {
+  width: 100%;
+  padding: min(1vh, 1vw);
+  font-size: min(2vw, 2vh);
+  border: 1px solid #ccc;
+  border-radius: min(0.5vh, 0.5vw);
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+.password-form button[type="submit"] {
+  margin-top: min(1.5vw, 1.5vh);
+  padding: min(1vh, 1vw) min(2vh, 2vw);
+  font-size: min(2vw, 2vh);
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: min(0.5vh, 0.5vw);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.password-form button[type="submit"]:hover {
+  background-color: #005fa3;
+}
+
+.success-message {
+  
+  display: block;
+  margin: 20px auto;
+  padding: 12px 24px;
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  border-radius: 6px;
+  max-width: 600px; /* igual al ancho del bloque de perfil */
+  font-weight: 500;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+

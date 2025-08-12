@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalles de Publicación - Administración</title>
+    <title>Detalles de las publicaciones - Administración</title>
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <link rel="stylesheet" href="css/PublicacionesAdmin.css">
@@ -25,6 +25,7 @@
             </label>
         </div>
      <label for="check" class="overlay"></label>
+  
 
     <div class="page-layout-container">
         <aside class="sidebar">
@@ -91,38 +92,38 @@
         <div class="content-area-wrapper">
             <div class="main-content-container">
                 <div class="header-section">
-                    <h2>Detalles de la Publicación</h2>
+                    <h2>Detalles de la publicación</h2>
                     <p>Información completa sobre la publicación seleccionada.</p>
                 </div>
 
                 <div class="main-content-grid">
                     <div class="section-title-wrapper">
-                        <h1 class="section-title">Título del Anuncio</h1>
+                        <h1 class="section-title">Título de la publicación</h1>
                         <p>Descripción</p>
                     </div>
 
                     <div class="section-content-wrapper">
                         <div class="side-info-cards">
                             <div class="info-card">
-                                <h4>Nombre del Anuncio</h4>
-                                <p>Texto de ejemplo de anuncio para ilustrar el detalle.</p>
+                                <h4>Título de la Publicaciones</h4>
+                                <p id="cardTitulo"></p>
                             </div>
                             <div class="info-card">
                                 <h4>Autor</h4>
-                                <p>Juan Pérez</p>
+                                <p id="cardAutor"></p>
                             </div>
                             <div class="info-card">
                                 <h4>Fecha de Publicación</h4>
-                                <p>23 de marzo, 2023</p>
+                                <p id="cardFecha"></p>
                             </div>
                             <div class="info-card">
                                 <h4>Categoría</h4>
-                                <p>Servicios</p>
+                                <p id="cardCategoria"></p>
                             </div>
                             <div class="info-card">
                                 <h4>Estado</h4>
-                                <p>Pendiente</p>
-                                <p>Activo</p>
+                                <p id="cardEstado">Pendiente</p>
+                                
                             </div>
                         </div>
                     </div>
@@ -130,14 +131,15 @@
                     <div class="section-title-wrapper">
                         <h3 class="section-title">Imagen Destacada</h3>
                     </div>
-                    <div class="section-content-wrapper">
-                        <div class="featured-image-section">
-                            <div class="image-placeholder">
-                                <p>Imagen destacada del anuncio.</p>
-                            </div>
-                            <p>Esta imagen representa el detalle del anuncio. <br> Placeholder si no existe imagen.</p>
+                <div class="section-content-wrapper">
+                    <div class="featured-image-section">
+                        <div class="image-placeholder" id="imagePlaceholder">
+                            <img id="cardImagen" alt="imagen del emprendimiento" class="hidden">
+                            <p class="placeholder-text">Imagen destacada del emprendimiento.</p>
                         </div>
+                        <p>Esta imagen representa el detalle del emprendimiento. <br> Placeholder si no existe imagen.</p>
                     </div>
+                </div>
 
                     <div class="section-title-wrapper">
                         <h3 class="section-title">Descripción</h3>
@@ -145,12 +147,12 @@
                     <div class="section-content-wrapper">
                         <div class="side-info-cards">
                             <div class="info-card wide">
-                                <h4>Texto Extenso</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                <h4>Descripción de la publicación</h4>
+                                <p id="cardDescripcion"></p>
                             </div>
                             <div class="info-card">
                                 <h4>Ubicación</h4>
-                                <p>Provincia: San José, Cantón: Escazú, Distrito: Escazú</p>
+                                <p id="cardUbicacion"></p>
                             </div>
                         </div>
                     </div>
@@ -168,31 +170,48 @@
                     </div>
 
                     <div class="section-title-wrapper">
-                        <h3 class="section-title">Acciones Contextuales</h3>
+                         <h3 class="section-title">Lista de Emprendimientos</h3>
                     </div>
-                    <div class="section-content-wrapper">
-                        <div class="contextual-actions-list">
-                            <ul>
-                                <li class="action-approve">
-                                    <i class='bx bx-check-circle'></i> Aprobar
-                                </li>
-                                <li class="action-reject">
-                                    <i class='bx bx-x-circle'></i> Rechazar
-                                </li>
-                                <li class="action-delete">
-                                    <i class='bx bx-trash'></i> Eliminar
-                                </li>
-                                <li class="action-edit">
-                                    <i class='bx bx-edit'></i> Editar publicación
-                                </li>
-                            </ul>
+
+                   <div class="section-content-wrapper">
+                        <div class="emprendimientos-table-wrapper">
+                            <table>
+                            <thead>
+                                <tr>
+                                <th>Nombre</th>
+                                <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% publicaciones.forEach(pub => { %>
+                                <tr onclick="mostrarDetallePorId('<%= pub._id %>')">
+                                <td><%= pub.reportTitle %></td>
+                                    <td>
+                                        <form action="/aprobarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
+                                            <button type="submit">✅</button>
+                                        </form>
+                                        <form action="/rechazarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
+                                            <button type="submit">❌</button>
+                                        </form>
+                                        <form action="/eliminarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
+                                            <button type="submit">🗑️</button>
+                                        </form>
+                                        <a href="/editarPublicacion/<%= pub._id %>">📝</a>
+                                    </td>
+                                </tr>
+                                <% }) %>
+
+                            </tbody>
+                            </table>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
     </div>
-
+    <label for="check" class="overlay"></label>
     <footer class="site-footer">
         <div class="footer-container">
             <ul class="footer-links">
@@ -211,5 +230,66 @@
             </ul>
         </div>
     </footer>
+
+    
+<script type="application/json" id="data-publicaciones">
+  <%- JSON.stringify(publicaciones) %>
+</script>
+
+
+
+
+<script>
+  const publicaciones = JSON.parse(
+    document.getElementById('data-publicaciones').textContent
+);
+
+function mostrarDetallePorId(id) {
+  const pub = publicaciones.find(p => p._id === id);
+    if (!pub) return;
+
+    mostrarDetalle({
+        titulo: pub.reportTitle,
+        autor: pub.usuario?.nombre || '—',
+        fecha: new Date(pub.loginDate).toLocaleDateString(),
+        categoria: pub.category,
+        estado: pub.aprobado ? 'Aprobado' : 'Pendiente',
+        descripcion: pub.reportDescription,
+        ubicacion: pub.communityLocation,
+        imagen: pub.imagePath
+    });
+}
+</script>
+
+<script>
+  function mostrarDetalle(datos) {
+    console.log('Datos recibidos:', datos);
+    document.getElementById('cardTitulo').textContent = datos.titulo;
+    document.getElementById('cardAutor').textContent = datos.autor;
+    document.getElementById('cardFecha').textContent = datos.fecha;
+    document.getElementById('cardCategoria').textContent = datos.categoria;
+    document.getElementById('cardEstado').textContent = datos.estado;
+    document.getElementById('cardDescripcion').textContent = datos.descripcion;
+    document.getElementById('cardUbicacion').textContent = datos.ubicacion;
+
+    const img = document.getElementById('cardImagen');
+    const contenedor = document.getElementById('imagePlaceholder');
+
+    if (datos.imagen) {
+    img.src = datos.imagen;
+    img.alt = `Imagen de ${datos.titulo}`;
+    img.classList.remove('hidden');
+    contenedor.classList.add('has-image');
+    } else {
+    img.removeAttribute('src');
+    img.alt = 'No hay imagen disponible';
+    img.classList.add('hidden');
+    contenedor.classList.remove('has-image');
+    }
+}
+</script>
+
+
+
 </body>
 </html>

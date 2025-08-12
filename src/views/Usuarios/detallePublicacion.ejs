@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalles de la Publicación</title>
+  <link rel="stylesheet" href="/css/header.css">
+  <link rel="stylesheet" href="/css/detallePublicacion.css">
+  <link rel="stylesheet" href="/css/footer.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div><img class="logo" src="/img/logooficial.png" alt="logo"></div>
+      <div class="mobile-nav">
+        <input type="checkbox" id="responsive-menu" class="responsive-menu">
+        <label for="responsive-menu" class="hamburger">
+          <i class='bx bx-menu'></i>
+        </label>
+        <div class="menu-content">
+          <nav>
+            <div class="menu-item">
+              <ul>
+                <li><a href="/index">Inicio</a></li>
+                <li><a href="/publicaciones">Publicaciones</a></li>
+                <li><a href="/transporte">Transporte</a></li>
+                <li><a href="/ofertas">Oferta</a></li>
+                <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
+                <li><a href="/panelAdmin">Administración</a></li>
+                <li><a href="/perfil">Perfil</a></li>
+                <li><a href="/RegistroPublicacion">Reportes</a></li>
+                <li class="search-container">
+                  <form action="search">
+                    <input type="text" name="query" placeholder="buscar">
+                    <span class="icon"><i class='bx bx-search'></i></span>
+                  </form>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="content-area-wrapper">
+    <div class="main-content-container">
+      <div class="header-section">
+        <h2>Detalles de la Publicación</h2>
+        <p>Información completa sobre la publicación seleccionada.</p>
+      </div>
+
+      <div class="main-content-grid">
+        <div class="section-title-wrapper">
+          <h1 class="section-title">Título de la Publicación</h1>
+          <p>Descripción</p>
+        </div>
+
+        <div class="section-content-wrapper">
+          <div class="side-info-cards">
+            <div class="info-card">
+              <h4>Título</h4>
+              <p id="cardTitulo"><%= publicacion.reportTitle %></p>
+            </div>
+            <div class="info-card">
+              <h4>Autor</h4>
+              <p id="cardAutor"><%= publicacion.usuario?.nombre || '—' %></p>
+            </div>
+            <div class="info-card">
+              <h4>Fecha de Publicación</h4>
+              <p id="cardFecha"><%= new Date(publicacion.loginDate).toLocaleDateString() %></p>
+            </div>
+            <div class="info-card">
+              <h4>Categoría</h4>
+              <p id="cardCategoria"><%= publicacion.category %></p>
+            </div>
+            <div class="info-card">
+              <h4>Estado</h4>
+              <p id="cardEstado"><%= publicacion.aprobado ? 'Aprobado' : 'Pendiente' %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title-wrapper">
+          <h3 class="section-title">Imagen Destacada</h3>
+        </div>
+        <div class="section-content-wrapper">
+          <div class="featured-image-section">
+            <div class="image-placeholder" id="imagePlaceholder">
+              <% if (publicacion.imagePath) { %>
+                <img src="<%= publicacion.imagePath %>" id="cardImagen" alt="imagen de la publicación">
+              <% } else { %>
+                <p class="placeholder-text">Imagen destacada de la publicación.</p>
+              <% } %>
+            </div>
+            <p>Esta imagen representa el detalle de la publicación. <br> Placeholder si no existe imagen.</p>
+          </div>
+        </div>
+
+        <div class="section-title-wrapper">
+          <h3 class="section-title">Descripción</h3>
+        </div>
+        <div class="section-content-wrapper">
+          <div class="side-info-cards">
+            <div class="info-card wide">
+              <h4>Descripción de la publicación</h4>
+              <p id="cardDescripcion"><%= publicacion.reportDescription %></p>
+            </div>
+            <div class="info-card">
+              <h4>Ubicación</h4>
+              <p id="cardUbicacion"><%= publicacion.communityLocation %></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="full-width-block">
+          <div class="user-profile-card">
+            <div class="avatar"></div>
+            <div class="user-info">
+              <h4><%= publicacion.usuario?.nombre || 'Autor desconocido' %></h4>
+              <p>Autor</p>
+              <p>Fecha de registro: <%= new Date(publicacion.usuario?.fechaRegistro).toLocaleDateString() || '—' %></p>
+            </div>
+            <button class="view-profile-button">Ver perfil</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <label for="check" class="overlay"></label>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <ul class="footer-links">
+        <li>
+          <a href="mailto:comunidadconectada@gmail.com" class="contact">
+            Contacto: comunidadconectada@gmail.com
+          </a>
+        </li>
+        <li>
+          <ul class="submenu">
+            <li><a href="#" class="fa fa-instagram"></a></li>
+            <li><a href="#" class="fa fa-twitter"></a></li>
+            <li><a href="#" class="fa fa-facebook"></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

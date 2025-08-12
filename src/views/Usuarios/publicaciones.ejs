@@ -34,7 +34,7 @@
                                     <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
                                     <li><a href="/panelAdmin">Administración</a></li>
                                     <li><a href="/perfil">Perfil</a></li>
-                                    <li><a href="/envioReportes">Reportes</a></li>
+                                    <li><a href="/RegistroPublicacion">Reportes</a></li>
                                     <li class="search-container">
                                         <form action="search">
                                             <input type="text" name="query" placeholder="buscar">
@@ -55,25 +55,27 @@
                     <h2>Publicaciones Disponibles</h2>
                     <p>Explora las publicaciones filtradas.</p> </div>
             </section>
-            <section class="postCards">
-                <div class="Card">
-                    <small>Autor: Usuario A - Fecha: 01/01/2023</small>
-                    <div class="postImg">Imagen de Publicación 1</div>
-                    <h3>Título de Publicación 1</h3>
-                    <p>Descripción breve de publicación 1</p>
-                </div>
-                <div class="Card">
-                    <small>Autor: Usuario B - Fecha: 01/02/2023</small>
-                    <div class="postImg">Imagen de Publicación 2</div>
-                    <h3>Título de Publicación 2</h3>
-                    <p>Descripción breve de publicación 2</p>
-                </div>
-                <div class="Card">
-                    <small>Autor: Usuario C - Fecha: 01/03/2023</small>
-                    <div class="postImg">Imagen de Publicación 3</div> <h3>Título de Publicación 3</h3>
-                    <p>Descripción breve de publicación 3</p>
-                </div>
-            </section>
+         <section class="postCards">
+            <% publicaciones.slice(0, 3).forEach((publicacion, index) => { %>
+                    <div class="Card">
+                    <small>
+                        Autor: <%= publicacion.usuario?.nombre || 'Desconocido' %> – 
+                        Fecha: <%= new Date(publicacion.loginDate).toLocaleDateString() %>
+                    </small>
+                    <a href="/tablaPublicacionesAprobadas" class="cardLink">
+                        <div class="postImg">
+                            <img src="<%= publicacion.imagePath %>" alt="publicacion<%= index + 1 %>">
+                        </div>
+                        <div class="text-container">
+                            <h3><%= publicacion.reportTitle || 'Sin título' %></h3>
+                            <p><%= publicacion.communityLocation || 'Sin ubicación' %></p>
+                        </div>
+                    </a>
+                    </div>
+            <% }) %>
+        </section>
+
+
         </main>
    <footer class="site-footer">
         <div class="footer-container">

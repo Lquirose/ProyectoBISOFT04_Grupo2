@@ -45,7 +45,8 @@ app.use(session({
 //Declarar modelos
 const importTransportModel = require('../modelos/transporte.js')
 const Business = require('../modelos/emprendimiento.js')
-const User = require('../modelos/user.js'); 
+const User = require('../modelos/user.js');
+const Publicacion = require('../modelos/publicaciones.js');
 
 // views/General
 
@@ -98,9 +99,20 @@ app.get('/panelAdmin', verificarSesion, verificarRol('admin'), (req, res) => {
 });
 
 
-app.get('/publicacionesAdmin', verificarSesion,verificarRol('admin'), (req,res)=>{
-    res.render("Administradores/publicacionesAdmin.html");
-})
+app.get('/PublicacionesAdmin', verificarSesion, verificarRol('admin'), async (req, res) => {
+  try {
+    const publicacionesPendientes = await Publicacion.find({ aprobado: false }).populate('usuario');
+
+    res.render("Administradores/PublicacionesAdmin", {
+      publicaciones: publicacionesPendientes
+    });
+  } catch (error) {
+    console.error("Error al cargar publicaciones pendientes:", error);
+    res.render("Administradores/PublicacionesAdmin", {
+      publicaciones: []
+    });
+  }
+});
 
 app.get('/ReportesAdmin', verificarSesion, verificarRol('admin'), (req,res)=>{
     res.render("Administradores/ReportesAdmin.html");
@@ -118,21 +130,96 @@ app.get('/transporteadmin', verificarSesion, verificarRol('admin'), async (req, 
 
 //views/Usuarios
 
-app.get('/envioReportes', verificarSesion, verificarRol('ciudadano', 'emprendedor'),(req,res)=>{
-    res.render("Usuarios/envioReportes.html");
-})
+app.get('/RegistroPublicacion', verificarSesion, verificarRol('ciudadano','emprendedor'), async (req, res) => {
+  try {
+    const publicaciones = await Publicacion.find({ aprobado: true }).populate('usuario', 'nombre');
+
+    const exito = req.query.exito === 'true';
+
+    res.render('Usuarios/RegistroPublicacion', {
+      publicaciones,
+      exito
+    });
+
+  } catch (error) {
+    console.error("Error al cargar publicaciones:", error);
+    res.render('Usuarios/RegistroPublicacion', {
+      publicaciones: [],
+      exito: false
+    });
+  }
+});
 
 app.get('/ofertas', verificarSesion, verificarRol('ciudadano','emprendedor'),(req,res)=>{
     res.render("Usuarios/ofertas.html");
 })
 
-app.get('/perfil',  verificarSesion, verificarRol('ciudadano','emprendedor'), (req,res)=>{
-    res.render("Usuarios/perfil.html");
-})
+app.get('/perfil', async (req, res) => {
+  try {
+    if (!req.session.usuario || !req.session.usuario.id) {
+      return res.redirect('/');
+    }
 
-app.get('/publicaciones',  verificarSesion, verificarRol('ciudadano','emprendedor'),(req,res)=>{
-    res.render("Usuarios/publicaciones.html");
-})
+    const usuario = await User.findById(req.session.usuario.id);
+    if (!usuario) {
+      return res.status(404).send('Usuario no encontrado');
+    }
+
+    const passwordActualizada = req.query.passwordActualizada === 'true';
+
+    res.render('Usuarios/perfil', {
+      usuario,
+      passwordActualizada,
+      sesion: req.session.usuario
+    });
+  } catch (error) {
+    console.error('Error al cargar perfil:', error);
+    res.status(500).send('Error interno al cargar perfil');
+  }
+});
+app.get('/publicaciones', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const publicaciones = await Publicacion.find({ aprobado: true }).populate('usuario', 'nombre');// Ajustá el modelo si tiene otro nombre
+    res.render('Usuarios/publicaciones', {
+      usuario: req.session.usuario,
+      publicaciones
+    });
+  } catch (error) {
+    console.error('Error al cargar publicaciones:', error);
+    res.status(500).send('Error al cargar la página');
+  }
+});
+app.get('/tablaPublicacionesAprobadas', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const publicaciones = await Publicacion.find({ aprobado: true });
+    res.render('Usuarios/tablaPublicacionesAprobadas', {
+      usuario: req.session.usuario,
+      publicaciones
+    });
+  } catch (error) {
+    console.error('Error al cargar publicaciones aprobadas:', error);
+    res.status(500).send('Error al cargar la tabla');
+  }
+});
+
+app.get('/detallePublicacion/:id', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const publicacion = await Publicacion.findById(req.params.id).populate('usuario');
+    if (!publicacion || !publicacion.aprobado) {
+      return res.status(404).send('Publicación no encontrada o no aprobada');
+    }
+
+    res.render('Usuarios/detallePublicacion', {
+      usuario: req.session.usuario,
+      publicacion
+    });
+  } catch (error) {
+    console.error('Error al cargar detalle de la publicación:', error);
+    res.status(500).send('Error al cargar el detalle');
+  }
+});
+
+
 
 app.get('/transporte', verificarSesion, verificarRol('ciudadano','emprendedor'), async (req, res) => {
   try {
@@ -302,6 +389,8 @@ app.post('/registroUsuario', async (req, res) => {
 
     // Encriptar contraseña
     const hashedPassword = await bcrypt.hash(password, 10);
+    const fechaConvertida = new Date(Fecha); //// Convertir string a objeto Date para guardar correctamente
+
 
     // Crear nuevo usuario
     const nuevoUsuario = new User({
@@ -309,7 +398,7 @@ app.post('/registroUsuario', async (req, res) => {
       Identification,
       nombre,
       telefono,
-      Fecha,
+      Fecha: fechaConvertida,
       email,
       password: hashedPassword,
       rol: rol || 'ciudadano' // si no viene rol, se asigna ciudadano
@@ -372,14 +461,41 @@ app.post('/LoginSite', async (req, res) => {
 
 
 
-//Reportes
-app.post('/addReport',(req,res)=>{
-    console.log(req.body.reportTitle);
-    console.log(req.body.reportDescription);
-    console.log(req.body.communityLocation);
-    res.redirect('/envioReportes')
-    //Preguntar a la profe si acá se pone el de cargar archivo
-})
+//Publicaciones
+
+app.post('/addPublicacion', upload.single('image'), async (req, res) => {
+  try {
+    const {
+      reportTitle,
+      reportDescription,
+      category,
+      communityLocation
+    } = req.body;
+
+    const loginDate = new Date();
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+
+    const newPublicacion = new Publicacion({
+      reportTitle,
+      reportDescription,
+      category,
+      communityLocation,
+      loginDate,
+      imagePath,
+      aprobado: false,
+      usuario: req.session.usuario.id
+    });
+
+    await newPublicacion.save();
+
+    // Redirigir al formulario con mensaje de éxito
+    res.redirect('/RegistroPublicacion?exito=true');
+
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Error al registrar la publicación');
+  }
+});
 
 
 
@@ -459,5 +575,89 @@ app.post('/aprobarEmprendimiento/:id', async (req, res) => {
   }
 });
 
+
+
+app.post('/aprobarPublicacion/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const publicacion = await Publicacion.findById(id);
+    if (!publicacion || publicacion.aprobado === true) {
+      return res.status(400).send('Publicación no válida o ya aprobada');
+    }
+
+    // Aprobar la publicación
+    publicacion.aprobado = true;
+    await publicacion.save();
+
+    res.redirect('/PublicacionesAdmin');
+  } catch (error) {
+    console.error('Error al aprobar publicación:', error);
+    res.status(500).send('Error interno');
+  }
+});
+
+
+
+app.post('/actualizarPerfil', async (req, res) => {
+  try {
+    const userId = req.session.usuario?.id;
+    if (!userId) return res.status(401).send('Sesión no activa');
+
+    const {
+      usuario,
+      identificacion,
+      nombre,
+      telefono,
+      fechaNacimiento,
+      email
+    } = req.body;
+
+    // Actualización directa, sin cambiar rol ni password
+    await User.findByIdAndUpdate(userId, {
+      usuario,
+      Identification: identificacion,
+      nombre,
+      telefono,
+      Fecha: new Date(fechaNacimiento),
+      email
+    });
+
+    res.redirect('/perfil');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error al actualizar perfil');
+  }
+});
+
+
+
+app.post('/perfil/cambiar-clave', async (req, res) => {
+  try {
+    const userId = req.session.usuario?.id;
+    if (!userId) return res.status(401).send('Sesión no activa');
+
+    const { claveActual, claveNueva, confirmarClave } = req.body;
+
+    if (claveNueva !== confirmarClave) {
+      return res.status(400).send('Las claves no coinciden');
+    }
+
+    const user = await User.findById(userId);
+    if (!user) return res.status(404).send('Usuario no encontrado');
+
+    const match = await bcrypt.compare(claveActual, user.password);
+    if (!match) return res.status(400).send('Clave actual incorrecta');
+
+    const hashed = await bcrypt.hash(claveNueva, 10);
+    user.password = hashed;
+    await user.save();
+
+    res.redirect('/perfil?passwordActualizada=true');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error al cambiar la clave');
+  }
+});
 
 

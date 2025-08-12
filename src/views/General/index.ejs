@@ -124,7 +124,7 @@
             <div class="business-links">
                 <% emprendimientos.slice(0, 3).forEach((emprendimiento, index) => { %>
                 <a href="/tablaEmprendimientosAprobados" class="business-card">
-                    <img src="img/logooficial.png" alt="post<%= index + 1 %>">
+                    <img src="<%= emprendimiento.imagePath %>" alt="post<%= index + 1 %>">
                     <div class="card-content">
                     <h5><%= emprendimiento.businessName || 'Sin nombre' %></h5>
                     <p><%= emprendimiento.category || 'Sin categoría' %></p>

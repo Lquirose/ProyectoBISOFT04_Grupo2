@@ -1,10 +1,19 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+
 .post-main {
   max-width: 1400px; 
   margin: 32px auto;
   padding: 0 32px;
   display: flex;
   gap: 32px;
-  font-family: 'Poppins', sans-serif; 
+  font-family: 'Poppins', sans-serif;
+  flex: 1; 
 }
 
 .availablePosts {
@@ -29,21 +38,30 @@
   margin-top: 8px;
   font-size: 15px;
 }
-
 .postCards {
-  flex: 2; 
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding: 16px;
 }
+
+
 
 .Card {
-  background-color: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+  display:flex;
+  flex-direction: column;
+  
 }
+
+
 
 .Card:hover {
   transform: scale(1.01);
@@ -56,17 +74,31 @@
   font-size: 13px;
 }
 
-.postImg,
-.postsImg { 
-  background-color: #e0e0e0;
-  height: 150px;
+
+.postImg {
+  width: 100%;
+  height: auto; /* altura fija */
+  background-color: #f0f0f0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: #888;
-  font-size: 14px;
-  background-size: cover; 
-  background-position: center;
+  align-items: center;
+  overflow: hidden;
+  max-height: 300px;
+}
+
+.postImg img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* ajusta sin recortar */
+  background-color: #f0f0f0;
+  display: block;
+}
+
+
+.text-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 16px;
 }
 
 .Card h3 {
@@ -81,6 +113,9 @@
   color: #444;
   font-size: 14px;
 }
+
+
+
 
 
 @media (max-width: 992px) {
