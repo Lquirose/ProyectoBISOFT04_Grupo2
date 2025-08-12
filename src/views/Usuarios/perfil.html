@@ -146,6 +146,73 @@
 
     overlay.addEventListener('click', hideMenu);
 
+    
+    let isEditing = false;
+    const originalValues = {}; 
+
+    
+    function toggleEditMode() {
+      const editButton = document.querySelector('a[href="#"]:first-child'); // El botón "Editar perfil"
+      const userInfoSpans = document.querySelectorAll('.user-Info span');
+      
+      if (!isEditing) {
+        
+        userInfoSpans.forEach((span, index) => {
+          
+          originalValues[index] = span.textContent;
+          
+          
+          const input = document.createElement('input');
+          input.type = 'text';
+          input.value = span.textContent;
+          input.style.marginLeft = span.style.marginLeft || 'min(1vw,1vh)';
+          input.style.fontWeight = '600';
+          input.style.border = '1px solid #ddd';
+          input.style.padding = '2px 5px';
+          input.style.borderRadius = '3px';
+          input.style.fontSize = 'inherit';
+          input.style.fontFamily = 'inherit';
+          
+          
+          span.parentNode.replaceChild(input, span);
+        });
+        
+        
+        editButton.textContent = 'Guardar cambios';
+        isEditing = true;
+        
+      } else {
+        
+        const userInfoInputs = document.querySelectorAll('.user-Info input');
+        
+        userInfoInputs.forEach((input, index) => {
+          
+          const span = document.createElement('span');
+          span.textContent = input.value;
+          span.style.fontWeight = '600';
+          span.style.marginLeft = 'min(1vw,1vh)';
+          
+          
+          input.parentNode.replaceChild(span, input);
+        });
+        
+        
+        editButton.textContent = 'Editar perfil';
+        isEditing = false;
+      }
+      
+      hideMenu();
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      const editButton = document.querySelector('a[href="#"]:first-child');
+      
+      editButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        toggleEditMode();
+      });
+    });
+
   </script>
 </body>
 
