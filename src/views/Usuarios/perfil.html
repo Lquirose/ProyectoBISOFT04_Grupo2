@@ -78,14 +78,13 @@
           <img src="img/userProfile.png" alt="">
         </div>
 
-        <h5 class="User">@Usuario</h5>
+        <h5 class="User">@<span>Usuario</span></h5>
 
         <h5 class="user-Info">Identificacion: <span>119410542</span></h5>
         <h5 class="user-Info">Nombre: <span>Jean Marco Lopez Mejia</span></h5>
         <h5 class="user-Info">Telefono: <span>72443340</span></h5>
         <h5 class="user-Info">Fecha: <span> 20-7-2005</span></h5>
         <h5 class="user-Info">Email: <span> jlopez@gmail.com</span></h5>
-        <h5 class="user-Info">contraseña: <span> ********</span></h5>
 
       </div>
 
@@ -115,105 +114,133 @@
 
   <script>
 
-    const menuButton = document.getElementById('menuButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-    const overlay = document.getElementById('overlay');
+const menuButton = document.getElementById('menuButton');
+const dropdownMenu = document.getElementById('dropdownMenu');
+const overlay = document.getElementById('overlay');
 
-    function toggleMenu() {
-      const isVisible = dropdownMenu.classList.contains('show');
+function toggleMenu() {
+  const isVisible = dropdownMenu.classList.contains('show');
 
-      if (isVisible) {
-        hideMenu();
-      } else {
-        showMenu();
-      }
-    }
+  if (isVisible) {
+    hideMenu();
+  } else {
+    showMenu();
+  }
+}
 
-    function showMenu() {
-      dropdownMenu.classList.add('show');
-      overlay.classList.add('show');
-    }
+function showMenu() {
+  dropdownMenu.classList.add('show');
+  overlay.classList.add('show');
+}
 
-    function hideMenu() {
-      dropdownMenu.classList.remove('show');
-      overlay.classList.remove('show');
-    }
+function hideMenu() {
+  dropdownMenu.classList.remove('show');
+  overlay.classList.remove('show');
+}
 
-    menuButton.addEventListener('click', function (e) {
-      e.stopPropagation();
-      toggleMenu();
-    });
+menuButton.addEventListener('click', function (e) {
+  e.stopPropagation();
+  toggleMenu();
+});
 
-    overlay.addEventListener('click', hideMenu);
+overlay.addEventListener('click', hideMenu);
 
+
+let isEditing = false;
+const originalValues = {}; 
+
+
+function toggleEditMode() {
+  const editButton = document.querySelector('a[href="#"]:first-child'); // El botón "Editar perfil"
+  const userInfoSpans = document.querySelectorAll('.user-Info span');
+  const userSpan = document.querySelector('.User span'); // Agregar el span de la clase User
+  
+  if (!isEditing) {
     
-    let isEditing = false;
-    const originalValues = {}; 
-
-    
-    function toggleEditMode() {
-      const editButton = document.querySelector('a[href="#"]:first-child'); // El botón "Editar perfil"
-      const userInfoSpans = document.querySelectorAll('.user-Info span');
+    userInfoSpans.forEach((span, index) => {
       
-      if (!isEditing) {
-        
-        userInfoSpans.forEach((span, index) => {
-          
-          originalValues[index] = span.textContent;
-          
-          
-          const input = document.createElement('input');
-          input.type = 'text';
-          input.value = span.textContent;
-          input.style.marginLeft = span.style.marginLeft || 'min(1vw,1vh)';
-          input.style.fontWeight = '600';
-          input.style.border = '1px solid #ddd';
-          input.style.padding = '2px 5px';
-          input.style.borderRadius = '3px';
-          input.style.fontSize = 'inherit';
-          input.style.fontFamily = 'inherit';
-          
-          
-          span.parentNode.replaceChild(input, span);
-        });
-        
-        
-        editButton.textContent = 'Guardar cambios';
-        isEditing = true;
-        
-      } else {
-        
-        const userInfoInputs = document.querySelectorAll('.user-Info input');
-        
-        userInfoInputs.forEach((input, index) => {
-          
-          const span = document.createElement('span');
-          span.textContent = input.value;
-          span.style.fontWeight = '600';
-          span.style.marginLeft = 'min(1vw,1vh)';
-          
-          
-          input.parentNode.replaceChild(span, input);
-        });
-        
-        
-        editButton.textContent = 'Editar perfil';
-        isEditing = false;
-      }
+      originalValues[index] = span.textContent;
       
-      hideMenu();
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-      const editButton = document.querySelector('a[href="#"]:first-child');
       
-      editButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        toggleEditMode();
-      });
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = span.textContent;
+      input.style.marginLeft = span.style.marginLeft || 'min(1vw,1vh)';
+      input.style.fontWeight = '600';
+      input.style.border = '1px solid #ddd';
+      input.style.padding = '2px 5px';
+      input.style.borderRadius = '3px';
+      input.style.fontSize = 'inherit';
+      input.style.fontFamily = 'inherit';
+      
+      
+      span.parentNode.replaceChild(input, span);
     });
+    
+    // Convertir el span de .User en input
+    if (userSpan) {
+      originalValues['user'] = userSpan.textContent;
+      
+      const input = document.createElement('input');
+      input.type = 'text';
+      input.value = userSpan.textContent;
+      input.style.fontWeight = '600';
+      input.style.border = '1px solid #ddd';
+      input.style.padding = '2px 5px';
+      input.style.borderRadius = '3px';
+      input.style.fontSize = 'inherit';
+      input.style.fontFamily = 'inherit';
+      
+      userSpan.parentNode.replaceChild(input, userSpan);
+    }
+    
+    
+    editButton.textContent = 'Guardar cambios';
+    isEditing = true;
+    
+  } else {
+    
+    const userInfoInputs = document.querySelectorAll('.user-Info input');
+    const userInput = document.querySelector('.User input'); // Buscar el input de .User
+    
+    userInfoInputs.forEach((input, index) => {
+      
+      const span = document.createElement('span');
+      span.textContent = input.value;
+      span.style.fontWeight = '600';
+      span.style.marginLeft = 'min(1vw,1vh)';
+      
+      
+      input.parentNode.replaceChild(span, input);
+    });
+    
+    // Convertir el input de .User de vuelta a span
+    if (userInput) {
+      const span = document.createElement('span');
+      span.textContent = userInput.value;
+      span.style.fontWeight = '600';
+      
+      userInput.parentNode.replaceChild(span, userInput);
+    }
+    
+    
+    editButton.textContent = 'Editar perfil';
+    isEditing = false;
+  }
+  
+  hideMenu();
+}
 
-  </script>
+document.addEventListener('DOMContentLoaded', function() {
+  const editButton = document.querySelector('a[href="#"]:first-child');
+  
+  editButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    toggleEditMode();
+  });
+});
+
+</script>
 </body>
 
 </html>

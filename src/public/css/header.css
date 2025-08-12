@@ -143,7 +143,7 @@ nav a:hover {
         transition: max-height 0.3s ease;
         max-height: 0;
         overflow: hidden;
-
+        
     }
     .responsive-menu:checked ~ .menu-content .menu-item{
         max-height: 800px;
@@ -155,7 +155,7 @@ nav a:hover {
         padding:10px;
         cursor: pointer;
         color: white;
-        
+        margin-left:min(23vw,23vh);
     }
     nav ul {
         flex-direction: column;
@@ -175,7 +175,6 @@ nav a:hover {
         font-size: 16px;
         border-radius: 6px;
         background-color: #0041c2;
-        /*background-color: rgba(40, 101, 255, 0.1) ;*/
         color: white;
         transition: background-color 0.3s ease;
     }

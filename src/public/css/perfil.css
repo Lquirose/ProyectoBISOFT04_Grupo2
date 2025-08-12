@@ -1,115 +1,115 @@
-    body{
-      font-family: 'Poppins', sans-serif; 
+    body {
+      font-family: 'Poppins', sans-serif;
     }
 
-    main{
+    main {
       width: auto;
-      height: min(72vh,72vw);
+      height: min(72vh, 72vw);
       display: flex;
       flex-direction: column;
     }
 
-    .title{
+    .title {
       width: auto;
-      height: min(10vh,10vw);
+      height: min(10vh, 10vw);
       display: flex;
       justify-content: center;
     }
 
-    .title h1{
-      font-weight:700;
-      font-size: min(4vh,4vw);
-      margin-top: min(3vh,3vw);
+    .title h1 {
+      font-weight: 700;
+      font-size: min(4vh, 4vw);
+      margin-top: min(3vh, 3vw);
     }
 
-    .main-high{
+    .main-high {
       display: flex;
       flex-direction: row;
       justify-content: center;
     }
 
-    .user-photo{
+    .user-photo {
       display: flex;
-      flex-direction:column;
+      flex-direction: column;
       align-items: center;
       height: auto;
-      width: min(52vw,52vh);
+      width: min(52vw, 52vh);
       background-color: #ffffff;
-      border-radius: min(1vw,1vh);
-      box-shadow:  0 2px 8px rgba(0,0,0,0.3);
-      margin-top: min(2vw,2vh);
-      position: relative; 
+      border-radius: min(1vw, 1vh);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      margin-top: min(2vw, 2vh);
+      position: relative;
     }
 
-    .User{
-      margin-top: min(2vw,2vh);
-      font-size: min(2.3vw,2.3vh);
-      margin-bottom:min(1vw,1vh);
+    .User {
+      margin-top: min(2vw, 2vh);
+      font-size: min(2.3vw, 2.3vh);
+      margin-bottom: min(1vw, 1vh);
     }
 
-    .user-Info{
-      margin-top: min(2vw,2vh);
-      font-size: min(2.3vw,2.3vh);
+    .user-Info {
+      margin-top: min(2vw, 2vh);
+      font-size: min(2.3vw, 2.3vh);
       align-self: flex-start;
-      margin-left: min(1vw,1vh);
+      margin-left: min(1vw, 1vh);
       display: inline-block;
     }
 
-    .user-Info span{
+    .user-Info span {
       font-weight: 600;
-      margin-left: min(1vw,1vh);
+      margin-left: min(1vw, 1vh);
     }
 
-    .user-Info:last-of-type{
-      margin-bottom: min(1vw,1vh);
+    .user-Info:last-of-type {
+      margin-bottom: min(1vw, 1vh);
     }
 
-    .Circle{
+    .Circle {
       background-color: #dddddd;
-      height: min(18vw,18vh);
-      width: min(18vw,18vh);
+      height: min(18vw, 18vh);
+      width: min(18vw, 18vh);
       border-radius: 50%;
       overflow: hidden;
-      border: min(0.1vh,0.1vw) solid #dddddd;
-      margin-top: min(1vh,1vw);
+      border: min(0.1vh, 0.1vw) solid #dddddd;
+      margin-top: min(1vh, 1vw);
     }
 
-    .Circle img{
+    .Circle img {
       filter: invert(1);
       width: 100%;
       height: auto;
-      margin-top: min(3vw,3vh);
+      margin-top: min(3vw, 3vh);
     }
 
-    .MenuButton{
+    .MenuButton {
       height: auto;
       width: auto;
       position: absolute;
       border: none;
       background-color: transparent;
-      right: min(1vw,1vh); 
-      top: min(1vw,1vh); 
-      cursor: pointer; 
+      right: min(1vw, 1vh);
+      top: min(1vw, 1vh);
+      cursor: pointer;
     }
 
-    .MenuButton img{
-      height: min(6vw,6vh);
+    .MenuButton img {
+      height: min(6vw, 6vh);
       width: auto;
     }
 
-    .MenuButton img:active{
+    .MenuButton img:active {
       filter: opacity(.7);
     }
 
- 
+
     .dropdown-menu {
       position: absolute;
-      top: min(7vw,7vh);
-      right: min(1vw,1vh);
+      top: min(7vw, 7vh);
+      right: min(1vw, 1vh);
       background-color: white;
-      border-radius: min(0.5vw,0.5vh);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      min-width: min(20vw,20vh);
+      border-radius: min(0.5vw, 0.5vh);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      min-width: min(20vw, 20vh);
       z-index: 1000;
       opacity: 0;
       visibility: hidden;
@@ -126,7 +126,7 @@
     .dropdown-menu ul {
       list-style: none;
       margin: 0;
-      padding: min(1vw,1vh) 0;
+      padding: min(1vw, 1vh) 0;
     }
 
     .dropdown-menu li {
@@ -135,10 +135,10 @@
 
     .dropdown-menu a {
       display: block;
-      padding: min(1.5vw,1.5vh) min(2vw,2vh);
+      padding: min(1.5vw, 1.5vh) min(2vw, 2vh);
       text-decoration: none;
       color: #333;
-      font-size: min(2vw,2vh);
+      font-size: min(2vw, 2vh);
       font-weight: 400;
       transition: all 0.2s ease;
     }
