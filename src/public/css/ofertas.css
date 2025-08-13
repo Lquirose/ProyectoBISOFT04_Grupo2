@@ -1,197 +1,158 @@
     * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-      }
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
 
-      body {
-        line-height: 1.6;
-      }
+    body {
+      line-height: 1.6;
+      background-color: #f1f5f9;
+    }
 
-      .top-blue-section {
-        background-color: #3b82f6;
-        color: white;
-        padding: 2rem 1rem;
-        text-align: center;
-      }
+    main{
+      margin-bottom: min(6vh,6vw);
+      background-color: #f1f5f9;
+    }
 
-      .registro {
-        padding: 2rem 1rem;
-        background-color: #f9fafb;
+    .page-title {
+      background-color: #e6efff;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .ofertas-space {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .white-button,
+    .blue-button {
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .img-wrapper {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      background-color: #a9a7a7;
+      overflow: hidden;
+    }
+
+    .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      margin-left: 15px;
+      margin-bottom: 10px;
+      color: black;
+      font-weight: normal;
+    }
+
+    .card-content h5 {
+      font-weight: normal;
+    }
+
+    .white-button {
+      margin-bottom: 10px;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-left: 70px;
+      padding-right: 70px;
+      background-color: white;
+      color: #007BFF;
+      border: #007BFF 1px solid;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .blue-button {
+      background-color: #1e3a8a;
+      color: white;
+    }
+
+    .ofertas {
+      padding: 2rem 1rem;
+      background-color: #f1f5f9;
+      margin-top: min(5vw,5vh);
+    }
+
+    .ofertas-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .ofertas-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      width: 250px;
+      overflow: hidden;
+    }
+
+    .ofertas-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 1rem;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #1e3a8a;
+      color: white;
+      padding: 2rem 1rem;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .submenu {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .submenu a {
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
       }
 
       .registro-contenedor {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        max-width: 800px;
-        margin: auto;
-      }
-
-      .celeste-button{
-        width: 90px; 
-        display:inline-flex;
-        text-size-adjust: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: rgba(40, 101, 255, 0.1);
-        color: black;
-        border: none;
-        border-radius: 5px;
-        font-size: small;
-        padding: 5px;
-        margin-bottom: 15px;
-        cursor: pointer;
-      }
-
-      .btn-buscar{
-        width: 90px; 
-        display:inline-flex;
-        text-size-adjust: 100%;
-        justify-content: center;
-        align-items: center;
-        background-color: #007BFF;
-        color: #ffffff;
-        border: none;
-        border-radius: 5px;
-        font-size: small;
-        padding: 5px;
-        margin-top: 10px;
-        cursor: pointer;
-      }
-
-      .ofertas-space {
-        text-align: center;
-        padding: 2rem 1rem;
-      }
-
-      .white-button,
-      .blue-button {
-        margin: 0.5rem;
-        padding: 0.5rem 1rem;
-        border-radius: 5px;
-        border: none;
-        cursor: pointer;
-      }
-
-      .img-wrapper {
-        width: 100%;
-        aspect-ratio: 3 / 2;         
-        background-color: #a9a7a7;   
-        overflow: hidden;
-      }
-
-      .img-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        display: block;
-      }
-
-      .card-content{
-          display:flex;
-          flex-direction: column;
-          text-align: left;
-          margin-left: 15px;
-          margin-bottom: 10px;
-          color: black;
-          font-weight: normal;
-      }
-
-      .card-content h5{
-        font-weight: normal;
-      }
-
-      .white-button{
-        margin-bottom: 10px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-left: 70px;
-        padding-right: 70px;
-        background-color:white;
-        color: #007BFF;
-        border: #007BFF 1px solid;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      .blue-button {
-        background-color: #1e3a8a;
-        color: white;
-      }
-
-      .ofertas {
-        padding: 2rem 1rem;
-        background-color: #f1f5f9;
+        padding: 1rem;
       }
 
       .ofertas-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-        justify-content: center;
-      }
-
-      .ofertas-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        width: 250px;
-        overflow: hidden;
-      }
-
-      .ofertas-card img {
-        width: 100%;
-        height: 150px;
-        object-fit: cover;
-      }
-
-      .card-content {
-        padding: 1rem;
-        text-align: center;
-      }
-
-      footer {
-        background-color: #1e3a8a;
-        color: white;
-        padding: 2rem 1rem;
-      }
-
-      .footer-links {
-        list-style: none;
-        display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
       }
 
-      .submenu {
-        display: flex;
-        gap: 1rem;
+      .logo {
+        max-width: 100px;
       }
-
-      .submenu a {
-        color: white;
-        font-size: 1.5rem;
-      }
-
-      @media (max-width: 768px) {
-        nav ul {
-          flex-direction: column;
-          gap: 0.5rem;
-        }
-
-        .registro-contenedor {
-          padding: 1rem;
-        }
-
-        .ofertas-links {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        .logo {
-          max-width: 100px;
-        }
-      }
+    }
