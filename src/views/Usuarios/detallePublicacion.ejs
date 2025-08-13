@@ -122,13 +122,18 @@
 
         <div class="full-width-block">
           <div class="user-profile-card">
-            <div class="avatar"></div>
+            <div class="avatar">
+              <% if (publicacion.usuario?.imagePath) { %>
+                  <img src="<%= publicacion.usuario.imagePath %>" alt="Foto del autor">
+              <% } else { %>
+                  <img src="/img/default-avatar.png" alt="Foto por defecto">
+              <% } %>
+            </div>
+
             <div class="user-info">
               <h4><%= publicacion.usuario?.nombre || 'Autor desconocido' %></h4>
-              <p>Autor</p>
               <p>Fecha de registro: <%= new Date(publicacion.usuario?.fechaRegistro).toLocaleDateString() || '—' %></p>
             </div>
-            <button class="view-profile-button">Ver perfil</button>
           </div>
         </div>
       </div>

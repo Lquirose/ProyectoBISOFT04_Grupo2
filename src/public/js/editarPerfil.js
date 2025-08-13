@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', () => {
     e.preventDefault();
     isEditing = !isEditing;
 
+    const userPhotoBlock = document.querySelector('.user-photo');
+    userPhotoBlock.classList.toggle('show-image-input', isEditing);
+
     const fields = document.querySelectorAll(isEditing ? '.editable' : '.input-editable');
 
     fields.forEach(el => {
@@ -39,6 +42,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     toggleEditBtn.textContent = isEditing ? 'Guardar cambios' : 'Editar perfil';
+
+    const imageInput = document.getElementById('image');
+    if (!perfilForm.contains(imageInput) && imageInput.files.length > 0) {
+      perfilForm.appendChild(imageInput); // ✅ Mueve el input original al form
+    }
+
 
     // 🔧 NUEVO: enviar el formulario si se está guardando
     if (!isEditing) {

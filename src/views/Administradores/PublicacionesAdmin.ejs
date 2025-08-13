@@ -83,7 +83,7 @@
                         <i class='bx  bx-arrow-right-stroke-square'></i>
                     </div>
                     <div class="sidebar-text">
-                        <p><a href="/">Salir del Sistema</a></p>
+                        <p><a href="/logout">Salir del Sistema</a></p>
                     </div>
                 </li>
             </ul>
@@ -157,54 +157,79 @@
                         </div>
                     </div>
 
-                    <div class="full-width-block">
+                   <div class="full-width-block">
                         <div class="user-profile-card">
                             <div class="avatar"></div>
                             <div class="user-info">
-                                <h4>Juan Pérez</h4>
+                                <h4 id="autorNombre">Autor desconocido</h4>
                                 <p>Autor</p>
-                                <p>Fecha de registro: 15 de enero, 2021</p>
+                                <p id="autorFecha">Fecha de registro: —</p>
                             </div>
-                            <button class="view-profile-button">Ver perfil</button>
-                        </div>
+                            </div>
+
                     </div>
+
 
                     <div class="section-title-wrapper">
-                         <h3 class="section-title">Lista de Emprendimientos</h3>
+                    <h3 class="section-title">Publicaciones Pendientes</h3>
                     </div>
 
-                   <div class="section-content-wrapper">
+                    <div class="section-content-wrapper">
                         <div class="emprendimientos-table-wrapper">
                             <table>
-                            <thead>
-                                <tr>
-                                <th>Nombre</th>
-                                <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% publicaciones.forEach(pub => { %>
-                                <tr onclick="mostrarDetallePorId('<%= pub._id %>')">
-                                <td><%= pub.reportTitle %></td>
-                                    <td>
-                                        <form action="/aprobarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
-                                            <button type="submit">✅</button>
-                                        </form>
-                                        <form action="/rechazarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
-                                            <button type="submit">❌</button>
-                                        </form>
-                                        <form action="/eliminarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
-                                            <button type="submit">🗑️</button>
-                                        </form>
-                                        <a href="/editarPublicacion/<%= pub._id %>">📝</a>
-                                    </td>
-                                </tr>
-                                <% }) %>
-
-                            </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% publicacionesPendientes.forEach(pub => { %>
+                                        <tr onclick="mostrarDetallePorId('<%= pub._id %>')">
+                                            <td><%= pub.reportTitle %></td>
+                                            <td>
+                                                <form action="/aprobarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
+                                                    <button type="submit">✅</button>
+                                                </form>
+                                                <form action="/rechazarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
+                                                    <button type="submit">❌</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
                             </table>
                         </div>
-                    </div>
+                        </div>
+
+                        <div class="section-title-wrapper">
+                            <h3 class="section-title">Publicaciones Aprobadas</h3>
+                        </div>
+
+                        <div class="section-content-wrapper">
+                            <div class="emprendimientos-table-wrapper">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Nombre</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                <tbody>
+                                    <% publicacionesAprobadas.forEach(pub => { %>
+                                        <tr onclick="mostrarDetallePorId('<%= pub._id %>')">
+                                        <td><%= pub.reportTitle %></td>
+                                            <td>
+                                                <form action="/eliminarPublicacion/<%= pub._id %>" method="POST" style="display:inline;">
+                                                    <button type="submit">🗑️</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                                </table>
+                            </div>
+                        </div>
 
 
                 </div>
@@ -233,7 +258,7 @@
 
     
 <script type="application/json" id="data-publicaciones">
-  <%- JSON.stringify(publicaciones) %>
+  <%- JSON.stringify([...publicacionesPendientes, ...publicacionesAprobadas]) %>
 </script>
 
 
@@ -256,7 +281,13 @@ function mostrarDetallePorId(id) {
         estado: pub.aprobado ? 'Aprobado' : 'Pendiente',
         descripcion: pub.reportDescription,
         ubicacion: pub.communityLocation,
-        imagen: pub.imagePath
+        imagen: pub.imagePath,
+        autor: pub.usuario?.nombre || '—',
+        autorImagen: pub.usuario?.imagePath,
+        fechaRegistro: pub.usuario?.Fecha
+        ? new Date(pub.usuario.Fecha).toLocaleDateString('es-ES')
+        : '—'
+
     });
 }
 </script>
@@ -286,6 +317,18 @@ function mostrarDetallePorId(id) {
     img.classList.add('hidden');
     contenedor.classList.remove('has-image');
     }
+    const avatar = document.querySelector('.user-profile-card .avatar');
+    avatar.innerHTML = '';
+    const imgAutor = document.createElement('img');
+    imgAutor.src = datos.autorImagen || '/img/default-avatar.png';
+    imgAutor.alt = 'Foto del autor';
+    avatar.appendChild(imgAutor);
+
+    
+    document.getElementById('autorNombre').textContent = datos.autor;
+    document.getElementById('autorFecha').textContent = `Fecha de registro: ${datos.fechaRegistro}`;
+
+    
 }
 </script>
 

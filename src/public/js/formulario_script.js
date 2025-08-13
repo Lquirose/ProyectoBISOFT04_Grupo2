@@ -23,7 +23,8 @@ const mensajesError = { //Esto es un objeto literal, sirve para almacena los men
   "Identification" : "Debe ingresar una identificación válida de 9 dígitos sin espacios ni símbolos.",
   "nombre": "Debe de tener de 10 a 60 letras",
   "Fecha" : "Debe de tener al menos 15 años para ingresar al sitio",
-  "confirmPassword" : "Las contraseñas no coinciden"
+  "confirmPassword" : "Las contraseñas no coinciden",
+  "precio" : "El campo precio es obligatorio si la categoría es 'oferta' y debe ser un número positivo."
 
 
 }
@@ -106,7 +107,16 @@ const validadores = {// Se declara e inicializa la varable validadores
     
     // Compara que ambas contraseñas coincidan y no estén vacías
     return value.length > 0 && value === passwordField.value;
-  }
+  },
+  "precio": (value, input) => {
+  const form = input.closest("form");
+  const categoria = form ? form.querySelector('select[name="category"]')?.value?.toLowerCase() : null;
+
+  if (categoria !== "oferta") return true; // No validar si no es oferta
+
+  const num = parseFloat(value);
+  return !isNaN(num) && num > 0;
+}
   
 
 

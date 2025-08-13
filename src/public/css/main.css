@@ -256,19 +256,27 @@ button:hover{
     transition: transform 0.2s ease;
     text-decoration: none;
     color: inherit;
-    margin-bottom: 100px;
+    margin-bottom: 60px;
 }
 
 .post-card:hover {
     transform: translate(-3px);
 }
 
-.post-card img {
+/*.post-card img {
     width: 420px;
     height: 250px;
     object-fit:cover;
     border-radius: 8px;
     flex-shrink: 0;
+}*/
+
+.post-card img {
+  width: 100%; /* ← se adapta al contenedor */
+  height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
 }
 
 .business-card{

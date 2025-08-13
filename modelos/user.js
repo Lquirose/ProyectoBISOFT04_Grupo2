@@ -44,6 +44,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         enum: ['administrador', 'emprendedor', 'ciudadano'],
         default: 'ciudadano'
+    }, 
+    imagePath: {
+        type: String,
+        default: '/img/default.png',
+        required: true
     }
 });
 

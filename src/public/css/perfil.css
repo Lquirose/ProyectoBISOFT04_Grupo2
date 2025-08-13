@@ -77,11 +77,13 @@
     }
 
     .Circle img {
-      filter: invert(1);
       width: 100%;
-      height: auto;
-      margin-top: min(3vw, 3vh);
-    }
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      margin-top: 0; /* eliminado el empuje */
+      }
+
 
     .MenuButton {
       height: auto;
@@ -270,5 +272,28 @@
   font-weight: 500;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+#image {
+  display: none;
+}
+
+.show-image-input #image {
+  display: block;
+  margin-top: min(1.5vh, 1.5vw);
+  font-size: min(2vw, 2vh);
+  font-weight: 500;
+  color: #444;
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  border-radius: min(0.4vh, 0.4vw);
+  padding: min(0.8vh, 0.8vw) min(1.2vh, 1.2vw);
+  cursor: pointer;
+  box-sizing: border-box;
+  transition: background-color 0.2s ease;
+}
+
+.show-image-input #image:hover {
+  background-color: #e2e2e2;
 }
 

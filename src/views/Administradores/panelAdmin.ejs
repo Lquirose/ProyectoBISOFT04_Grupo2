@@ -82,7 +82,7 @@
                         <i class='bx  bx-arrow-right-stroke-square'></i>
                     </div>
                     <div class="sidebar-text">
-                        <p><a href="/">Salir del Sistema</a></p>
+                        <p><a href="/logout">Salir del Sistema</a></p>
                     </div>
                 </li>
             </ul>
@@ -98,18 +98,20 @@
                 <section class="panel-summary-cards">
                     <div class="summary-card">
                         <h3>Publicaciones Pendientes</h3>
-                        <p>5</p>
-                        <a href="publicacionesAdmin.html">Ver Publicaciones</a>
+                        <p><%= publicacionesPendientes %></p>
+                        <a href="/PublicacionesAdmin">Ver Publicaciones</a>
                     </div>
-                     <div class="summary-card">
-                        <h3>Reportes Recientes</h3>
-                        <p>2</p>
-                        <a href="ReportesAdmin.html">Ver Reportes</a>
+
+                    <div class="summary-card">
+                        <h3>Reportes Pendientes</h3>
+                        <p><%= reportesPendientes %></p>
+                        <a href="/ReportesAdmin">Ver Reportes</a>
                     </div>
-                     <div class="summary-card">
+
+                    <div class="summary-card">
                         <h3>Emprendimientos Nuevos</h3>
-                        <p>1</p>
-                        <a href="EmprendimientosAdmin.html">Ver Emprendimientos</a>
+                        <p><%= emprendimientosNuevos %></p>
+                        <a href="/EmprendimientosAdmin">Ver Emprendimientos</a>
                     </div>
                 </section>
                 

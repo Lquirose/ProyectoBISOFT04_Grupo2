@@ -54,12 +54,15 @@ const Publicacion = require('../modelos/publicaciones.js');
 app.get('/index', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
   try {
     const emprendimientos = await Business.find({ aprobado: true }).limit(3);
+    const eventos = await Publicacion.find({ category: 'evento', aprobado: true }).limit(2);
+
     res.render('General/index', {
       usuario: req.session.usuario,
-      emprendimientos
+      emprendimientos,
+      eventos 
     });
   } catch (error) {
-    console.error('Error al cargar emprendimientos:', error);
+    console.error('Error al cargar datos del index:', error);
     res.status(500).send('Error al cargar la página');
   }
 });
@@ -79,13 +82,17 @@ app.get('/Registro',(req,res)=>{
 app.get('/EmprendimientosAdmin', verificarSesion, verificarRol('admin'), async (req, res) => {
   try {
     const emprendimientosPendientes = await Business.find({ aprobado: false }).populate('usuario');
+    const emprendimientosAprobados = await Business.find({ aprobado: true }).populate('usuario');
+
     res.render("Administradores/EmprendimientosAdmin", {
-      emprendimientos: emprendimientosPendientes
+      emprendimientosPendientes,
+      emprendimientosAprobados
     });
   } catch (error) {
-    console.error("Error al cargar emprendimientos pendientes:", error);
+    console.error("Error al cargar emprendimientos:", error);
     res.render("Administradores/EmprendimientosAdmin", {
-      emprendimientos: []
+      emprendimientosPendientes: [],
+      emprendimientosAprobados: []
     });
   }
 });
@@ -94,22 +101,42 @@ app.get('/OfertasAdmin', verificarSesion, verificarRol('admin'),(req,res)=>{
     res.render("Administradores/OfertasAdmin.html");
 })
 
-app.get('/panelAdmin', verificarSesion, verificarRol('admin'), (req, res) => {
-  res.render('Administradores/panelAdmin.html');
+app.get('/panelAdmin', verificarSesion, verificarRol('admin'), async (req, res) => {
+  try {
+    const publicacionesPendientes = await Publicacion.countDocuments({ aprobado: false, category: { $ne: 'reporte' } });
+    const reportesPendientes = await Publicacion.countDocuments({ category: 'reporte', aprobado: false });
+    const emprendimientosNuevos = await Business.countDocuments({ aprobado: false });
+
+    res.render('Administradores/panelAdmin', {
+      publicacionesPendientes,
+      reportesPendientes,
+      emprendimientosNuevos
+    });
+  } catch (error) {
+    console.error('Error al cargar panel admin:', error);
+    res.render('Administradores/panelAdmin', {
+      publicacionesPendientes: 0,
+      reportesPendientes: 0,
+      emprendimientosNuevos: 0
+    });
+  }
 });
 
 
 app.get('/PublicacionesAdmin', verificarSesion, verificarRol('admin'), async (req, res) => {
   try {
     const publicacionesPendientes = await Publicacion.find({ aprobado: false }).populate('usuario');
+    const publicacionesAprobadas = await Publicacion.find({ aprobado: true }).populate('usuario');
 
     res.render("Administradores/PublicacionesAdmin", {
-      publicaciones: publicacionesPendientes
+      publicacionesPendientes,
+      publicacionesAprobadas
     });
   } catch (error) {
-    console.error("Error al cargar publicaciones pendientes:", error);
+    console.error("Error al cargar publicaciones:", error);
     res.render("Administradores/PublicacionesAdmin", {
-      publicaciones: []
+      publicacionesPendientes: [],
+      publicacionesAprobadas: []
     });
   }
 });
@@ -150,9 +177,22 @@ app.get('/RegistroPublicacion', verificarSesion, verificarRol('ciudadano','empre
   }
 });
 
-app.get('/ofertas', verificarSesion, verificarRol('ciudadano','emprendedor'),(req,res)=>{
-    res.render("Usuarios/ofertas.html");
-})
+app.get('/ofertas', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
+  try {
+    const publicaciones = await Publicacion.find({
+      aprobado: true,
+      category: 'oferta'
+    });
+
+    res.render('Usuarios/ofertas', {
+      usuario: req.session.usuario,
+      publicaciones
+    });
+  } catch (error) {
+    console.error('Error al cargar ofertas:', error);
+    res.status(500).send('Error al cargar la vista de ofertas');
+  }
+});
 
 app.get('/perfil', async (req, res) => {
   try {
@@ -191,7 +231,15 @@ app.get('/publicaciones', verificarSesion, verificarRol('ciudadano', 'emprendedo
 });
 app.get('/tablaPublicacionesAprobadas', verificarSesion, verificarRol('ciudadano', 'emprendedor'), async (req, res) => {
   try {
-    const publicaciones = await Publicacion.find({ aprobado: true });
+    const categoria = req.query.categoria; // 🔍 Captura el query param
+
+    const filtro = { aprobado: true }; // ✅ Base: solo aprobadas
+    if (categoria) {
+      filtro.category = categoria.toLowerCase(); // 🔧 Agrega filtro si existe
+    }
+
+    const publicaciones = await Publicacion.find(filtro);
+
     res.render('Usuarios/tablaPublicacionesAprobadas', {
       usuario: req.session.usuario,
       publicaciones
@@ -469,11 +517,20 @@ app.post('/addPublicacion', upload.single('image'), async (req, res) => {
       reportTitle,
       reportDescription,
       category,
-      communityLocation
+      communityLocation,
+      precio // ✅ extraído del body
     } = req.body;
 
     const loginDate = new Date();
     const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
+
+    // ✅ Validación condicional para ofertas
+    if (category.toLowerCase() === 'oferta') {
+      const precioNumerico = parseFloat(precio);
+      if (isNaN(precioNumerico) || precioNumerico <= 0) {
+        return res.status(400).send('Las ofertas deben tener un precio válido.');
+      }
+    }
 
     const newPublicacion = new Publicacion({
       reportTitle,
@@ -483,12 +540,13 @@ app.post('/addPublicacion', upload.single('image'), async (req, res) => {
       loginDate,
       imagePath,
       aprobado: false,
-      usuario: req.session.usuario.id
+      usuario: req.session.usuario.id,
+      // ✅ Solo se guarda si es oferta
+      precio: category.toLowerCase() === 'oferta' ? parseFloat(precio) : null
     });
 
     await newPublicacion.save();
 
-    // Redirigir al formulario con mensaje de éxito
     res.redirect('/RegistroPublicacion?exito=true');
 
   } catch (error) {
@@ -568,9 +626,38 @@ app.post('/aprobarEmprendimiento/:id', async (req, res) => {
       }
     }
 
-    res.redirect('/panelAdmin');
+  res.redirect('/panelAdmin');
   } catch (error) {
     console.error('Error al aprobar emprendimiento:', error);
+    res.status(500).send('Error interno');
+  }
+});
+
+    app.post('/rechazarEmprendimiento/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const emprendimiento = await Business.findById(id);
+    if (!emprendimiento || emprendimiento.aprobado === true) {
+      return res.status(400).send('Emprendimiento no válido o ya aprobado');
+    }
+
+    await Business.findByIdAndDelete(id);
+    res.redirect('/EmprendimientosAdmin');
+  } catch (error) {
+    console.error('Error al rechazar emprendimiento:', error);
+    res.status(500).send('Error interno');
+  }
+});
+
+app.post('/eliminarEmprendimiento/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    await Business.findByIdAndDelete(id);
+    res.redirect('/EmprendimientosAdmin');
+  } catch (error) {
+    console.error('Error al eliminar emprendimiento:', error);
     res.status(500).send('Error interno');
   }
 });
@@ -597,9 +684,38 @@ app.post('/aprobarPublicacion/:id', async (req, res) => {
   }
 });
 
+app.post('/rechazarPublicacion/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    const publicacion = await Publicacion.findById(id);
+    if (!publicacion || publicacion.aprobado === true) {
+      return res.status(400).send('Publicación no válida o ya aprobada');
+    }
+
+    await Publicacion.findByIdAndDelete(id);
+    res.redirect('/PublicacionesAdmin');
+  } catch (error) {
+    console.error('Error al rechazar publicación:', error);
+    res.status(500).send('Error interno');
+  }
+});
+
+app.post('/eliminarPublicacion/:id', async (req, res) => {
+  const id = req.params.id;
+
+  try {
+    await Publicacion.findByIdAndDelete(id);
+    res.redirect('/PublicacionesAdmin');
+  } catch (error) {
+    console.error('Error al eliminar publicación:', error);
+    res.status(500).send('Error interno');
+  }
+});
 
 
-app.post('/actualizarPerfil', async (req, res) => {
+
+app.post('/actualizarPerfil', upload.single('image'), async (req, res) => {
   try {
     const userId = req.session.usuario?.id;
     if (!userId) return res.status(401).send('Sesión no activa');
@@ -613,15 +729,26 @@ app.post('/actualizarPerfil', async (req, res) => {
       email
     } = req.body;
 
-    // Actualización directa, sin cambiar rol ni password
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : req.session.usuario.imagePath;
+
     await User.findByIdAndUpdate(userId, {
       usuario,
       Identification: identificacion,
       nombre,
       telefono,
       Fecha: new Date(fechaNacimiento),
-      email
+      email,
+      imagePath
     });
+
+    
+    req.session.usuario.usuario = usuario;
+    req.session.usuario.identificacion = identificacion;
+    req.session.usuario.nombre = nombre;
+    req.session.usuario.telefono = telefono;
+    req.session.usuario.fechaNacimiento = fechaNacimiento;
+    req.session.usuario.email = email;
+    req.session.usuario.imagePath = imagePath;
 
     res.redirect('/perfil');
   } catch (err) {

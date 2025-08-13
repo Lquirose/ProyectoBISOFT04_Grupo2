@@ -8,7 +8,8 @@ const publicacionSchema = new mongoose.Schema({
   loginDate: { type: Date, required: true },
   imagePath: { type: String }, // ruta del archivo subido
   aprobado: { type: Boolean, default: false }, // pendiente de aprobación
-  usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'User',required : true } // si querés vincular al usuario
+  usuario: { type: mongoose.Schema.Types.ObjectId, ref: 'User',required : true },
+  precio: { type: Number, default: null } // si querés vincular al usuario
 }, {
   timestamps: true
 });

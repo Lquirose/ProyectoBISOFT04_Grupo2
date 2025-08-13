@@ -340,6 +340,13 @@ body {
     flex-shrink: 0;
     border: 2px solid #f0f0f0;
 }
+.user-profile-card .avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+}
 .user-profile-card .user-info {
     flex-grow: 1;
 }

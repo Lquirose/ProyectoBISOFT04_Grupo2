@@ -38,7 +38,7 @@
                 <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
                 <li><a href="/panelAdmin">Administración</a></li>
                 <li><a href="/perfil">Perfil</a></li>
-                <li><a href="/envioReportes">Reportes</a></li>
+                <li><a href="/RegistroPublicacion">Reportes</a></li>
                 <li class="search-container">
                   <form action="search">
                     <input type="text" name="query" placeholder="buscar">
@@ -81,7 +81,7 @@
         </div>
 
         <div class="Circle">
-          <img src="img/userProfile.png" alt="">
+          <img src="<%= usuario.imagePath %>" alt="Foto de perfil" class="perfil-img">
         </div>
 
         <h5 class="User"><span class="editable" data-key="usuario"><%= usuario.usuario %></span></h5>
@@ -90,6 +90,7 @@
         <h5 class="user-Info">Teléfono: <span class="editable" data-key="telefono"><%= usuario.telefono %></span></h5>
         <h5 class="user-Info">Fecha de nacimiento:<span class="editable" data-key="fechaNacimiento"><%= usuario.Fecha.toISOString().slice(0, 10) %></span></h5>
         <h5 class="user-Info">Email: <span class="editable" data-key="email"><%= usuario.email %></span></h5>
+        <input type="file" name="image" id="image" accept="image/*" class="show-image-input">
       </div>
 
       <div class="password-block" id="passwordSection" style="display: none;">
@@ -113,7 +114,7 @@
 
     </div>
 
-    <form id="perfilForm" action="/actualizarPerfil" method="POST" style="display: none;"></form>
+    <form id="perfilForm" action="/actualizarPerfil" method="POST" style="display: none;" enctype="multipart/form-data"></form>
 
   </main>
 

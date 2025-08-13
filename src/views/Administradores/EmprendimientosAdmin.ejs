@@ -83,7 +83,7 @@
                         <i class='bx  bx-arrow-right-stroke-square'></i>
                     </div>
                     <div class="sidebar-text">
-                        <p><a href="/">Salir del Sistema</a></p>
+                        <p><a href="/logout">Salir del Sistema</a></p>
                     </div>
                 </li>
             </ul>
@@ -159,48 +159,73 @@
 
                     <div class="full-width-block">
                         <div class="user-profile-card">
-                            <div class="avatar"></div>
+                        <div class="avatar"></div>
                             <div class="user-info">
-                                <h4>Juan Pérez</h4>
+                                <h4 id="autorNombre">Autor desconocido</h4>
                                 <p>Autor</p>
-                                <p>Fecha de registro: 15 de enero, 2021</p>
+                                <p id="autorFecha">Fecha de registro: —</p>
                             </div>
-                            <button class="view-profile-button">Ver perfil</button>
+                        </div>
+
+                    </div>
+
+                    <div class="section-title-wrapper">
+                    <h3 class="section-title">Emprendimientos Pendientes</h3>
+                    </div>
+
+                    <div class="section-content-wrapper">
+                        <div class="emprendimientos-table-wrapper">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% emprendimientosPendientes.forEach(emp => { %>
+                                        <tr onclick="mostrarDetallePorId('<%= emp._id %>')">
+                                        <td><%= emp.businessName %></td>
+                                            <td>
+                                                <form action="/aprobarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
+                                                    <button type="submit">✅</button>
+                                                </form>
+                                                <form action="/rechazarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
+                                                    <button type="submit">❌</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
+                            </table>
                         </div>
                     </div>
 
                     <div class="section-title-wrapper">
-                         <h3 class="section-title">Lista de Emprendimientos</h3>
+                        <h3 class="section-title">Emprendimientos Aprobados</h3>
                     </div>
 
-                   <div class="section-content-wrapper">
+                    <div class="section-content-wrapper">
                         <div class="emprendimientos-table-wrapper">
                             <table>
-                            <thead>
-                                <tr>
-                                <th>Nombre</th>
-                                <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <% emprendimientos.forEach(emp => { %>
-                                <tr onclick="mostrarDetallePorId('<%= emp._id %>')">
-                                    <td><%= emp.businessName %></td>
-                                    <td>
-                                    <form action="/aprobarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
-                                        <button type="submit">✅</button>
-                                    </form>
-                                    <form action="/rechazarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
-                                        <button type="submit">❌</button>
-                                    </form>
-                                    <form action="/eliminarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
-                                        <button type="submit">🗑️</button>
-                                    </form>
-                                    <a href="/editarEmprendimiento/<%= emp._id %>">📝</a>
-                                    </td>
-                                </tr>
-                                <% }) %>
-                            </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% emprendimientosAprobados.forEach(emp => { %>
+                                        <tr onclick="mostrarDetallePorId('<%= emp._id %>')">
+                                        <td><%= emp.businessName %></td>
+                                            <td>
+                                                <form action="/eliminarEmprendimiento/<%= emp._id %>" method="POST" style="display:inline;">
+                                                    <button type="submit">🗑️</button>
+                                                </form>
+                                            </td>
+                                        </tr>
+                                    <% }) %>
+                                </tbody>
                             </table>
                         </div>
                     </div>
@@ -232,7 +257,7 @@
 
     
 <script type="application/json" id="data-emprendimientos">
-  <%- JSON.stringify(emprendimientos) %>
+   <%- JSON.stringify([...emprendimientosPendientes, ...emprendimientosAprobados]) %>
 </script>
 
 
@@ -243,19 +268,23 @@
     document.getElementById('data-emprendimientos').textContent
   );
 
-  function mostrarDetallePorId(id) {
-    const emp = emprendimientos.find(e => e._id === id);
-    if (!emp) return;
+ function mostrarDetallePorId(id) {
+  const emp = emprendimientos.find(e => e._id === id);
+  if (!emp) return;
 
-    mostrarDetalle({
-      nombre: emp.businessName,
-      autor: emp.usuario?.nombre || '—',
-      fecha: new Date(emp.loginDate).toLocaleDateString(),
-      categoria: emp.category,
-      estado: emp.aprobado ? 'Aprobado' : 'Pendiente',
-      descripcion: emp.businessDescription,
-      ubicacion: emp.businessLocation,
-      imagen: emp.imagePath
+  mostrarDetalle({
+    nombre: emp.businessName,
+    autor: emp.usuario?.nombre || '—',
+    fecha: emp.usuario?.Fecha
+      ? new Date(emp.usuario.Fecha).toLocaleDateString('es-ES')
+      : '—',
+    categoria: emp.category,
+    estado: emp.aprobado ? 'Aprobado' : 'Pendiente',
+    descripcion: emp.businessDescription,
+    ubicacion: emp.businessLocation,
+    imagen: emp.imagePath,
+    autorImagen: emp.usuario?.imagePath
+
     });
   }
 </script>
@@ -285,6 +314,17 @@
     img.classList.add('hidden');
     contenedor.classList.remove('has-image');
     }
+    const avatar = document.querySelector('.user-profile-card .avatar');
+  avatar.innerHTML = '';
+  const imgAutor = document.createElement('img');
+  imgAutor.src = datos.autorImagen || '/img/default-avatar.png';
+  imgAutor.alt = 'Foto del autor';
+  avatar.appendChild(imgAutor);
+
+  // Fecha de registro del autor
+  document.getElementById('autorNombre').textContent = datos.autor;
+  document.getElementById('autorFecha').textContent = `Fecha de registro: ${datos.fecha}`;
+
 }
 </script>
 

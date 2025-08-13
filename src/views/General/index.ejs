@@ -35,7 +35,7 @@
                                     <li><a href="/RegistroEmprendimiento">Emprendimientos</a></li>
                                     <li><a href="/panelAdmin">Administración</a></li>
                                     <li><a href="/perfil">Perfil</a></li>
-                                    <li><a href="/envioReportes">Reportes</a></li>
+                                    <li><a href="/RegistroPublicacion">Reportes</a></li>
                                     <li class="search-container">
                                         <form action="search">
                                             <input type="text" name="query" placeholder="buscar">
@@ -86,37 +86,7 @@
                 <span class="dot" onclick="currentSlide(3)"></span>
             </div>
         </section>
-        <section class="events"> <!--Clase para la sección de eventos*/-->
-            <h1>Últimos eventos</h1>
-            <br>
-            <h5>Descubre todos los eventos disponibles</h5>
-            <br>
-            <button>Ver todos</button>
-            <div class=" event-links">
-                <a href="evento1.html" class="event-card">
-                    <img src="img/logooficial.png" alt="evento3">
-                    <div class="card-content">
-                        <h5>Evento 1</h5>
-                        <p>Descripción del evento 1</p>
-                    </div>
-                </a>
-                <a href="evento2.html" class="event-card">
-                     <img src="img/logooficial.png" alt="evento2">
-                     <div class="card-content">
-                        <h5>Evento 2</h5>
-                        <p>Descripción del evento 2</p>
-                    </div>
-                </a>
-                <a href="evento3.html" class="event-card">
-                     <img src="img/logooficial.png" alt="evento3">
-                      <div class="card-content">
-                        <h5>Evento 3</h5>
-                        <p>Descripción del evento 3</p>
-                    </div>
-                </a>
-            </div>
-            <!--Aquí hay que poner el boton de ver todos-->
-            <!--También se debe de averiguar como hacer para colocar los accesos directos de los eventos-->
+        
 
         </section>
         <section class="business">
@@ -134,26 +104,19 @@
             </div>
         </section>
         <section class="recent-post"> <!--Clase para la sección de publicaciones recientes-->
-            <h1>Publicaciones recientes</h1>
-            <h5>Conéctate con lo que otros están diciendo</h5>
+            <h1>Eventos</h1>
+            <h5>Entérate de los últimos eventos</h5>
             <div class="post-links">
-                <a href="post1.html" class="post-card">
-                    <img src="img/logooficial.png" alt="post1">
-                    <div class="card-content">
-                        <h5>Publicación 1</h5>
-                        <p>Categoría o descripción corta</p>
-                    </div>
-                </a>
-                <a href="post2.html" class="post-card">
-                    <img src="img/logooficial.png" alt="post2">
-                    <div class="card-content">
-                        <h5>Publicación 2</h5>
-                        <p>Categoría o descripción corta</p>
-                    </div>
-                </a>
+                <% eventos.slice(0, 2).forEach((evento, index) => { %>
+                    <a href="/tablaPublicacionesAprobadas?categoria=evento" class="post-card">
+                        <img src="<%= evento.imagePath %>" alt="evento<%= index + 1 %>">
+                        <div class="card-content">
+                            <h5><%= evento.reportTitle || 'Sin título' %></h5>
+                            <p><%= evento.communityLocation || 'Sin Ubicación' %></p>
+                        </div>
+                    </a>
+                <% }) %>
             </div>
-
-            <!--Aqui hay que averiguar como poner accesos directos de los eventos principales del Calendario-->
         </section>
     </main>
    <footer class="site-footer">
