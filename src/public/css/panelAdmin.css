@@ -162,6 +162,7 @@ body {
 
     .checkbtn {
         display: block; 
+        color: #0056ff;
     }
 
     .page-layout-container {
@@ -194,6 +195,7 @@ body {
     
     .checkbtn {
         font-size: 28px;
+        color: #0056ff;
     }
     
     .panel-welcome-section {

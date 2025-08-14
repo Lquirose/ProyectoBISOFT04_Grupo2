@@ -43,7 +43,7 @@
 
 .sidebar-icon{
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
   justify-self: center;
   color: navy;
 }
@@ -51,7 +51,7 @@
 .sidebar-text{
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
+  overflow: visible;
   flex-shrink: 0;
 }
 
@@ -126,6 +126,7 @@
     z-index: 901;
     position: relative;
     padding: 1rem;
+    color: #0056ff;
   }
 
   .sidebar {

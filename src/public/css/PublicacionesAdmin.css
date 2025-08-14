@@ -1,5 +1,6 @@
 /* CSS publicaciones con añadidos para sidebar responsive y botón hamburguesa */
 
+
 html, body {
     margin: 0;
     padding: 0;
@@ -22,9 +23,7 @@ body {
     margin-top: 0;
     width: 100%;
     padding: 0 20px;
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 
@@ -181,60 +180,6 @@ body {
     margin: 0;
     line-height: 1.5;
 }
-
-/*.featured-image-section {
-    background-color: #f9f9f9;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-    margin-bottom: 20px;
-}
-
-
-#cardImagen {
-  max-width: 100%;
-  height:100%;
-  object-fit: contain;
-  display: block;
-}
-
-
-
-
-
-.featured-image-section .image-placeholder {
-    background-color: #e0e0e0;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #888;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    font-style: italic;
-    font-size: 14px;
-    text-align: center;
-}
-
-.image-placeholder {
-  width: 100%;
-  max-width: 600px;
-  background-color: #e0e0e0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  border-radius: 4px;
-  padding: 10px;
-}
-
-
-.featured-image-section p {
-    font-size: 13px;
-    color: #888;
-    margin: 0;
-    line-height: 1.4;
-}*/
 
 .featured-image-section {
     background-color: #f9f9f9;

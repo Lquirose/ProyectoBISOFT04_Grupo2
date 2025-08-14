@@ -213,7 +213,7 @@ body {
 
 
 .route-card .card-content h5, .route-usercard .usercard-content h5 {
-   margin: 0 0 4px 0;
+   margin: 0  4px ;
    font-size: 16px;
    font-weight: 600;
    font-family: "poppins", sans-serif;
@@ -224,66 +224,184 @@ body {
    transform: scale(1.02);
 }
 
-
 @media (max-width: 768px) {
+    /* Ajustes generales a nivel de página para evitar el scroll horizontal */
+    html, body {
+        overflow-x: hidden; /* Evita el scroll horizontal en toda la página */
+        margin: 0;
+        padding: 0;
+    }
+    
+    .route-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+        /* Aseguramos que el contenedor ocupe el ancho completo */
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .route-card {
+        /*
+         * En lugar de flex: 1 1 100%, que causa el desborde,
+         * usamos un ancho fijo que se adapte al 100% del contenedor.
+         */
+        width: 100%;
+        box-sizing: border-box; /* Fundamental para que el padding se incluya en el 100% */
+        max-width: 100%;
+    }
 
+    .page-layout-container {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 15px; /* Mantén un pequeño padding lateral para estética */
+        margin: 0 auto; /* Asegura el centrado */
+        box-sizing: border-box;
+    }
+    
+    .transport-main {
+        width: 100%;
+        padding: 1rem;
+        box-sizing: border-box;
+    }
+
+    /* Ocultar el botón hamburguesa si no se usa */
     .checkbtn {
-    display: block;
-    position: fixed; 
-    top: 10px; 
-    left: 10px; 
-    font-size: 28px;
-    cursor: pointer;
-    color: #000; 
-    z-index: 1001; 
-  }
+        display: none;
+    }
 
-   .checkbtn {
-   display: block;
-   position: fixed;
-   top: 10px;
-   left: 10px;
-   font-size: 28px;
-   cursor: pointer;
-   color: #000;
-   z-index: 1001;
- }
+    /* Título de la página en móvil */
+    .page-title {
+        padding: 20px;
+    }
+    .page-title h1 {
+        font-size: 24px;
+    }
 
+    /* ------------------------------------------------------------- */
+    /* MODIFICACIONES ESPECÍFICAS DEL FORMULARIO */
+    /* ------------------------------------------------------------- */
+    .transport-form {
+        padding: 20px;
+        width: 100%;
+        max-width: none; /* Elimina cualquier límite de ancho */
+        margin: 0 auto; /* Centra el formulario dentro de su contenedor */
+        box-sizing: border-box;
+    }
+    
+    .form-body {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin: 20px 0;
+    }
 
-   .form-body {
-       grid-template-columns: 1fr;
-      
- }
+    .transportform-group {
+        width: 100%;
+    }
 
+    .transportform-group label {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
 
- .form-button {
-   flex-direction: column;
-   align-items: center;
- }
+    .transportform-group input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 12px;
+        font-size: 16px;
+    }
 
+    .form-button {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        max-width: 100%;
+        margin-top: 20px;
+    }
 
- .form-button button {
-   width: 100%;
-   max-width: 300px;
- }
- .route-links {
- display: flex;
- gap: 16px;
- flex-wrap: wrap;
- justify-content: center;
-}
+    .form-button button {
+        width: 100%;
+        max-width: 300px;
+        height: 48px;
+        font-size: 16px;
+        padding: 10px;
+        margin: 0;
+    }
 
+    /* ------------------------------------------------------------- */
+    /* MODIFICACIONES DE LA TABLA (MANTENIENDO EL DISEÑO DE REFERENCIA) */
+    /* ------------------------------------------------------------- */
 
-.route-card {
- flex: 1 1 100%; /* tarjetas responsivas */
- max-width: 100%;
-}
+    .emprendimientos-table-wrapper {
+        overflow-x: visible; 
+    }
 
+    .emprendimientos-table-wrapper table {
+        border: none;
+        width: 100%;
+        display: block;
+    }
 
-.transport-form
-.page-title {
-   padding: 20px;
-}
+    .emprendimientos-table-wrapper thead {
+        display: none;
+    }
 
+    .emprendimientos-table-wrapper tbody,
+    .emprendimientos-table-wrapper tr {
+        display: block;
+        width: 100%;
+    }
+    
+    .emprendimientos-table-wrapper tr {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+        margin-left: 30px;
+    }
 
+    .emprendimientos-table-wrapper td {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 12px;
+        position: relative;
+    }
+    
+    .emprendimientos-table-wrapper tr td:last-child {
+        border-bottom: none;
+    }
+
+    .emprendimientos-table-wrapper td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        text-transform: uppercase;
+        color: #1e3a8a;
+        width: auto;
+        min-width: 70px;
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+
+    .emprendimientos-table-wrapper td button,
+    .emprendimientos-table-wrapper td a {
+        font-size: 1.5rem;
+        margin: 0 4px;
+    }
+
+    .emprendimientos-table-wrapper td:last-child {
+        justify-content: flex-end;
+        border-bottom: none;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+    
+    .emprendimientos-table-wrapper td:last-child::before {
+        content: none;
+    }
 }
