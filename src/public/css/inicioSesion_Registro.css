@@ -495,6 +495,34 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     margin-top:min(2vw,2vh);
 }
 
+.idIMG{
+    width: 6vw;
+    top:1.4vw ;
+    left:.7vw ;
+    filter: opacity(0.5)
+}
+
+.nameIMG{
+    width: 7vw;
+    top:.8vw ;
+    left:-.1vw ;
+    filter: opacity(0.5)
+}
+
+.cellphoneIMG{
+    width: 5.6vw;
+    top:1.5vw ;
+    left:.6vw ;
+    filter: opacity(0.5)
+}
+
+.dateIMG{
+    width: 6vw;
+    top:.8vw;
+    left:.7vw ;
+    filter: opacity(0.5)
+}
+
 .text-below{
     margin-top:min(3vw,3vw);
 }
@@ -520,40 +548,4 @@ input[type="date"]::-webkit-calendar-picker-indicator{
 
     
     }
-
-
-
-
-/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */ 
-
-/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS-- */
-
-/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS PEQUEÑOS-- */
-
-@media (max-width:330px){
-
-.all_container{
-    margin-top:min(10vw,10vh);
-}
-    
-}
-
-
-/* --- MEDIA QUERIES PARA RESPONSIVE - TELEFONOS PEQUEÑOS-- */
-
-
-
-
-/* --- MEDIA QUERIES PARA RESPONSIVE - Tablets-- */ 
-
-@media (min-width:601px) and (max-width:1024px) {
-
-
-    
-}
-
-/* --- MEDIA QUERIES PARA RESPONSIVE - Tablets-- */
-
-
-
 
