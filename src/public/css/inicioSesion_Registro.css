@@ -346,16 +346,16 @@ input[type="date"]::-webkit-calendar-picker-indicator{
     width: min(2vw,2vw);
     top: min(2.8vw,2.8vh);
     right: min(1vw,1vh);
-    background-color: none;
+    background-color: transparent;
     border: none;
 }
 
 .passViewButtonIMG{
     position: absolute;
-    top: min(-.2vh,-.2vw);
+    top: min(-.3vh,-.3vw);
     right: min(-.06vh,-.06vw);
     cursor: pointer;
-    filter: opacity(0.7)
+    filter: opacity(0.7);
 }
 
 .SpaceSpace{

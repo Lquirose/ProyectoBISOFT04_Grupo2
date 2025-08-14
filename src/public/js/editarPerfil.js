@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggleEditBtn = document.getElementById('toggleEdit');
-  const perfilForm = document.getElementById('perfilForm'); // 🔧 NUEVO
+  const perfilForm = document.getElementById('perfilForm'); 
   let isEditing = false;
 
   toggleEditBtn.addEventListener('click', (e) => {
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
         newSpan.textContent = el.value.trim();
         el.replaceWith(newSpan);
 
-        // 🔧 NUEVO: agregar campo oculto al form
+        
         let hiddenInput = perfilForm.querySelector(`[name="${key}"]`);
         if (!hiddenInput) {
           hiddenInput = document.createElement('input');
@@ -45,11 +45,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const imageInput = document.getElementById('image');
     if (!perfilForm.contains(imageInput) && imageInput.files.length > 0) {
-      perfilForm.appendChild(imageInput); // ✅ Mueve el input original al form
+      perfilForm.appendChild(imageInput); 
     }
 
 
-    // 🔧 NUEVO: enviar el formulario si se está guardando
+
     if (!isEditing) {
       perfilForm.submit();
     }

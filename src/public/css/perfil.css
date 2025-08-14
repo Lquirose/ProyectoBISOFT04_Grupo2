@@ -7,6 +7,7 @@
       height: min(72vh, 72vw);
       display: flex;
       flex-direction: column;
+      margin-bottom: min(5vw,5vh);
     }
 
     .title {
@@ -175,7 +176,6 @@
   border: 1px solid #ccc;
   border-radius: min(0.5vh, 0.5vw);
   width: 100%;
-  max-width: 100%;
   box-sizing: border-box;
   background-color: #f9f9f9;
   height: min(4vh, 4vw); /* igualar altura al contenedor */
@@ -291,9 +291,25 @@
   cursor: pointer;
   box-sizing: border-box;
   transition: background-color 0.2s ease;
+  margin-bottom: min(2vw, 2vh);
 }
 
 .show-image-input #image:hover {
   background-color: #e2e2e2;
 }
 
+
+@media (max-width: 600px){
+
+    main {
+  margin-bottom:min(28vh,28vw);
+}
+
+.user-photo{
+    margin-top:min(14vh,14vw);
+  }
+
+  .title h1{
+    font-size:min(5vw,5vh);
+  }
+}
