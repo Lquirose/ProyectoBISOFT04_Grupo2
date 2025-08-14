@@ -1,12 +1,9 @@
 
-
-
-
-
 .home-main {
     font-family: "poppins", sans-serif;
     text-align: center;
     background-color: #f9f9f9;
+    width: 100%;
 }
 
 .auth-bar{
@@ -116,6 +113,11 @@
   justify-content: center;
   width: 100%;
   height: 100%;
+}
+
+.hero-btn a{
+    text-decoration: none;
+    color:#4f7cff ;
 }
 
 /* Contenedor de los indicadores */
@@ -462,6 +464,8 @@ button:hover{
     /* CARRUSEL RESPONSIVE */
     .welcomeBanner {
         height: 300px;
+        width: 100%;
+        margin: 0 0 0 0;
         margin-bottom: 30px;
     }
 

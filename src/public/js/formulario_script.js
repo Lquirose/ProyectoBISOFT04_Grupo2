@@ -20,7 +20,7 @@ const mensajesError = { //Esto es un objeto literal, sirve para almacena los men
   "image": "Subí una imagen en formato JPG o PNG.",
   "loginDate": "La fecha de registro no puede estar vacía ni ser futura.",
   "telefono": "Debe de tener ocho números y empezar con 8,9 o 7",
-  "Identification" : "Debe ingresar una identificación válida de 9 dígitos sin espacios ni símbolos.",
+  "Identification" : "Debe tener 9 dígitos sin espacios ni símbolos.",
   "nombre": "Debe de tener de 10 a 60 letras",
   "Fecha" : "Debe de tener al menos 15 años para ingresar al sitio",
   "confirmPassword" : "Las contraseñas no coinciden",
