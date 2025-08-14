@@ -1,11 +1,6 @@
 /*-----------------------------------------------
 transporteadmin
 -----------------------------------------------*/
-
-
-
-
-/*NUEVO PARA QUE SE EXTIENDA*/
 body {
  background-color: #f0f2f5; /* Gris azulado como en la imagen */
  margin: 0;
@@ -108,17 +103,13 @@ body {
  font-size: 14px;
 }
 .form-button {
-   /*background-color: red;*/
    max-width: 300px;
    margin: 0 auto;
    display:flex;
    flex-direction: row;
    max-height: 150px;
    justify-content: center;
-   /*background-color: red;*/
    gap: 30px;
-  
-  
 }
 .form-button button {
    align-items: center;
@@ -133,9 +124,8 @@ body {
   padding: 0;
   font-family: "puppins", sans-serif;
   font-size: 12px;
-  /*box-shadow: 0px 4px 6px rgba(0,0,0,0.1);*/
   cursor: pointer;
-  margin-bottom: 30px;;
+  margin-bottom: 30px;
 
 }
 
@@ -225,9 +215,8 @@ body {
 }
 
 @media (max-width: 768px) {
-    /* Ajustes generales a nivel de página para evitar el scroll horizontal */
     html, body {
-        overflow-x: hidden; /* Evita el scroll horizontal en toda la página */
+        overflow-x: hidden;
         margin: 0;
         padding: 0;
     }
@@ -237,27 +226,22 @@ body {
         flex-wrap: wrap;
         gap: 16px;
         justify-content: center;
-        /* Aseguramos que el contenedor ocupe el ancho completo */
         width: 100%;
         margin: 0;
         padding: 0;
     }
     
     .route-card {
-        /*
-         * En lugar de flex: 1 1 100%, que causa el desborde,
-         * usamos un ancho fijo que se adapte al 100% del contenedor.
-         */
         width: 100%;
-        box-sizing: border-box; /* Fundamental para que el padding se incluya en el 100% */
+        box-sizing: border-box;
         max-width: 100%;
     }
 
     .page-layout-container {
         flex-direction: column;
         width: 100%;
-        padding: 0 15px; /* Mantén un pequeño padding lateral para estética */
-        margin: 0 auto; /* Asegura el centrado */
+        padding: 0 15px;
+        margin: 0 auto;
         box-sizing: border-box;
     }
     
@@ -267,12 +251,10 @@ body {
         box-sizing: border-box;
     }
 
-    /* Ocultar el botón hamburguesa si no se usa */
     .checkbtn {
         display: none;
     }
 
-    /* Título de la página en móvil */
     .page-title {
         padding: 20px;
     }
@@ -280,14 +262,11 @@ body {
         font-size: 24px;
     }
 
-    /* ------------------------------------------------------------- */
-    /* MODIFICACIONES ESPECÍFICAS DEL FORMULARIO */
-    /* ------------------------------------------------------------- */
     .transport-form {
         padding: 20px;
         width: 100%;
-        max-width: none; /* Elimina cualquier límite de ancho */
-        margin: 0 auto; /* Centra el formulario dentro de su contenedor */
+        max-width: none;
+        margin: 0 auto;
         box-sizing: border-box;
     }
     
@@ -330,10 +309,6 @@ body {
         padding: 10px;
         margin: 0;
     }
-
-    /* ------------------------------------------------------------- */
-    /* MODIFICACIONES DE LA TABLA (MANTENIENDO EL DISEÑO DE REFERENCIA) */
-    /* ------------------------------------------------------------- */
 
     .emprendimientos-table-wrapper {
         overflow-x: visible; 
@@ -403,5 +378,66 @@ body {
     
     .emprendimientos-table-wrapper td:last-child::before {
         content: none;
+    }
+}
+
+@media (max-width: 600px) {
+    .ruta-table {
+        width: 100%;
+        border: none;
+        display: block;
+        margin-left: min(-6vh,-6vw);
+    }
+
+    .ruta-table thead {
+        display: none;
+    }
+
+    .ruta-table tbody,
+    .ruta-table tr {
+        display: block;
+        width: 100%;
+    }
+
+    .ruta-table tr {
+        margin-bottom: 1rem;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border: 1px solid #e0e0e0;
+        padding: 15px;
+    }
+
+    .ruta-table td {
+        display: flex;
+        align-items: center;
+        text-align: left;
+        border-bottom: 1px solid #e0e0e0;
+        padding: 12px 0;
+        position: relative;
+    }
+
+    .ruta-table tr td:last-child {
+        border-bottom: none;
+    }
+
+    .ruta-table td::before {
+        font-weight: 600;
+        color: #1e3a8a;
+        width: 100px;
+        flex-shrink: 0;
+        margin-right: 15px;
+    }
+
+    .ruta-table td:nth-child(1)::before { content: "Ruta:"; }
+    .ruta-table td:nth-child(2)::before { content: "Hora:"; }
+    .ruta-table td:nth-child(3)::before { content: "Destino:"; }
+    .ruta-table td:nth-child(4)::before { content: "Frecuencia:"; }
+    .ruta-table td:nth-child(5)::before { content: "Tarifa:"; }
+    .ruta-table td:nth-child(6)::before { content: "Duración:"; }
+    .ruta-table td:nth-child(7)::before { content: "Acciones:"; }
+
+    .ruta-table .action-buttons {
+        justify-content: flex-start;
     }
 }
