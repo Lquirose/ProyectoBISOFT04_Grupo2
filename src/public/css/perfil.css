@@ -302,14 +302,17 @@
 @media (max-width: 600px){
 
     main {
-  margin-bottom:min(28vh,28vw);
+
+  margin-bottom: min(32vw, 32vh);
 }
 
 .user-photo{
-    margin-top:min(14vh,14vw);
+    margin-top:min(17vh,17vw);
   }
 
   .title h1{
     font-size:min(5vw,5vh);
   }
+
+
 }
