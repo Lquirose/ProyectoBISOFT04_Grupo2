@@ -259,3 +259,71 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   -webkit-appearance: none;
 }
 
+/* Nueva media query para max-width: 600px */
+@media (max-width: 600px) {
+    .transport-usermain {
+        padding: 0 10px;
+        overflow-x: hidden;
+    }
+    
+    .page-title {
+        padding: 20px 10px;
+    }
+    
+    .routelinks-container {
+        padding: 20px 10px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin: 10px auto;
+    }
+    
+    .user-routes {
+        padding: 20px 0;
+        width: 100%;
+    }
+    
+    .route-userlinks {
+        padding: 0 10px;
+        gap: 15px;
+        align-items: center;
+    }
+    
+    .route-usercard, .fee-usercard {
+        max-width: 100%;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+    
+    .usercard-content {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .user-fee {
+        padding: 20px 10px;
+        width: 100%;
+    }
+    
+    .userfee-links > div {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 20px 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .route-usertitle {
+        display: none;
+    }
+    
+    .route-usertitle h2 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+    
+    .route-usertitle h5 {
+        font-size: 1rem;
+    }
+}
